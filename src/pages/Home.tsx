@@ -1,12 +1,13 @@
 import React from "react";
 
-import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import DiningOut from "../components/DiningOut";
 
 const Home = () => {
   return (
     <>
       <HeroSection />
+      <DiningOut />
     </>
   );
 };

@@ -210,13 +210,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-// #search-box {
-//     background-color: #d9d9d9;
-//     height: 65px;
-//     width: 642px;
-//     border-radius: 8px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-evenly;
-// }
