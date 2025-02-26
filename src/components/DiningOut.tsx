@@ -1,77 +1,85 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Box,
-  Stack,
-  Typography,
-} from "@mui/material";
 import React from "react";
+import { Box, Stack, styled, Typography } from "@mui/material";
+
+import DiningOutCard from "../UI/DiningOutCard";
+import { Container } from "@mui/system";
+
+type dummy_dining_out_data = {
+  imgurl: string;
+  heading: string;
+  statement: string;
+}[];
 
 const DiningOut = () => {
-  const DUMMY_DINING_OUT_DATA: {
-    imgurl: string;
-    heading: string;
-    statement: string;
-  } = {
-    imgurl: "/images/Dining_Out/img3.jpeg",
-    heading: "Dining Out",
-    statement: "Explore curated lists of top restaurants",
-  };
+  const DUMMY_DINING_OUT_DATA: dummy_dining_out_data = [
+    {
+      imgurl: "/images/Dining_Out/img1.jpeg",
+      heading: "Dining Out",
+      statement: "Explore curated lists of top restaurants",
+    },
+    {
+      imgurl: "/images/Dining_Out/img2.jpeg",
+      heading: "Dining Out",
+      statement: "Explore curated lists of top restaurants",
+    },
+    {
+      imgurl: "/images/Dining_Out/img3.jpeg",
+      heading: "Dining Out",
+      statement: "Explore curated lists of top restaurants",
+    },
+  ];
 
   return (
-    <>
-      <>DiningOut</>
+    <Box
+      sx={{
+        marginTop: "35px",
+        marginBottom: "40px",
+        padding: "15px 27px",
+        // margin: "0 15px",
+        position: "relative",
+      }}
+    >
       <Box
         sx={{
-          width: "100%",
-          margin: "auto 20px",
+          overflowX: "scroll",
+          overflowY: "hidden",
+          whiteSpace: "nowrap",
+          msOverflowStyle: "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "thin",
+          overscrollBehaviorX: "contain",
+          scrollbarColor: "#f8f8f8 transparent",
+          "&::-webkit-scrollbar-button": {
+            display: "none", // Remove the arrows completely
+          },
         }}
       >
-        <Card
+        <Box
           sx={{
-            maxWidth: 345,
-            borderRadius: "8px",
-            boxShadow: "0px 4px 4px 0px #0000001A",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            margin: "auto",
+            gap: {
+              xs: "45px",
+              sm: "50px",
+              md: "60px",
+              lg: "60px",
+            },
+            padding: "30px 15px",
+            "& > *": {
+              flexShrink: 0,
+            },
           }}
         >
-          <CardMedia
-            component="img"
-            height="140"
-            image={DUMMY_DINING_OUT_DATA.imgurl}
-            alt="Image description"
-          />
-          <CardContent>
-            <Typography
-              component="div"
-              sx={{
-                fontFamily: "Poppins",
-                fontWeight: 400,
-                fontSize: "16px",
-                lineHeight: "24px",
-                letterSpacing: "0px",
-                color: "#000000",
-              }}
-            >
-              {DUMMY_DINING_OUT_DATA.heading}
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Poppins",
-                fontWeight: 300,
-                fontSize: "14px",
-                lineHeight: "21px",
-                letterSpacing: "0%",
-                color: "#000000",
-              }}
-            >
-              {DUMMY_DINING_OUT_DATA.statement}
-            </Typography>
-          </CardContent>
-        </Card>
+          {DUMMY_DINING_OUT_DATA.map((item) => (
+            <DiningOutCard Card={item} />
+          ))}
+        </Box>
       </Box>
-      <>Over</>
-    </>
+    </Box>
   );
 };
 

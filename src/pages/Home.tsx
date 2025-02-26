@@ -8,6 +8,8 @@ const Home = () => {
     <>
       <HeroSection />
       <DiningOut />
+      <>Over</>
+      <>Over</>
     </>
   );
 };

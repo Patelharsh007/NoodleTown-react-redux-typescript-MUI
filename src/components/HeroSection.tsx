@@ -29,7 +29,7 @@ const HeroSection = () => {
       <Box
         sx={{
           padding: 0,
-          width: "100vw",
+          // width: "100vw",
           height: { xs: "480px", sm: "548px" },
           background: 'url("/images/hero.jpg")',
           backgroundSize: "cover",
