@@ -5,6 +5,7 @@ import DiningOut from "../components/DiningOut";
 import BestDelievered from "../components/BestDelievered";
 import ItemCarosuel from "../components/ItemCarosuel";
 import PizzaBanner from "../components/PizzaBanner";
+import GridImages from "../components/GridImages";
 
 const Home = () => {
   return (
@@ -15,6 +16,9 @@ const Home = () => {
       <ItemCarosuel />
       <ItemCarosuel />
       <PizzaBanner />
+      <ItemCarosuel />
+      <ItemCarosuel />
+      <GridImages />
       <ItemCarosuel />
       <ItemCarosuel />
     </>

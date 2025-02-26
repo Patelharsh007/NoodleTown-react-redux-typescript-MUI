@@ -20,13 +20,14 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
           padding: { sm: "30px", md: "10px" },
         }}
       >
-        <img
+        <Box
+          component={"img"}
           src={props.box.imageurl}
           alt={props.box.title}
+          width={"246px"}
+          height={"246px"}
+          borderRadius={"50%"}
           style={{
-            width: "246px",
-            height: "246px",
-            borderRadius: "50%",
             objectFit: "cover",
           }}
         />
