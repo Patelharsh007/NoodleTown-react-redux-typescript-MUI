@@ -33,11 +33,11 @@ const DiningOut = () => {
       sx={{
         marginTop: "35px",
         marginBottom: "40px",
-        padding: "15px 27px",
+        padding: "20px 27px",
         // margin: "0 15px",
         position: "relative",
         maxWidth: "1400px",
-        margin: "0 auto",
+        margin: "20px auto",
       }}
     >
       <Box
@@ -76,7 +76,7 @@ const DiningOut = () => {
           }}
         >
           {DUMMY_DINING_OUT_DATA.map((item) => (
-            <DiningOutCard Card={item} />
+            <DiningOutCard Card={item} key={Math.random()} />
           ))}
         </Box>
       </Box>

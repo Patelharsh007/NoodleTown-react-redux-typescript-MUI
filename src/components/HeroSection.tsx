@@ -130,6 +130,7 @@ const HeroSection = () => {
                 {/* Select  */}
                 <Select
                   id="dropdown"
+                  name="city"
                   value={selectedCity}
                   onChange={handleCityChange}
                   sx={{
@@ -169,6 +170,7 @@ const HeroSection = () => {
                   <SearchIcon sx={{ color: "#999999" }} />
                   <TextField
                     id="search-value"
+                    name="search"
                     onChange={handleSearchChange}
                     placeholder="Search for restraunt, cuisine, places"
                     sx={{

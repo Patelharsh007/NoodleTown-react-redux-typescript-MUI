@@ -28,8 +28,8 @@ const BestDelievered = () => {
       <Box
         sx={{
           display: { xs: "none", sm: "block", md: "block" },
-          padding: "20px",
-          margin: " 30px auto",
+          padding: "30px",
+          margin: " 20px auto",
           maxWidth: "1400px",
         }}
       >
@@ -69,7 +69,7 @@ const BestDelievered = () => {
             margin: "0 auto",
             padding: "0 20px",
 
-            "& > :nth-child(1)::after,& > :nth-child(2)::after": {
+            "& > :nth-of-type(1)::after,& > :nth-of-type(2)::after": {
               content: '""',
               position: "absolute",
               top: { sm: "100%", md: "40%" },
@@ -82,7 +82,7 @@ const BestDelievered = () => {
           }}
         >
           {DUMMY_BEST_DELIEVERED_DATA.map((item) => {
-            return <BestDelieveredBox box={item} />;
+            return <BestDelieveredBox box={item} key={item.title} />;
           })}
         </Box>
       </Box>
