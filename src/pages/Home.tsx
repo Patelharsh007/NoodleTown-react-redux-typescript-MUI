@@ -5,6 +5,7 @@ import DiningOut from "../components/DiningOut";
 import BestDelievered from "../components/BestDelievered";
 import ItemCarosuel from "../components/ItemCarosuel";
 import HomePageImages from "../components/HomePageImages";
+import InstagramBox from "../components/InstagramBox";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
       <HomePageImages />
       <ItemCarosuel />
       <ItemCarosuel />
+      <ItemCarosuel />
+      <ItemCarosuel />
+      <InstagramBox />
     </>
   );
 };

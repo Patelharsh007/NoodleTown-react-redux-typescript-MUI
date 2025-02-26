@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 type DiningOutProps = {
   Card: { imgurl: string; heading: string; statement: string };
