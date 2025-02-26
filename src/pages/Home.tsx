@@ -9,9 +9,6 @@ const Home = () => {
     <>
       <HeroSection />
       <DiningOut />
-      <>Over</>
-      <>Over</>
-      <>Best-Delievered-Section</>
       <BestDelievered />
     </>
   );

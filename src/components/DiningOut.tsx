@@ -36,6 +36,8 @@ const DiningOut = () => {
         padding: "15px 27px",
         // margin: "0 15px",
         position: "relative",
+        maxWidth: "1400px",
+        margin: "0 auto",
       }}
     >
       <Box

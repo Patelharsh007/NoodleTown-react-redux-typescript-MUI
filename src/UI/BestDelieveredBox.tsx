@@ -17,7 +17,7 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
           flexDirection: "column",
           justifyContent: "space-between",
           position: "relative",
-          backgroundColor: "#f3f3f3",
+          padding: { sm: "30px", md: "10px" },
         }}
       >
         <img
