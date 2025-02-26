@@ -2,6 +2,7 @@ import React from "react";
 
 import HeroSection from "../components/HeroSection";
 import DiningOut from "../components/DiningOut";
+import BestDelievered from "../components/BestDelievered";
 
 const Home = () => {
   return (
@@ -10,6 +11,8 @@ const Home = () => {
       <DiningOut />
       <>Over</>
       <>Over</>
+      <>Best-Delievered-Section</>
+      <BestDelievered />
     </>
   );
 };

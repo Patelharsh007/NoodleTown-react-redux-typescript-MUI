@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Stack, styled, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import DiningOutCard from "../UI/DiningOutCard";
-import { Container } from "@mui/system";
 
 type dummy_dining_out_data = {
   imgurl: string;
