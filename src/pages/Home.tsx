@@ -4,8 +4,7 @@ import HeroSection from "../components/HeroSection";
 import DiningOut from "../components/DiningOut";
 import BestDelievered from "../components/BestDelievered";
 import ItemCarosuel from "../components/ItemCarosuel";
-import PizzaBanner from "../components/PizzaBanner";
-import GridImages from "../components/GridImages";
+import HomePageImages from "../components/HomePageImages";
 
 const Home = () => {
   return (
@@ -15,10 +14,9 @@ const Home = () => {
       <BestDelievered />
       <ItemCarosuel />
       <ItemCarosuel />
-      <PizzaBanner />
       <ItemCarosuel />
       <ItemCarosuel />
-      <GridImages />
+      <HomePageImages />
       <ItemCarosuel />
       <ItemCarosuel />
     </>
