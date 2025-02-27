@@ -55,10 +55,10 @@ const HomePageImages = () => {
       <Box
         sx={{
           maxWidth: "1300px",
-          width: { xs: "80%", sm: "90%", lg: "95%" },
+          width: { xs: "80%", sm: "90%", lg: "90%" },
           margin: { xs: "100px auto", sm: "250px auto" },
           display: "grid",
-          padding: { xs: "40px", sm: "30px" },
+          padding: { xs: "40px", sm: "30px", lg: "35px" },
           gridTemplateAreas: {
             xs: '"first" "second" "third"',
             sm: '"first second" "first third"',
@@ -71,7 +71,6 @@ const HomePageImages = () => {
           sx={{
             gridArea: "first",
             position: "relative",
-            borderRadius: "17px",
             overflow: "hidden",
             height: { xs: "250px", sm: "400px", lg: "550px" },
             width: "100%",
@@ -91,10 +90,10 @@ const HomePageImages = () => {
           <Box
             component="img"
             src="images/Grid-Images/img4.jpg"
+            borderRadius={"17px"}
+            width={"100%"}
+            height={"100%"}
             sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "17px",
               objectFit: "cover",
               objectPosition: "center",
             }}
@@ -123,7 +122,6 @@ const HomePageImages = () => {
           sx={{
             gridArea: "second",
             position: "relative",
-            borderRadius: "16px",
             overflow: "hidden",
             height: { xs: "250px", sm: "180px", lg: "265px" },
             width: "100%",
@@ -132,10 +130,10 @@ const HomePageImages = () => {
           <Box
             component="img"
             src="images/Grid-Images/img2.jpeg"
+            borderRadius={"16px"}
+            width={"100%"}
+            height={"100%"}
             sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "16px",
               objectFit: "cover",
               objectPosition: "center",
             }}
@@ -146,7 +144,6 @@ const HomePageImages = () => {
           sx={{
             gridArea: "third",
             position: "relative",
-            borderRadius: "16px",
             overflow: "hidden",
             height: { xs: "250px", sm: "200px", lg: "265px" },
             width: "100%",
@@ -155,10 +152,10 @@ const HomePageImages = () => {
           <Box
             component="img"
             src="images/Grid-Images/img3.jpeg"
+            borderRadius={"16px"}
+            width={"100%"}
+            height={"100%"}
             sx={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "16px",
               objectFit: "cover",
               objectPosition: "center",
             }}

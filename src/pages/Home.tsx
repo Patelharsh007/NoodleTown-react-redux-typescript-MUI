@@ -23,6 +23,10 @@ const Home = () => {
       <ItemCarosuel />
       <ItemCarosuel />
       <InstagramBox />
+      <ItemCarosuel />
+      <ItemCarosuel />
+      <ItemCarosuel />
+      <ItemCarosuel />
     </>
   );
 };
