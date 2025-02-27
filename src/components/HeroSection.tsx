@@ -27,21 +27,19 @@ const HeroSection = () => {
   return (
     <>
       <Box
+        padding={0}
+        height={{ xs: "480px", sm: "548px" }}
+        position={"relative"}
+        zIndex={1}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        justifyContent={"space-around"}
         sx={{
-          padding: 0,
-          // width: "100vw",
-          height: { xs: "480px", sm: "548px" },
           background: 'url("/images/hero.jpg")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
-          position: "relative",
-          zIndex: 1,
-
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
 
           "&::before": {
             content: '""',
@@ -57,62 +55,43 @@ const HeroSection = () => {
       >
         <Navbar linkColor="#fff" />
         <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: { xs: "70px", sm: "130px" },
-          }}
+          width={"100%"}
+          display={"flex"}
+          flexDirection={"column"}
+          gap={{ xs: "70px", sm: "130px" }}
         >
           <Stack
             direction="column"
-            sx={{ justifyContent: "center", alignItems: "center" }}
+            justifyContent={"center"}
+            alignItems={"center"}
           >
             <Typography
-              sx={{
-                fontFamily: "Poppins, serif",
-                fontWeight: 700,
-                fontSize: { xs: "38px", sm: "48px" },
-                lineHeight: "72px",
-                color: "#fff",
-                letterSpacing: "0",
-                // "@media (max-width: 400px)": {
-                //   fontSize: "38px", // Set the font size
-                //   lineHeight: "58px",
-                // },
-              }}
+              fontFamily={"Poppins, serif"}
+              fontWeight={700}
+              fontSize={{ xs: "38px", sm: "48px" }}
+              lineHeight={"72px"}
+              letterSpacing={"0px"}
+              color={"#fff"}
             >
               NOODLETOWN
             </Typography>
             <Typography
-              sx={{
-                fontFamily: "Poppins, serif",
-                fontWeight: 500,
-                fontSize: { xs: "18px", sm: "24px" },
-                lineHeight: "36px",
-                color: "#fff",
-                letterSpacing: "0",
-                // "@media (max-width: 400px)": {
-                //   fontSize: "17.3px", // Set the font size
-                //   lineHeight: "26px",
-                // },
-              }}
+              fontFamily={"Poppins, serif"}
+              fontWeight={500}
+              fontSize={{ xs: "18px", sm: "24px" }}
+              lineHeight={"36px"}
+              letterSpacing={"0px"}
+              color={"#fff"}
             >
               Discover best food around you
             </Typography>
           </Stack>
 
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
             <Stack
+              height={{ xs: "80px", sm: "65px" }}
+              width={{ xs: "90%", sm: "590px" }}
               sx={{
-                height: { xs: "80px", sm: "65px" },
-                width: { xs: "90%", sm: "590px" },
                 backgroundColor: "#d9d9d9",
                 borderRadius: "8px",
               }}
@@ -120,12 +99,10 @@ const HeroSection = () => {
               {/* Search-Bar Box  */}
               <Stack
                 direction={{ xs: "column", sm: "row" }}
-                sx={{
-                  margin: "auto 15px",
-                  gap: { xs: "5px", sm: "41px" },
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+                justifyContent={"center"}
+                alignItems={"center"}
+                margin={"auto 15px"}
+                gap={{ xs: "5px", sm: "41px" }}
               >
                 {/* Select  */}
                 <Select
@@ -154,18 +131,14 @@ const HeroSection = () => {
                   <MenuItem value="Valsad">Valsad</MenuItem>
                 </Select>
 
-                <Typography sx={{ display: { xs: "none", sm: "block" } }}>
-                  |
-                </Typography>
+                <Typography display={{ xs: "none", sm: "block" }}>|</Typography>
                 <Stack
+                  margin={"0 auto"}
+                  display={"flex"}
                   direction="row"
-                  sx={{
-                    margin: "0 auto",
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                    gap: "5px",
-                  }}
+                  justifyContent={"flex-start"}
+                  alignItems={"center"}
+                  gap={"5px"}
                 >
                   <SearchIcon sx={{ color: "#999999" }} />
                   <TextField
