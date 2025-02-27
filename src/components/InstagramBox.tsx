@@ -9,7 +9,7 @@ const InstagramBox = () => {
       <Box
         maxWidth={"1600px"}
         width={{ xs: "80%", sm: "90%" }}
-        margin={"auto"}
+        margin={"50px auto"}
         padding={{ xs: "25px", sm: "30px" }}
       >
         <Grid2
@@ -23,7 +23,7 @@ const InstagramBox = () => {
               left: "0",
               top: "0",
               width: "100%",
-              height: "99%",
+              height: "99.5%",
               background: "rgba(0, 0, 0, 0.2)",
               zIndex: 3,
             },

@@ -53,7 +53,7 @@ const HomePageImages = () => {
       <Box
         maxWidth={"1300px"}
         width={{ xs: "80%", sm: "90%", lg: "90%" }}
-        margin={{ xs: "100px auto", sm: "250px auto" }}
+        margin={{ xs: "100px auto", sm: "150px auto" }}
         padding={{ xs: "25px", sm: "30px", lg: "35px" }}
         display={"grid"}
         gridTemplateAreas={{
