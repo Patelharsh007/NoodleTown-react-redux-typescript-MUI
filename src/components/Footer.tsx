@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Typography, Grid2 } from "@mui/material";
+import { Box, Typography, Grid2, Container } from "@mui/material";
 
 const Footer = () => {
   return (
-    <Box
+    <Container
       sx={{
         maxWidth: "1300px",
         width: "90%",
@@ -91,7 +91,7 @@ const Footer = () => {
           </Grid2>
         </Box>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

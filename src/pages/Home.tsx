@@ -15,9 +15,6 @@ const Home = () => {
       <DiningOut />
       <BestDelievered />
       <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
       <HomePageImages />
       <InstagramBox />
       <Footer />
