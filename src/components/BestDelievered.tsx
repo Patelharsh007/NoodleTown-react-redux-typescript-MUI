@@ -26,21 +26,20 @@ const BestDelievered = () => {
   return (
     <>
       <Box
-        sx={{
-          display: { xs: "none", sm: "block", md: "block" },
-          padding: "30px",
-          margin: " 20px auto",
-          maxWidth: "1400px",
-        }}
+        maxWidth={"1400px"}
+        margin={"20px auto"}
+        padding={"30px"}
+        display={{ xs: "none", sm: "block", md: "block" }}
       >
-        <Stack sx={{ padding: "20px 20px", margin: "50px 20px" }}>
+        <Stack padding={"20px 20px"} margin={"50px 20px"}>
           <Typography
             fontFamily={"Poppins"}
             fontSize={"48px"}
             fontWeight={700}
             lineHeight={"72px"}
             letterSpacing={0}
-            sx={{ color: "#ffc300", textAlign: "left" }}
+            color={"#ffc300"}
+            textAlign={"left"}
           >
             Our best delivered cuisines
           </Typography>
@@ -50,7 +49,7 @@ const BestDelievered = () => {
             fontWeight={400}
             lineHeight={"24px"}
             letterSpacing={0}
-            sx={{ textAlign: "left" }}
+            textAlign={"left"}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore
@@ -59,16 +58,15 @@ const BestDelievered = () => {
 
         <Box
           id="best-delievered-container"
+          maxWidth={"1400px"}
+          margin={"0 auto"}
+          padding={"0 20px"}
+          display={"flex"}
+          flexDirection={{ sm: "column", md: "row" }}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          position={"relative"}
           sx={{
-            display: "flex",
-            flexDirection: { sm: "column", md: "row" },
-            justifyContent: "space-between",
-            alignItems: "center",
-            position: "relative",
-            maxWidth: "1400px",
-            margin: "0 auto",
-            padding: "0 20px",
-
             "& > :nth-of-type(1)::after,& > :nth-of-type(2)::after": {
               content: '""',
               position: "absolute",

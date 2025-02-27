@@ -10,15 +10,13 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
     <>
       <Box
         id="best-deivered-box"
-        sx={{
-          width: "246px",
-          height: "317px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          position: "relative",
-          padding: { sm: "30px", md: "10px" },
-        }}
+        width={"246px"}
+        height={"317px"}
+        padding={{ sm: "30px", md: "10px" }}
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"space-between"}
+        position={"relative"}
       >
         <Box
           component={"img"}
