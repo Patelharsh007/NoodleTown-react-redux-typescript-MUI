@@ -2,7 +2,7 @@ import * as React from "react";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
-import { Badge, Container, Stack, Box } from "@mui/material";
+import { Badge, Stack, Box } from "@mui/material";
 
 type NavbarProps = {
   linkColor?: string;
@@ -46,7 +46,7 @@ const Navbar = (props: NavbarProps) => {
               fontWeight={500}
               fontSize={"20px"}
               lineHeight={"30px"}
-              letterSpacing={"0px"}
+              letterSpacing={"0%"}
             >
               <Link
                 to="/menu"

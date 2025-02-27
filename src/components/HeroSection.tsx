@@ -70,7 +70,7 @@ const HeroSection = () => {
               fontWeight={700}
               fontSize={{ xs: "38px", sm: "48px" }}
               lineHeight={"72px"}
-              letterSpacing={"0px"}
+              letterSpacing={"0%"}
               color={"#fff"}
             >
               NOODLETOWN
@@ -80,7 +80,7 @@ const HeroSection = () => {
               fontWeight={500}
               fontSize={{ xs: "18px", sm: "24px" }}
               lineHeight={"36px"}
-              letterSpacing={"0px"}
+              letterSpacing={"0%"}
               color={"#fff"}
             >
               Discover best food around you
@@ -165,7 +165,7 @@ const HeroSection = () => {
                         fontWeight: "400",
                         fontSize: { xs: "16.5px", sm: "18px" }, // Responsive font size
                         lineHeight: "27px",
-                        letterSpacing: "0px",
+                        letterSpacing: "0%",
                         padding: "0px",
                       },
                       "& .MuiInputBase-input::placeholder": {

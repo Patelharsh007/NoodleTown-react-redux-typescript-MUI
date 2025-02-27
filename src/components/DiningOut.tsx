@@ -30,15 +30,10 @@ const DiningOut = () => {
 
   return (
     <Box
-      sx={{
-        marginTop: "35px",
-        marginBottom: "40px",
-        padding: "20px 27px",
-        // margin: "0 15px",
-        position: "relative",
-        maxWidth: "1400px",
-        margin: "20px auto",
-      }}
+      maxWidth={"1400px"}
+      margin={"20px auto"}
+      padding={"20px 27px"}
+      position={"relative"}
     >
       <Box
         sx={{
@@ -58,18 +53,18 @@ const DiningOut = () => {
         }}
       >
         <Box
+          margin={"auto"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-around"}
+          gap={{
+            xs: "45px",
+            sm: "50px",
+            md: "60px",
+            lg: "60px",
+          }}
+          padding={"30px 15px"}
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            margin: "auto",
-            gap: {
-              xs: "45px",
-              sm: "50px",
-              md: "60px",
-              lg: "60px",
-            },
-            padding: "30px 15px",
             "& > *": {
               flexShrink: 0,
             },
