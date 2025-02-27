@@ -54,7 +54,7 @@ const HomePageImages = () => {
         maxWidth={"1300px"}
         width={{ xs: "80%", sm: "90%", lg: "90%" }}
         margin={{ xs: "100px auto", sm: "250px auto" }}
-        padding={{ xs: "40px", sm: "30px", lg: "35px" }}
+        padding={{ xs: "25px", sm: "30px", lg: "35px" }}
         display={"grid"}
         gridTemplateAreas={{
           xs: '"first" "second" "third"',

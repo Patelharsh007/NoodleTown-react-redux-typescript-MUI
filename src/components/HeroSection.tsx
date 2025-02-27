@@ -87,7 +87,12 @@ const HeroSection = () => {
             </Typography>
           </Stack>
 
-          <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            overflow={"hidden"}
+          >
             <Stack
               height={{ xs: "80px", sm: "65px" }}
               width={{ xs: "90%", sm: "590px" }}
@@ -147,7 +152,7 @@ const HeroSection = () => {
                     onChange={handleSearchChange}
                     placeholder="Search for restraunt, cuisine, places"
                     sx={{
-                      width: { xs: "230px", sm: "320px" }, // Responsive width
+                      width: { xs: "235px", sm: "325px" }, // Responsive width
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
                           border: "none",

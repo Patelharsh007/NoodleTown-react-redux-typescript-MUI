@@ -6,6 +6,7 @@ import BestDelievered from "../components/BestDelievered";
 import ItemCarosuel from "../components/ItemCarosuel";
 import HomePageImages from "../components/HomePageImages";
 import InstagramBox from "../components/InstagramBox";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -18,15 +19,8 @@ const Home = () => {
       <ItemCarosuel />
       <ItemCarosuel />
       <HomePageImages />
-      <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
       <InstagramBox />
-      <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
-      <ItemCarosuel />
+      <Footer />
     </>
   );
 };
