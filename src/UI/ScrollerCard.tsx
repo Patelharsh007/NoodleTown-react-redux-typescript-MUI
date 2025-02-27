@@ -2,11 +2,11 @@ import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
 import React from "react";
 
-type CarosuelCardProp = {
+type ScrollerCardProp = {
   Card: { imageurl: string };
 };
 
-const CarosuelCard = (props: CarosuelCardProp) => {
+const ScrollerCard = (props: ScrollerCardProp) => {
   return (
     <Box
       id={"outer-container-to-make-design"}
@@ -140,9 +140,9 @@ const CarosuelCard = (props: CarosuelCardProp) => {
             cursor: "pointer",
             "&:hover": {
               backgroundColor: "#F6B716",
-              // "& .MuiSvgIcon-root": {
-              //   color: "#ffffff",
-              // },
+              "& .MuiSvgIcon-root": {
+                color: "#ffffff",
+              },
             },
           }}
         >
@@ -152,10 +152,6 @@ const CarosuelCard = (props: CarosuelCardProp) => {
               position: "absolute",
               top: "5px",
               left: "5px",
-
-              "&:hover": {
-                color: "#fff",
-              },
             }}
           />
         </Box>
@@ -164,4 +160,4 @@ const CarosuelCard = (props: CarosuelCardProp) => {
   );
 };
 
-export default CarosuelCard;
+export default ScrollerCard;

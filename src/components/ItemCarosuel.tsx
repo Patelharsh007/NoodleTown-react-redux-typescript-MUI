@@ -2,7 +2,7 @@ import React from "react";
 import ReceipeHeader from "./ReceipeHeader";
 import { Box } from "@mui/material";
 
-import CarosuelCard from "../UI/CarosuelCard";
+import ScrollerCard from "../UI/ScrollerCard";
 
 type Carddetails = {
   imageurl: string;
@@ -22,13 +22,14 @@ const ItemCarosuel = () => {
       <ReceipeHeader />
 
       <Box
-        margin={"20px"}
+        maxWidth={"1800px"}
+        margin={"auto"}
         padding={"20px"}
         display={"flex"}
         flexDirection={"row"}
       >
-        <CarosuelCard Card={dummy_carddetails} />
-        <CarosuelCard Card={dummy_carddetails2} />
+        <ScrollerCard Card={dummy_carddetails} />
+        <ScrollerCard Card={dummy_carddetails2} />
       </Box>
 
       {/* <Box
