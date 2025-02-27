@@ -11,27 +11,18 @@ type NavbarProps = {
 const Navbar = (props: NavbarProps) => {
   return (
     <>
-      <Box
-        sx={{
-          maxWidth: "1600px",
-          width: "95%",
-        }}
-      >
+      <Box maxWidth={"1600px"} width={"95%"} margin={" 0 auto"}>
         <Stack
           direction={{ xs: "column", sm: "row" }}
-          sx={{
-            width: "100%",
-            justifyContent: { xs: "center", sm: "space-between" },
-            alignItems: { xs: "flex-start", sm: "center" },
-          }}
+          width={"100%"}
+          justifyContent={{ xs: "center", sm: "space-between" }}
+          alignItems={{ xs: "flex-start", sm: "center" }}
         >
           <Typography
-            sx={{
-              fontFamily: "Poppins, serif",
-              fontWeight: 500,
-              fontSize: "20px",
-              lineHeight: "30px",
-            }}
+            fontFamily={"Poppins, serif"}
+            fontWeight={500}
+            fontSize={"20px"}
+            lineHeight={"30px"}
           >
             <Link
               to="/"
@@ -47,20 +38,15 @@ const Navbar = (props: NavbarProps) => {
           <Stack
             direction="row"
             spacing={{ xs: 0, sm: 9 }}
-            sx={{
-              justifyContent: { xs: "space-between" },
-              width: { xs: "100%", sm: "auto" },
-            }}
+            justifyContent={{ xs: "space-between" }}
+            width={{ xs: "100%", sm: "auto" }}
           >
             <Typography
-              sx={{
-                fontFamily: "Poppins, serif",
-                fontWeight: 500,
-                fontSize: "20px",
-                lineHeight: "30px",
-                color: "#ffc300",
-                letterSpacing: "0",
-              }}
+              fontFamily={"Poppins, serif"}
+              fontWeight={500}
+              fontSize={"20px"}
+              lineHeight={"30px"}
+              letterSpacing={"0px"}
             >
               <Link
                 to="/menu"
@@ -73,11 +59,7 @@ const Navbar = (props: NavbarProps) => {
               </Link>
             </Typography>
 
-            <Stack
-              sx={{
-                padding: "0 15px",
-              }}
-            >
+            <Stack padding={"0 15px"}>
               <Link
                 to="/cart"
                 style={{
