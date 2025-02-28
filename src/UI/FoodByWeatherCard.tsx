@@ -28,16 +28,12 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
           lineHeight={{ xs: "18px", sm: "22px", md: "30px" }}
           letterSpacing={"0%"}
           color={"#000000"}
-          sx={{
-            objectFit: "cover",
-            objectPosition: "center center",
-          }}
         >
           {props.Card.foodName}
         </Typography>
         <Typography
           fontFamily={"Poppins"}
-          fontWeight={600}
+          fontWeight={300}
           fontSize={{ xs: "12px", sm: "14px", md: "16px" }}
           lineHeight={{ xs: "16px", sm: "20px", md: "24px" }}
           letterSpacing={"0%"}

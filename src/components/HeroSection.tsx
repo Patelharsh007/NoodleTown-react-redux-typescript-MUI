@@ -35,7 +35,6 @@ const HeroSection = () => {
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"flex-start"}
-        paddingTop={{ xs: "20px", sm: "30px" }}
         sx={{
           background: 'url("/images/hero.jpg")',
           backgroundSize: "cover",
@@ -119,7 +118,7 @@ const HeroSection = () => {
                   name="city"
                   value={selectedCity}
                   onChange={handleCityChange}
-                  displayEmpty={false} // Prevents empty selection
+                  displayEmpty={false}
                   sx={{
                     width: { xs: "50%", sm: "auto" },
                     margin: { xs: "0", sm: "auto 10px" },

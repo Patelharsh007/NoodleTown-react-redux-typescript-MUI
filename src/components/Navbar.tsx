@@ -11,7 +11,7 @@ type NavbarProps = {
 const Navbar = (props: NavbarProps) => {
   return (
     <>
-      <Box maxWidth={"1600px"} width={"90%"} margin={" 0 auto"}>
+      <Box maxWidth={"1600px"} width={"90%"} margin={"25px auto"}>
         <Stack
           direction={{ xs: "column", sm: "row" }}
           width={"100%"}

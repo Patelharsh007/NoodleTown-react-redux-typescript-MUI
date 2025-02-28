@@ -1,6 +1,6 @@
-import { Box, Grid2, Stack, Typography } from "@mui/material";
 import React from "react";
-import TopBrandUI from "../UI/TopBrandUI";
+import { Box, Grid2, Typography } from "@mui/material";
+
 import FoodByWeatherCard from "../UI/FoodByWeatherCard";
 
 type foodByWeatherType = {
