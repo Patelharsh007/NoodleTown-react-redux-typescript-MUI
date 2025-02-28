@@ -9,7 +9,7 @@ type ScrollerCardProp = {
 const ScrollerCard = (props: ScrollerCardProp) => {
   return (
     // Outer box so that the design does get overlaped by below sections
-    <Box height={"550px"}>
+    <Box height={"550px"} mx="auto">
       <Box
         id={"outer-container-to-make-design"}
         width={"280px"}

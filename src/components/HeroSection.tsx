@@ -17,7 +17,7 @@ const HeroSection = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleCityChange = (event: SelectChangeEvent) => {
-    setSelectedCity(event.target.value);
+    setSelectedCity(event.target.value || "Surat");
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -119,6 +119,7 @@ const HeroSection = () => {
                   name="city"
                   value={selectedCity}
                   onChange={handleCityChange}
+                  displayEmpty={false} // Prevents empty selection
                   sx={{
                     width: { xs: "50%", sm: "auto" },
                     margin: { xs: "0", sm: "auto 10px" },
@@ -149,7 +150,7 @@ const HeroSection = () => {
                     // Center the icon
                     "& .MuiSelect-icon": {
                       position: "absolute",
-                      right: { xs: "20%", sm: "0" },
+                      right: { xs: "15%", sm: "0" },
                     },
                   }}
                 >
