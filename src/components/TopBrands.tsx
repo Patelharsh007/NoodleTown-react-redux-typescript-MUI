@@ -42,7 +42,7 @@ const TopBrands = () => {
           fontFamily={"Poppins"}
           fontWeight={500}
           fontSize={{ xs: "28px", sm: "32px" }}
-          lineHeight={"48px"}
+          lineHeight={{ xs: "40px", sm: "48px" }}
           letterSpacing={"0%"}
         >
           Top brands for you

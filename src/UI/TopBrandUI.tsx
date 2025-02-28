@@ -16,7 +16,7 @@ const TopBrandUI = (props: topBrandUiProp) => {
       <Box
         component={"img"}
         src={props.brands.brandIcon}
-        alt={"brand-name"}
+        alt={props.brands.brandName}
         width={{ xs: "100px", sm: "150px", md: "187px" }}
         height={{ xs: "100px", sm: "150px", md: "186px" }}
       />
