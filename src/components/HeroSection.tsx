@@ -110,8 +110,8 @@ const HeroSection = () => {
                 direction={{ xs: "column", sm: "row" }}
                 justifyContent={"space-between"}
                 alignItems={"center"}
-                margin={"0 15px"}
-                gap={{ xs: "5px", sm: "41px" }}
+                margin={"0 auto"}
+                gap={{ xs: "5px", sm: "35px" }}
               >
                 {/* Select  */}
                 <Select
@@ -120,6 +120,8 @@ const HeroSection = () => {
                   value={selectedCity}
                   onChange={handleCityChange}
                   sx={{
+                    width: { xs: "50%", sm: "auto" }, // Make full width on mobile
+                    margin: { xs: "0", sm: "auto 10px" },
                     height: "50%",
                     fontFamily: "Poppins",
                     fontSize: "20px",
@@ -137,8 +139,17 @@ const HeroSection = () => {
                       {
                         border: 0,
                       },
+                    //For to see dropdown list when click in side of select
                     "& .MuiSelect-select": {
-                      padding: { xs: "7px", sm: "auto" }, // Remove padding
+                      padding: { xs: "7px", sm: "auto" },
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    },
+                    // Center the icon
+                    "& .MuiSelect-icon": {
+                      position: "absolute",
+                      right: { xs: "20%", sm: "0" },
                     },
                   }}
                 >
