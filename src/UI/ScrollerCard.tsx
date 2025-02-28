@@ -97,8 +97,17 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               fontSize={"12px"}
               lineHeight={"16.8px"}
               letterSpacing={"0%"}
+              sx={{
+                whiteSpace: "normal", // Allows text to wrap
+                wordWrap: "break-word", // Breaks long words if necessary
+                overflow: "hidden",
+                display: "-webkit-box",
+                WebkitLineClamp: 2, // Limits to 2 lines
+                WebkitBoxOrient: "vertical",
+                textOverflow: "ellipsis", // Shows ... if text is truncated
+              }}
             >
-              Dough, Mozzarella, Cheddar, Blue, Parmesan
+              Dough, Mozzarella, Cheddar, Blue, Parmesan, dshjxnmz
             </Typography>
             <Typography
               marginTop={"30px"}

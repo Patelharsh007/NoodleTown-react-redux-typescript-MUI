@@ -51,7 +51,7 @@ const Footer = () => {
             margin={"auto"}
             sx={{
               fontFamily: "Poppins",
-              fontSize: { xs: "20px", sm: "36px", lg: "48px" },
+              fontSize: { xs: "17px", sm: "36px", lg: "48px" },
               fontWeight: 700,
               lineHeight: { xs: "36px", sm: "48px", lg: "72px" },
               marginBottom: "20px",
