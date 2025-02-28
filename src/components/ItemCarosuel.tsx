@@ -142,16 +142,19 @@ const ItemCarosuel = () => {
               padding: "10px 20px",
               fontSize: "16px",
               cursor: "pointer",
-              border: "2px solid #ccc",
-              borderRadius: "50px",
-              bgcolor: itemCategory === category ? "#F6B716" : "white",
+              border:
+                itemCategory === category
+                  ? "2px solid #F6B716"
+                  : "2px solid #ECEEF6",
+              borderRadius: "45px",
+              bgcolor: itemCategory === category ? "#F6B716" : "#ECEEF6",
               color: itemCategory === category ? "white" : "inherit",
               textTransform: "none",
               transition: "all 0.3s ease",
               "&:hover": {
                 opacity: 0.8,
                 bgcolor: "#f8c33d",
-                border: "none",
+                border: "2px solid #f8c33d",
               },
             }}
           >

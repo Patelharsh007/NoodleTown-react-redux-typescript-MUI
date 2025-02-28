@@ -35,7 +35,7 @@ const HeroSection = () => {
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"flex-start"}
-        paddingTop={{ xs: "20px", sm: "30px" }} // Add padding at the top
+        paddingTop={{ xs: "20px", sm: "30px" }}
         sx={{
           background: 'url("/images/hero.jpg")',
           backgroundSize: "cover",
@@ -60,7 +60,7 @@ const HeroSection = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={{ xs: "40px", sm: "80px" }}
-          marginTop={{ xs: "120px", sm: "200px" }} // Add margin to create space after navbar
+          marginTop={{ xs: "120px", sm: "200px" }}
         >
           <Stack
             direction="column"
@@ -120,7 +120,7 @@ const HeroSection = () => {
                   value={selectedCity}
                   onChange={handleCityChange}
                   sx={{
-                    width: { xs: "50%", sm: "auto" }, // Make full width on mobile
+                    width: { xs: "50%", sm: "auto" },
                     margin: { xs: "0", sm: "auto 10px" },
                     height: "50%",
                     fontFamily: "Poppins",
@@ -177,7 +177,7 @@ const HeroSection = () => {
                     onChange={handleSearchChange}
                     placeholder="Search for restraunt, cuisine, places"
                     sx={{
-                      width: "90%", // Responsive width
+                      width: "90%",
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
                           border: "none",
@@ -190,16 +190,18 @@ const HeroSection = () => {
                         },
                       },
                       "& .MuiInputBase-input": {
-                        color: "#999999",
+                        color: "#000000",
                         fontFamily: "Poppins",
                         fontWeight: "400",
-                        fontSize: { xs: "16.5px", sm: "18px" }, // Responsive font size
+                        fontSize: { xs: "16.5px", sm: "18px" },
                         lineHeight: "27px",
                         letterSpacing: "0%",
                         padding: "0px",
                       },
                       "& .MuiInputBase-input::placeholder": {
-                        textOverflow: "ellipsis", // Add ellipsis for overflow
+                        textOverflow: "ellipsis",
+                        color: "#999999",
+                        opacity: "1",
                       },
                     }}
                     variant="outlined"
