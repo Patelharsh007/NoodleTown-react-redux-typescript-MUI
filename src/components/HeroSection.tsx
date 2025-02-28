@@ -34,7 +34,8 @@ const HeroSection = () => {
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
-        justifyContent={"space-around"}
+        justifyContent={"flex-start"}
+        paddingTop={{ xs: "20px", sm: "30px" }} // Add padding at the top
         sx={{
           background: 'url("/images/hero.jpg")',
           backgroundSize: "cover",
@@ -58,7 +59,8 @@ const HeroSection = () => {
           width={"100%"}
           display={"flex"}
           flexDirection={"column"}
-          gap={{ xs: "70px", sm: "130px" }}
+          gap={{ xs: "40px", sm: "80px" }}
+          marginTop={{ xs: "120px", sm: "200px" }} // Add margin to create space after navbar
         >
           <Stack
             direction="column"
@@ -103,10 +105,12 @@ const HeroSection = () => {
             >
               {/* Search-Bar Box  */}
               <Stack
+                height={"100%"}
+                width={"100%"}
                 direction={{ xs: "column", sm: "row" }}
-                justifyContent={"center"}
+                justifyContent={"space-between"}
                 alignItems={"center"}
-                margin={"auto 15px"}
+                margin={"0 15px"}
                 gap={{ xs: "5px", sm: "41px" }}
               >
                 {/* Select  */}
@@ -116,6 +120,13 @@ const HeroSection = () => {
                   value={selectedCity}
                   onChange={handleCityChange}
                   sx={{
+                    height: "50%",
+                    fontFamily: "Poppins",
+                    fontSize: "20px",
+                    fontWeight: 400,
+                    color: "#000000",
+                    lineHeight: "30px",
+                    letterSpacing: "0%",
                     boxShadow: "none",
                     ".MuiOutlinedInput-notchedOutline": { border: 0 },
                     "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
@@ -138,12 +149,15 @@ const HeroSection = () => {
 
                 <Typography display={{ xs: "none", sm: "block" }}>|</Typography>
                 <Stack
+                  width={"90%"}
+                  height={"50%"}
+                  // height={{ xs: "40px", sm: "auto" }}
                   margin={"0 auto"}
                   display={"flex"}
-                  direction="row"
-                  justifyContent={"flex-start"}
+                  direction={"row"}
+                  justifyContent={{ xs: "flex-start", sm: "center" }}
                   alignItems={"center"}
-                  gap={"5px"}
+                  gap={{ xs: "20px", sm: "15px" }}
                 >
                   <SearchIcon sx={{ color: "#999999" }} />
                   <TextField
@@ -152,7 +166,7 @@ const HeroSection = () => {
                     onChange={handleSearchChange}
                     placeholder="Search for restraunt, cuisine, places"
                     sx={{
-                      width: { xs: "235px", sm: "325px" }, // Responsive width
+                      width: "90%", // Responsive width
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
                           border: "none",
