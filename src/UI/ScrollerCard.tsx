@@ -1,6 +1,6 @@
+import React from "react";
 import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
-import React from "react";
 
 type ScrollerCardProp = {
   Card: { imageurl: string };
@@ -8,7 +8,6 @@ type ScrollerCardProp = {
 
 const ScrollerCard = (props: ScrollerCardProp) => {
   return (
-    // Outer box so that the design does get overlaped by below sections
     <Box height={"550px"} mx="auto">
       <Box
         id={"outer-container-to-make-design"}
@@ -98,13 +97,13 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               lineHeight={"16.8px"}
               letterSpacing={"0%"}
               sx={{
-                whiteSpace: "normal", // Allows text to wrap
-                wordWrap: "break-word", // Breaks long words if necessary
+                whiteSpace: "normal",
+                wordWrap: "break-word",
                 overflow: "hidden",
                 display: "-webkit-box",
-                WebkitLineClamp: 2, // Limits to 2 lines
+                WebkitLineClamp: 2,
                 WebkitBoxOrient: "vertical",
-                textOverflow: "ellipsis", // Shows ... if text is truncated
+                textOverflow: "ellipsis",
               }}
             >
               Dough, Mozzarella, Cheddar, Blue, Parmesan, dshjxnmz
