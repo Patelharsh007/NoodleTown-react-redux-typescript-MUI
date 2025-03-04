@@ -5,7 +5,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
-import Restaurant from "./pages/Restaurant";
+import RestaurantPage from "./pages/RestaurantPage";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/restaurantPage" element={<RestaurantPage />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>

@@ -119,7 +119,7 @@ const HomePageImages = () => {
           height={{ xs: "250px", sm: "180px", lg: "265px" }}
           gridArea={"second"}
           overflow={"hidden"}
-          position={"relative"}
+          // position={"relative"}
         >
           <Box
             component="img"
@@ -139,7 +139,6 @@ const HomePageImages = () => {
           height={{ xs: "250px", sm: "200px", lg: "265px" }}
           gridArea={"third"}
           overflow={"hidden"}
-          position={"relative"}
         >
           <Box
             component="img"
