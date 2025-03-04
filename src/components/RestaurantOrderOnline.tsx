@@ -124,7 +124,6 @@ const RestaurantOrderOnline = () => {
           </Grid2>
           <Grid2
             size={{ xs: 12, sm: 9 }}
-            // padding={{ xs: "10px", sm: "0" }}
             paddingLeft={{ xs: "0px", sm: "30px" }}
             marginTop={{ xs: "30px", sm: "0px" }}
           >
@@ -147,15 +146,7 @@ const RestaurantOrderOnline = () => {
               {meals_data.map((meal) => {
                 return (
                   <>
-                    <Grid2
-                      size={{ xs: 12, sm: 6 }}
-                      //   sx={{
-                      //     "@media (max-width: 380px)": {
-                      //       flexBasis: "100%",
-                      //       maxWidth: "100%",
-                      //     },
-                      //   }}
-                    >
+                    <Grid2 size={{ xs: 12, sm: 6 }}>
                       <Box
                         component={"img"}
                         src={meal.image}
@@ -163,7 +154,7 @@ const RestaurantOrderOnline = () => {
                         width={{ xs: "100%", sm: "95%" }}
                         margin={"auto"}
                         // height={"100%"}
-                        height={{ xs: "190px", sm: "100%" }} // Added fixed height for xs
+                        height={{ xs: "190px", sm: "100%" }}
                         borderRadius={"16px"}
                         sx={{
                           objectFit: "cover",
@@ -176,14 +167,9 @@ const RestaurantOrderOnline = () => {
                       size={{ xs: 12, sm: 6 }}
                       sx={{
                         marginBottom: "50px",
-                        // "@media (max-width: 380px)": {
-                        //   flexBasis: "100%",
-                        //   maxWidth: "100%",
-                        //   marginTop: "16px",
-                        // },
                       }}
                     >
-                      <Stack spacing={"2px"}>
+                      <Stack spacing={{ xs: "2px", sm: "9px" }}>
                         <Typography
                           fontFamily="Poppins"
                           fontWeight={400}
