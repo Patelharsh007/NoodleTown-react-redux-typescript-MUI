@@ -8,6 +8,10 @@ import {
 } from "@mui/material";
 import React from "react";
 
+type restaurantProps = {
+  id: string;
+};
+
 type Dummy_Menu_Data = {
   image: string;
   title: string;
@@ -20,9 +24,10 @@ const DUMMY_MENU_DATA: Dummy_Menu_Data = [
   { image: "./images/menus/menu2.png", title: "Takeaway Menu" },
 ];
 
-const Restaurant = () => {
+const Restaurant = (props: restaurantProps) => {
   return (
     <>
+      <>{props.id}</>
       {/* Restaurant meals images */}
       <Box
         width={"100%"}

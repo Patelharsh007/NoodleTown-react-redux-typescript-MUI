@@ -11,7 +11,6 @@ import {
   Typography,
   InputAdornment,
   IconButton,
-  Divider,
 } from "@mui/material";
 import {
   Email,
