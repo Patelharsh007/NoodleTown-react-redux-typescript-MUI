@@ -16,18 +16,6 @@ type restaurantProps = {
   id: string;
 };
 
-type Dummy_Menu_Data = {
-  image: string;
-  title: string;
-}[];
-
-const DUMMY_MENU_DATA: Dummy_Menu_Data = [
-  { image: "./images/menus/menu1.png", title: "Dining Menu" },
-  { image: "./images/menus/menu2.png", title: "Takeaway Menu" },
-  { image: "./images/menus/menu1.png", title: "Dining Menu" },
-  { image: "./images/menus/menu2.png", title: "Takeaway Menu" },
-];
-
 const Restaurant = (props: restaurantProps) => {
   const id = props.id;
   const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);

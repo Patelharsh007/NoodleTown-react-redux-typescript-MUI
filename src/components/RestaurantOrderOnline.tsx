@@ -7,23 +7,16 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { text } from "stream/consumers";
 
 import restaurants from "../data/restaurantsData";
 import { RestaurantType } from "../data/restaurantTypes";
 
+import mealItems from "../data/mealItem";
+import { MealItemType } from "../data/mealItemTypes";
+
 type restaurantProps = {
   id: string;
 };
-
-const DUMMY_MEAL_CATEGORIES: string[] = [
-  "Recommended",
-  "Pizzas",
-  "Burger",
-  "Chinese",
-  "Drinks",
-  "Desserts",
-];
 
 type mealsData = {
   category: string;
@@ -72,6 +65,10 @@ const meals_data: mealsData[] = [
 const RestaurantOrderOnline = (props: restaurantProps) => {
   const id = props.id;
   const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
+  const [mealItem, setMealItem] = useState<MealItemType[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    "Recommended"
+  );
 
   useEffect(() => {
     const fetchRestaurantData = async () => {
@@ -83,6 +80,26 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
     fetchRestaurantData();
     console.log(restaurant);
   }, [id]);
+
+  // Update the useEffect for meal items
+  useEffect(() => {
+    const fetchMealData = async () => {
+      if (restaurant?.id) {
+        // Add null check for restaurant
+        const fetchedMealItems = mealItems.filter(
+          (meal) => meal.restaurantId === restaurant.id
+        );
+        setMealItem(fetchedMealItems); // Remove the || null as we're using array
+      }
+    };
+
+    fetchMealData();
+  }, [restaurant]);
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <>
       <Container sx={{ padding: "20px" }}>
@@ -115,34 +132,45 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
           >
             <Stack marginTop={{ xs: "0px", sm: "50px" }}>
               {/* {restaurant?.categories.unshift("Recommended")} */}
-              {restaurant?.categories.map((category) => {
-                return (
-                  <Button
-                    key={category}
-                    sx={{
-                      //   border: "2px solid #FFA500",
-                      color: "#000000",
-                      "&:hover": {
-                        backgroundColor: "#FFC300",
-                        borderColor: "#FFC300",
-                        "& .MuiTypography-root": {
-                          color: "#FFFFFF",
-                        },
-                      },
-                    }}
-                  >
-                    <Typography
-                      fontFamily="Poppins"
-                      fontWeight={400}
-                      fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                      lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
-                      color="inherit"
-                    >
-                      {category}
-                    </Typography>
-                  </Button>
-                );
-              })}
+
+              {restaurant && restaurant.categories ? (
+                ["Recommended", ...restaurant.categories].map(
+                  (category, index) => {
+                    const isSelected = selectedCategory === category;
+                    return (
+                      <Button
+                        key={index}
+                        onClick={() => handleCategoryClick(category)}
+                        sx={{
+                          color: isSelected ? "#FFFFFF" : "#000000",
+                          backgroundColor: isSelected
+                            ? "#FFC300"
+                            : "transparent",
+                          "&:hover": {
+                            backgroundColor: "#FFC300",
+                            borderColor: "#FFC300",
+                            "& .MuiTypography-root": {
+                              color: "#FFFFFF",
+                            },
+                          },
+                        }}
+                      >
+                        <Typography
+                          fontFamily="Poppins"
+                          fontWeight={400}
+                          fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
+                          lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
+                          color="inherit"
+                        >
+                          {category}
+                        </Typography>
+                      </Button>
+                    );
+                  }
+                )
+              ) : (
+                <p>Loading...</p> // or handle the case when restaurant is null/undefined
+              )}
             </Stack>
           </Grid2>
           <Grid2
@@ -156,7 +184,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
               fontSize={{ xs: "26px", sm: "28px", md: "32px" }}
               lineHeight={{ xs: "38px", sm: "44px", md: "48px" }}
             >
-              Recommended
+              {selectedCategory}
             </Typography>
 
             <Grid2
@@ -166,14 +194,14 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
               marginTop={{ xs: "20px", sm: "50px" }}
               direction={{ xs: "column", sm: "row" }}
             >
-              {meals_data.map((meal) => {
+              {mealItem.map((meal) => {
                 return (
                   <>
                     <Grid2 size={{ xs: 12, sm: 6 }}>
                       <Box
                         component={"img"}
                         src={meal.image}
-                        alt={meal.desc}
+                        alt={meal.title}
                         width={{ xs: "100%", sm: "95%" }}
                         margin={"auto"}
                         // height={"100%"}
@@ -199,7 +227,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                           fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
                           lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
                         >
-                          {meal.name}
+                          {meal.title}
                         </Typography>
                         <Typography
                           fontFamily="Poppins"
@@ -208,7 +236,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                           lineHeight={{ xs: "21px", sm: "18px", md: "21px" }}
                           color="#848484"
                         >
-                          {meal.desc}
+                          {meal.shortDescription}
                         </Typography>
                         <Typography
                           fontFamily="Poppins"
