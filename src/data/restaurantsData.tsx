@@ -32,7 +32,7 @@ const restaurants: Restaurant[] = [
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
       "https://scontent.famd1-2.fna.fbcdn.net/v/t1.6435-9/107594265_3290517980986469_6710678867188094634_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jBnWxmUfO0MQ7kNvgHj2jfb&_nc_oc=Adg04oZMbYQAGZnylYRITbMZnZWkzOPk2IKLvH1yJ9AN_G9C_Peh8P19IlLtj629VDrb5arHWNPSqvBC5jKMDLlL&_nc_zt=23&_nc_ht=scontent.famd1-2.fna&_nc_gid=AHEDWF2lDKaYI0aibt3UFxv&oh=00_AYCJ3b7va8Ug-8nTedJjoE6t49uN4vhdZ1mD_xVor8_TKA&oe=67EF78CE",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc3zGeihxOUGvwn-Cy0CdnBZXgFAR9RWbatQ&s",
+      "https://res.cloudinary.com/dt3japg4o/image/upload/f_auto,q_auto/v1/Restaurants/McDonalds/menu/abyqscf5rzzmnopjfsv0",
     ],
     categories: [
       "Burgers",
@@ -61,8 +61,9 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591",
-      "https://images.unsplash.com/photo-1571066811602-716837d681de",
+      "https://th.bing.com/th/id/OIP.Ozf4tbVHcqoOOJZZDkwbewAAAA?rs=1&pid=ImgDetMain",
+      "https://www.berkshiremenus.com/images/menus/47a1a4da-457a-78be.jpg",
+      "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/4/v/k/m42-1493886585590ae67914fd6.jpg?w=700",
     ],
     categories: [
       "Pizzas",
@@ -90,8 +91,9 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58",
-      "https://images.unsplash.com/photo-1626082927389-6cd097cee6a3",
+      "https://th.bing.com/th/id/OIP._NScablThWpl2MVV8Vlj2gHaHa?w=800&h=800&rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.40ba7aaea0af0b31bfceb31a276a641e?rik=dbgcDQSprVlNIw&riu=http%3a%2f%2fwww.kfcslu.com%2ftemplate%2ffiles%2fmenu%2fKFC_SLU-menuboard_5.jpg&ehk=7FDUFjj9E6wVi%2fa%2b8IBAmvf2v4vhvksb8nH9ukDbeoA%3d&risl=&pid=ImgRaw&r=0",
+      "https://www.kfcdominica.com/template/files/menu/new/Jan%202023/KFC_DOM-appmenu_bucket.jpg",
     ],
     categories: [
       "Chicken",
@@ -120,8 +122,9 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "10:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1509722747041-616f39b57569",
-      "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+      "https://b.zmtcdn.com/data/menus/147/147/d6c1b2ee88cb48d1efbeaceae62e1e96.jpg",
+      "https://th.bing.com/th/id/OIP.tu4ZNpUffvWj-P4FV1DveAHaK_?rs=1&pid=ImgDetMain",
+      "https://b.zmtcdn.com/data/menus/004/35004/defd899a23cbcfffbbc1cd549a0d6302.jpg",
     ],
     categories: [
       "Subs",
@@ -150,8 +153,8 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591",
-      "https://images.unsplash.com/photo-1571066811602-716837d681de",
+      "https://b.zmtcdn.com/data/menus/384/90384/059cfc4d0a8ad30b5b1cb8ac318d46a6.jpg",
+      "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/4/j/f/m46-16056772405fb4b0b87a02d.jpg?tr=tr:n-xlarge",
     ],
     categories: [
       "Pizzas",
@@ -179,8 +182,9 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "7:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
-      "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+      "https://static.eazydiner.com/resized/1920X/restaurant/663004/menu/menu21556866080606.jpg",
+      "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/4/y/m/m445-15578170215cda66bd77bde.jpg?tr=tr:n-xlarge",
+      "https://menuza.org/wp-content/uploads/2024/03/Starbucks-Food-Menu-723x1024.webp",
     ],
     categories: [
       "Hot Coffee",
@@ -210,8 +214,8 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "7:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1551024506-0bccd828d307",
-      "https://images.unsplash.com/photo-1556745753-b2904692b3cd",
+      "https://th.bing.com/th/id/OIP.Iv1uI37URLhdv-PtJ8wtVQAAAA?rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.IAqof6LGNwGJGKPk2fqxOwHaHa?rs=1&pid=ImgDetMain",
     ],
     categories: [
       "Donuts",
@@ -239,8 +243,10 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1550547660-d9450f859349",
-      "https://images.unsplash.com/photo-1550547660-d9450f859349",
+      "https://th.bing.com/th/id/OIP.HlASB3-qcsDcAX7bCZqDZAHaNK?pid=ImgDet&w=474&h=842&rs=1",
+      "https://th.bing.com/th/id/OIP.axFI20A40grcmM_vT5yyqAHaNK?w=1080&h=1920&rs=1&pid=ImgDetMain",
+      "https://www.restaurantmenuprice.com/wp-content/uploads/2022/04/burgerking_menu_042022_02_breakfast_sandwiches_01.jpg",
+      "https://th.bing.com/th/id/OIP.AKwRdJE2F2GmfvcmC78ioAHaNK?pid=ImgDet&w=474&h=842&rs=1",
     ],
     categories: [
       "Flame Grilled Burgers",
@@ -268,8 +274,10 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
-      "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85",
+      // "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
+      // "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85",
+      "https://promolkwebsite.blob.core.windows.net/promotions/promo.lk-promo-5689004182354cd0b4518ecc42550a69.jpg",
+      "https://static.eazydiner.com/resized/1920X/restaurant/619792/menu/menu41468580593467.jpg",
     ],
     categories: [
       "Tacos",
@@ -298,8 +306,10 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591",
-      "https://images.unsplash.com/photo-1571066811602-716837d681de",
+      // "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+      // "https://images.unsplash.com/photo-1571066811602-716837d681de",
+      "https://th.bing.com/th/id/OIP.c9BK9LUF3wXzFwaWaenuHwHaHa?rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/R.0a2530ebf412d53b5071fe217d60fff5?rik=o1%2be5T4kVSRh7w&riu=http%3a%2f%2fwww.fallrivermenus.com%2fwp-content%2fuploads%2f2016%2f02%2fpapa-johns-menu-8-scnd-6-11-2016.jpg&ehk=9xPXCa%2f3xbhPe%2bgGXgVQpamOrHxPohFnARUvkxWmxus%3d&risl=&pid=ImgRaw&r=0",
     ],
     categories: [
       "Pizzas",
