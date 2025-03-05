@@ -45,12 +45,6 @@ const Restaurant = (props: restaurantProps) => {
 
   return (
     <>
-      <>{props.id}</>
-      <></>
-      <>{restaurant?.id}</>
-      <>{restaurant?.title}</>
-      <>{restaurant?.address}</>
-
       {/* Restaurant meals images */}
       <Box
         width={"100%"}
@@ -65,7 +59,7 @@ const Restaurant = (props: restaurantProps) => {
       >
         <Box
           component={"img"}
-          src={"/images/restaurants/img1.png"}
+          src={restaurant?.posterImages[0]}
           alt="Resatuarant meals"
           width={"100%"}
           height={{ xs: "200px", sm: "500px", lg: "600px" }}
@@ -78,7 +72,7 @@ const Restaurant = (props: restaurantProps) => {
         />
         <Box
           component={"img"}
-          src={"/images/restaurants/img2.png"}
+          src={restaurant?.posterImages[1]}
           alt="Resatuarant meals"
           width={"100%"}
           height={{ xs: "200px", sm: "245px", lg: "295px" }}
@@ -91,7 +85,7 @@ const Restaurant = (props: restaurantProps) => {
         />
         <Box
           component={"img"}
-          src={"/images/restaurants/img3.png"}
+          src={restaurant?.posterImages[2]}
           alt="Resatuarant meals"
           width={"100%"}
           height={{ xs: "200px", sm: "245px", lg: "295px" }}
@@ -237,8 +231,8 @@ const Restaurant = (props: restaurantProps) => {
         <Typography
           fontFamily={"Poppins"}
           fontWeight={500}
-          fontSize={"24px"}
-          lineHeight={"36px"}
+          fontSize={{ xs: "28px", sm: "24px" }}
+          lineHeight={{ xs: "40px", sm: "36px" }}
           letterSpacing="0%"
           color={"#000000"}
           textAlign={{ xs: "center", sm: "left" }}

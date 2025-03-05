@@ -89,8 +89,10 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
         <Typography
           fontFamily="Poppins"
           fontWeight={500}
-          fontSize={"20px"}
-          lineHeight={"30px"}
+          fontSize={{ xs: "26px", sm: "20px" }}
+          lineHeight={{ xs: "34px", sm: "30px" }}
+          textAlign={{ xs: "center", sm: "left" }}
+          paddingTop={"20px"}
         >
           Order Online
         </Typography>
