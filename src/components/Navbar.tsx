@@ -1,5 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
+import FaceIcon from "@mui/icons-material/Face";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { Badge, Stack, Box } from "@mui/material";
@@ -37,7 +38,7 @@ const Navbar = (props: NavbarProps) => {
 
           <Stack
             direction="row"
-            spacing={{ xs: 0, sm: 9 }}
+            spacing={{ xs: 0, sm: 3 }}
             justifyContent={{ xs: "space-between" }}
             width={{ xs: "100%", sm: "auto" }}
           >
@@ -47,6 +48,7 @@ const Navbar = (props: NavbarProps) => {
               fontSize={"20px"}
               lineHeight={"30px"}
               letterSpacing={"0%"}
+              paddingX={{ xs: 0, sm: "20px" }}
             >
               <Link
                 to="/menu"
@@ -59,12 +61,32 @@ const Navbar = (props: NavbarProps) => {
               </Link>
             </Typography>
 
-            <Stack padding={"0 15px"}>
+            <Stack
+              direction="row"
+              spacing={{ xs: 0, sm: 3 }}
+              justifyContent={{ xs: "flex-end" }}
+              width={{ xs: "100%", sm: "auto" }}
+            >
               <Link
                 to="/cart"
                 style={{
                   textDecoration: "none",
                   color: props.linkColor,
+                  padding: "0 20px",
+                  // paddingX:"20px"
+                }}
+              >
+                <FaceIcon />
+              </Link>
+
+              {/* <Stack > */}
+              <Link
+                to="/cart"
+                style={{
+                  textDecoration: "none",
+                  color: props.linkColor,
+                  padding: "0 15px",
+                  // paddingX:"20px",
                 }}
               >
                 <Badge
@@ -80,6 +102,7 @@ const Navbar = (props: NavbarProps) => {
                 </Badge>
               </Link>
             </Stack>
+            {/* </Stack> */}
           </Stack>
         </Stack>
       </Box>

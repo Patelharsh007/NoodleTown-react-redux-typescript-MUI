@@ -1,0 +1,334 @@
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  Tab,
+  Tabs,
+  TextField,
+  Typography,
+  InputAdornment,
+  IconButton,
+  Divider,
+} from "@mui/material";
+import {
+  Email,
+  Lock,
+  Visibility,
+  VisibilityOff,
+  Person,
+  Google,
+  Facebook,
+} from "@mui/icons-material";
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+  return (
+    <div hidden={value !== index} {...other}>
+      {value === index && <Box>{children}</Box>}
+    </div>
+  );
+}
+
+export const LoginRegister = () => {
+  const [tab, setTab] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setTab(newValue);
+  };
+
+  return (
+    <Container
+      maxWidth={false}
+      sx={{
+        minHeight: "100vh",
+        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/auth-bg.jpg')`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          width: { xs: "90%", sm: "450px" },
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          borderRadius: "24px",
+          backdropFilter: "blur(20px)",
+          padding: { xs: 3, sm: 4 },
+          boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+          border: "1px solid rgba(255, 255, 255, 0.18)",
+        }}
+      >
+        <Box
+          component="img"
+          src="/images/logo.png"
+          alt="Noodletown"
+          sx={{
+            width: "80px",
+            height: "80px",
+            display: "block",
+            margin: "0 auto 20px",
+          }}
+        />
+
+        <Typography
+          variant="h4"
+          textAlign="center"
+          fontFamily="Poppins"
+          fontWeight={600}
+          color="#333"
+          mb={1}
+        >
+          {tab === 0 ? "Welcome Back!" : "Create Account"}
+        </Typography>
+
+        <Typography
+          textAlign="center"
+          fontFamily="Poppins"
+          color="#666"
+          mb={3}
+          fontSize="0.9rem"
+        >
+          {tab === 0
+            ? "Your favorite food is waiting for you!"
+            : "Join us for delicious adventures!"}
+        </Typography>
+
+        <Tabs
+          value={tab}
+          onChange={handleChange}
+          centered
+          sx={{
+            mb: 4,
+            "& .MuiTab-root": {
+              fontFamily: "Poppins",
+              fontSize: "1rem",
+              fontWeight: 500,
+              minWidth: "120px",
+              transition: "all 0.3s ease",
+            },
+            "& .Mui-selected": {
+              color: "#FFA500 !important",
+            },
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#FFA500",
+              height: "3px",
+              borderRadius: "3px",
+            },
+          }}
+        >
+          <Tab label="Login" />
+          <Tab label="Sign Up" />
+        </Tabs>
+
+        <TabPanel value={tab} index={0}>
+          <Stack spacing={3}>
+            <TextField
+              fullWidth
+              placeholder="Email"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Email sx={{ color: "#FFA500" }} />
+                  </InputAdornment>
+                ),
+                sx: {
+                  borderRadius: "12px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(0, 0, 0, 0.1)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Lock sx={{ color: "#FFA500" }} />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+                sx: {
+                  borderRadius: "12px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(0, 0, 0, 0.1)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                },
+              }}
+            />
+
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                bgcolor: "#FFA500",
+                color: "#fff",
+                fontFamily: "Poppins",
+                fontSize: "1rem",
+                py: 1.5,
+                borderRadius: "12px",
+                textTransform: "none",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  bgcolor: "#ff8c00",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 5px 15px rgba(255, 165, 0, 0.4)",
+                },
+              }}
+            >
+              Login
+            </Button>
+          </Stack>
+        </TabPanel>
+
+        <TabPanel value={tab} index={1}>
+          <Stack spacing={3}>
+            <TextField
+              fullWidth
+              placeholder="Full Name"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Person sx={{ color: "#FFA500" }} />
+                  </InputAdornment>
+                ),
+                sx: {
+                  borderRadius: "12px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(0, 0, 0, 0.1)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              placeholder="Email"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Email sx={{ color: "#FFA500" }} />
+                  </InputAdornment>
+                ),
+                sx: {
+                  borderRadius: "12px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(0, 0, 0, 0.1)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Lock sx={{ color: "#FFA500" }} />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+                sx: {
+                  borderRadius: "12px",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(0, 0, 0, 0.1)",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#FFA500",
+                  },
+                },
+              }}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                bgcolor: "#FFA500",
+                color: "#fff",
+                fontFamily: "Poppins",
+                fontSize: "1rem",
+                py: 1.5,
+                borderRadius: "12px",
+                textTransform: "none",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  bgcolor: "#ff8c00",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 5px 15px rgba(255, 165, 0, 0.4)",
+                },
+              }}
+            >
+              Sign Up
+            </Button>
+          </Stack>
+        </TabPanel>
+      </Box>
+    </Container>
+  );
+};
+
+export default LoginRegister;

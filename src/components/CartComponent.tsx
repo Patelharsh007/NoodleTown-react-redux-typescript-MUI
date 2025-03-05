@@ -93,7 +93,7 @@ const CartComponent = () => {
           Your Cart
         </Typography>
 
-        <Grid2 container spacing={3}>
+        <Grid2 container spacing={3} margin={"30px 0"}>
           {mealsData.map((meal) => {
             //mealsData is state
             return (
@@ -138,7 +138,7 @@ const CartComponent = () => {
                           letterSpacing={"0%"}
                           color={"#FFA500"}
                         >
-                          {meal.price}
+                          ₹{meal.price}
                         </Typography>
                       </Stack>
                       <Typography
@@ -273,7 +273,7 @@ const CartComponent = () => {
                           letterSpacing={"0%"}
                           color={"#FFA500"}
                         >
-                          ₹140
+                          ₹{meal.price * meal.quantity}
                         </Typography>
                       </Stack>
                       <Divider variant="middle" />
@@ -296,7 +296,7 @@ const CartComponent = () => {
                           letterSpacing={"0%"}
                           color={"#FFA500"}
                         >
-                          ₹140
+                          ₹{meal.price * meal.quantity}
                         </Typography>
                       </Stack>
 
