@@ -4,10 +4,6 @@ import Restaurant from "../components/Restaurant";
 import RestaurantOrderOnline from "../components/RestaurantOrderOnline";
 import { Navigate, useParams } from "react-router-dom";
 
-// type restaurantProps = {
-//   id: string;
-// };
-
 const RestaurantPage = () => {
   const { id } = useParams();
 
