@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
@@ -28,6 +29,12 @@ interface TabPanelProps {
   value: number;
 }
 
+interface FormData {
+  fullName?: string;
+  email: string;
+  password: string;
+}
+
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
   return (
@@ -38,11 +45,62 @@ function TabPanel(props: TabPanelProps) {
 }
 
 export const LoginRegister = () => {
+  const navigate = useNavigate();
   const [tab, setTab] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  const validateForm = () => {
+    const newErrors: Partial<FormData> = {};
+
+    if (tab === 1 && !formData.fullName) {
+      newErrors.fullName = "Full name is required";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setTab(newValue);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error when user types
+    if (errors[name as keyof FormData]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: undefined,
+      }));
+    }
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      navigate("/");
+    }
   };
 
   return (
@@ -136,6 +194,11 @@ export const LoginRegister = () => {
           <Stack spacing={3}>
             <TextField
               fullWidth
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              error={!!errors.email}
+              helperText={errors.email}
               placeholder="Email"
               variant="outlined"
               InputProps={{
@@ -160,6 +223,11 @@ export const LoginRegister = () => {
             />
             <TextField
               fullWidth
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              error={!!errors.password}
+              helperText={errors.password}
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               variant="outlined"
@@ -195,6 +263,7 @@ export const LoginRegister = () => {
             />
 
             <Button
+              onClick={handleSubmit}
               variant="contained"
               size="large"
               sx={{
@@ -222,6 +291,11 @@ export const LoginRegister = () => {
           <Stack spacing={3}>
             <TextField
               fullWidth
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleInputChange}
+              error={!!errors.fullName}
+              helperText={errors.fullName}
               placeholder="Full Name"
               variant="outlined"
               InputProps={{
@@ -246,6 +320,11 @@ export const LoginRegister = () => {
             />
             <TextField
               fullWidth
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              error={!!errors.email}
+              helperText={errors.email}
               placeholder="Email"
               variant="outlined"
               InputProps={{
@@ -270,6 +349,11 @@ export const LoginRegister = () => {
             />
             <TextField
               fullWidth
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              error={!!errors.password}
+              helperText={errors.password}
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               variant="outlined"
@@ -304,6 +388,7 @@ export const LoginRegister = () => {
               }}
             />
             <Button
+              onClick={handleSubmit}
               variant="contained"
               size="large"
               sx={{
