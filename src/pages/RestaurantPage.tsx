@@ -15,7 +15,7 @@ const RestaurantPage = () => {
     <>
       <Navbar linkColor="#000000" />
       <Restaurant id={id} />
-      <RestaurantOrderOnline />
+      <RestaurantOrderOnline id={id} />
     </>
   );
 };

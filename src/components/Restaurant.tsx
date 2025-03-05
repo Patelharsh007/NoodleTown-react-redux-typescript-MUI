@@ -246,7 +246,7 @@ const Restaurant = (props: restaurantProps) => {
         </Typography>
 
         <Grid2 container spacing={"30px"}>
-          {DUMMY_MENU_DATA.map((menu) => {
+          {/* {DUMMY_MENU_DATA.map((menu) => {
             return (
               <Grid2
                 size={{ xs: 6, sm: 4 }}
@@ -270,6 +270,39 @@ const Restaurant = (props: restaurantProps) => {
                   color={"#000000"}
                 >
                   {menu.title}
+                </Typography>
+              </Grid2>
+            );
+          })} */}
+          {restaurant?.menuImages.map((image) => {
+            return (
+              <Grid2
+                size={{ xs: 6, sm: 4 }}
+                marginTop={"30px"}
+                key={restaurant?.id}
+              >
+                <Box
+                  component={"img"}
+                  src={image}
+                  alt={restaurant?.title}
+                  borderRadius={"20px"}
+                  width={"100%"}
+                  height={"100%"}
+                  sx={{
+                    objectFit: "cover",
+                    objectPosition: "center center",
+                  }}
+                />
+                <Typography
+                  margin={"16px"}
+                  fontFamily={"Poppins"}
+                  fontWeight={400}
+                  fontSize={"16px"}
+                  lineHeight={"24px"}
+                  letterSpacing="0%"
+                  color={"#000000"}
+                >
+                  {restaurant.title}
                 </Typography>
               </Grid2>
             );

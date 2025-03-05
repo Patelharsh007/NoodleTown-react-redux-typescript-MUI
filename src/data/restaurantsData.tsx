@@ -31,8 +31,8 @@ const restaurants: Restaurant[] = [
     isOpen: true,
     timing: "11:00 AM - 11:00 PM",
     menuImages: [
-      "https://images.unsplash.com/photo-1586816001966-79b736744398",
-      "https://images.unsplash.com/photo-1585687544047-cf47d5806f96",
+      "https://scontent.famd1-2.fna.fbcdn.net/v/t1.6435-9/107594265_3290517980986469_6710678867188094634_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jBnWxmUfO0MQ7kNvgHj2jfb&_nc_oc=Adg04oZMbYQAGZnylYRITbMZnZWkzOPk2IKLvH1yJ9AN_G9C_Peh8P19IlLtj629VDrb5arHWNPSqvBC5jKMDLlL&_nc_zt=23&_nc_ht=scontent.famd1-2.fna&_nc_gid=AHEDWF2lDKaYI0aibt3UFxv&oh=00_AYCJ3b7va8Ug-8nTedJjoE6t49uN4vhdZ1mD_xVor8_TKA&oe=67EF78CE",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc3zGeihxOUGvwn-Cy0CdnBZXgFAR9RWbatQ&s",
     ],
     categories: [
       "Burgers",

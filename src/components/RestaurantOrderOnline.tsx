@@ -6,8 +6,15 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { text } from "stream/consumers";
+
+import restaurants from "../data/restaurantsData";
+import { RestaurantType } from "../data/restaurantTypes";
+
+type restaurantProps = {
+  id: string;
+};
 
 const DUMMY_MEAL_CATEGORIES: string[] = [
   "Recommended",
@@ -62,7 +69,20 @@ const meals_data: mealsData[] = [
   },
 ];
 
-const RestaurantOrderOnline = () => {
+const RestaurantOrderOnline = (props: restaurantProps) => {
+  const id = props.id;
+  const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
+
+  useEffect(() => {
+    const fetchRestaurantData = async () => {
+      const fetchedRestaurant =
+        restaurants.find((restaurant) => restaurant.id === id) || null;
+      setRestaurant(fetchedRestaurant);
+    };
+
+    fetchRestaurantData();
+    console.log(restaurant);
+  }, [id]);
   return (
     <>
       <Container sx={{ padding: "20px" }}>
@@ -92,7 +112,8 @@ const RestaurantOrderOnline = () => {
             }}
           >
             <Stack marginTop={{ xs: "0px", sm: "50px" }}>
-              {DUMMY_MEAL_CATEGORIES.map((category) => {
+              {/* {restaurant?.categories.unshift("Recommended")} */}
+              {restaurant?.categories.map((category) => {
                 return (
                   <Button
                     key={category}
