@@ -19,7 +19,7 @@ const restaurants: Restaurant[] = [
   {
     id: "mcdonalds-1",
     title: "McDonald's",
-    logo: "https://images.unsplash.com/photo-1587653263995-425704e5a914",
+    logo: "/images/Menu/brands/brand6.png",
     posterImages: [
       "https://images.unsplash.com/photo-1552566626-52f8b828add9",
       "https://images.unsplash.com/photo-1561758033-7e924f619b47",
@@ -49,7 +49,8 @@ const restaurants: Restaurant[] = [
   {
     id: "dominos-1",
     title: "Domino's Pizza",
-    logo: "https://images.unsplash.com/photo-1590947132387-155cc02f3212",
+    // logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0xBChoLAMuhD8axCrLuhmkDaKTO4B4zj3ocdxzvxCQUpIQq-jtkJsYeauZSIoXRZZOBM&usqp=CAU",
+    logo: "https://cdn.iconscout.com/icon/free/png-512/free-dominos-logo-icon-download-in-svg-png-gif-file-formats--pizza-beverages-food-and-pack-logos-icons-226179.png?f=webp&w=512",
     posterImages: [
       "https://images.unsplash.com/photo-1513104890138-7c749659a591",
       "https://images.unsplash.com/photo-1604382355076-af4b0eb60143",
@@ -78,7 +79,7 @@ const restaurants: Restaurant[] = [
   {
     id: "kfc-1",
     title: "KFC",
-    logo: "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb",
+    logo: "/images/Menu/brands/brand3.png",
     posterImages: [
       "https://images.unsplash.com/photo-1513639778-4c513ba4a9f4",
       "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58",
@@ -108,7 +109,7 @@ const restaurants: Restaurant[] = [
   {
     id: "subway-1",
     title: "Subway",
-    logo: "https://images.unsplash.com/photo-1532768641073-503a97e32f19",
+    logo: "https://logos.logofury.com/logo_src/1acde24021eb936693f8ace058773474.png",
     posterImages: [
       "https://images.unsplash.com/photo-1509722747041-616f39b57569",
       "https://images.unsplash.com/photo-1511909525232-61113c912358",
@@ -138,7 +139,7 @@ const restaurants: Restaurant[] = [
   {
     id: "pizzahut-1",
     title: "Pizza Hut",
-    logo: "https://images.unsplash.com/photo-1590947132387-155cc02f3212",
+    logo: "https://logos.logofury.com/logo_src/fb97b2ef510a773dfc4bd49a15eab1db.png",
     posterImages: [
       "https://images.unsplash.com/photo-1513104890138-7c749659a591",
       "https://images.unsplash.com/photo-1604382355076-af4b0eb60143",
@@ -167,7 +168,7 @@ const restaurants: Restaurant[] = [
   {
     id: "starbucks-1",
     title: "Starbucks",
-    logo: "https://images.unsplash.com/photo-1577936891915-4026c7e29438",
+    logo: "/images/Menu/brands/brand5.png",
     posterImages: [
       "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb",
       "https://images.unsplash.com/photo-1559925393-8be0ec4767c8",
@@ -197,7 +198,8 @@ const restaurants: Restaurant[] = [
   {
     id: "dunkin-1",
     title: "Dunkin' Donuts",
-    logo: "https://images.unsplash.com/photo-1530189673472-3c5c9b3a8211",
+    // logo: "https://images.seeklogo.com/logo-png/28/1/dunkin-donuts-logo-png_seeklogo-286018.png",
+    logo: "https://images.seeklogo.com/logo-png/28/1/dunkin-donuts-logo-png_seeklogo-286018.png",
     posterImages: [
       "https://images.unsplash.com/photo-1551024506-0bccd828d307",
       "https://images.unsplash.com/photo-1556745753-b2904692b3cd",
@@ -226,7 +228,7 @@ const restaurants: Restaurant[] = [
   {
     id: "burgerking-1",
     title: "Burger King",
-    logo: "https://images.unsplash.com/photo-1561758033-563f9666b8c8",
+    logo: "/images/Menu/brands/brand4.png",
     posterImages: [
       "https://images.unsplash.com/photo-1550547660-d9450f859349",
       "https://images.unsplash.com/photo-1550547660-d9450f859349",
@@ -255,7 +257,7 @@ const restaurants: Restaurant[] = [
   {
     id: "tacobell-1",
     title: "Taco Bell",
-    logo: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c",
+    logo: "https://lens-storage.storage.googleapis.com/png/67ec00a7757143c384950f0ce31ed22d",
     posterImages: [
       "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
       "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85",
@@ -285,7 +287,7 @@ const restaurants: Restaurant[] = [
   {
     id: "papajohns-1",
     title: "Papa John's",
-    logo: "https://images.unsplash.com/photo-1590947132387-155cc02f3212",
+    logo: "https://scontent.famd1-2.fna.fbcdn.net/v/t39.30808-6/404288179_739837711493147_6882084349773332253_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Dq_d6zhR_v0Q7kNvgG-roho&_nc_oc=Adib0CLq_YPzTIUGv32Q81vaKka83evqnTehj5XSA3fJlDB_9EmA2v5at-gnjvi7FHRAqrva1R5x-NXhNPURZPG2&_nc_zt=23&_nc_ht=scontent.famd1-2.fna&_nc_gid=AUb246aPKZ3_nI1oGp0LL5Q&oh=00_AYD0VlnAPFZTe_PVbpRHSvxPB8EjGKSdoWgjOeXoWFyKYw&oe=67CDFA6C",
     posterImages: [
       "https://images.unsplash.com/photo-1513104890138-7c749659a591",
       "https://images.unsplash.com/photo-1604382355076-af4b0eb60143",

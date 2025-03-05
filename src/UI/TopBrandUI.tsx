@@ -2,7 +2,7 @@ import { Stack, Box, Typography } from "@mui/material";
 import React from "react";
 
 type topBrandUiProp = {
-  brands: { brandName: string; brandIcon: string };
+  restaurant: { id: string; title: string; logo: string };
 };
 
 const TopBrandUI = (props: topBrandUiProp) => {
@@ -15,8 +15,8 @@ const TopBrandUI = (props: topBrandUiProp) => {
     >
       <Box
         component={"img"}
-        src={props.brands.brandIcon}
-        alt={props.brands.brandName}
+        src={props.restaurant.logo}
+        alt={props.restaurant.title}
         width={{ xs: "100px", sm: "150px", md: "187px" }}
         height={{ xs: "100px", sm: "150px", md: "186px" }}
       />
@@ -28,7 +28,7 @@ const TopBrandUI = (props: topBrandUiProp) => {
         lineHeight={{ xs: "22px", sm: "27px", md: "30px" }}
         letterSpacing={"0%"}
       >
-        {props.brands.brandName}
+        {props.restaurant.title}
       </Typography>
     </Stack>
   );

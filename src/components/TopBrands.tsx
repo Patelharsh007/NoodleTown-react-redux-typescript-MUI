@@ -1,38 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import TopBrandUI from "../UI/TopBrandUI";
+
+import restaurants from "../data/restaurantsData";
 
 type brands = {
   brandName: string;
   brandIcon: string;
 }[];
-
-const DUMMY_BRAND_DATA: brands = [
-  {
-    brandName: "COFFEE CULTURE",
-    brandIcon: "/images/Menu/brands/brand2.png",
-  },
-  {
-    brandName: "KFC",
-    brandIcon: "/images/Menu/brands/brand3.png",
-  },
-  {
-    brandName: "Burger King",
-    brandIcon: "/images/Menu/brands/brand4.png",
-  },
-  {
-    brandName: "Starbucks",
-    brandIcon: "/images/Menu/brands/brand5.png",
-  },
-  {
-    brandName: "McDonald's",
-    brandIcon: "/images/Menu/brands/brand6.png",
-  },
-  {
-    brandName: "La Pino'z Pizza",
-    brandIcon: "/images/Menu/brands/brand1.png",
-  },
-];
 
 const TopBrands = () => {
   return (
@@ -71,8 +47,21 @@ const TopBrands = () => {
           }}
         >
           {/* Rendering all brands */}
-          {DUMMY_BRAND_DATA.map((brand) => (
-            <TopBrandUI brands={brand} key={brand.brandName} />
+          {restaurants.map((restaurant) => (
+            <Link
+              to={`/restaurantPage/${restaurant.id}`}
+              key={restaurant.id}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <TopBrandUI
+                restaurant={{
+                  title: restaurant.title,
+                  id: restaurant.id,
+                  logo: restaurant.logo,
+                }}
+                key={restaurant.id}
+              />
+            </Link>
           ))}
         </Box>
       </Box>
