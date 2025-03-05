@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+
 import {
   Box,
   Button,
@@ -6,7 +8,9 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
+
+import restaurants from "../data/restaurantsData";
+import { RestaurantType } from "../data/restaurantTypes";
 
 type restaurantProps = {
   id: string;
@@ -25,9 +29,28 @@ const DUMMY_MENU_DATA: Dummy_Menu_Data = [
 ];
 
 const Restaurant = (props: restaurantProps) => {
+  const id = props.id;
+  const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
+
+  useEffect(() => {
+    const fetchRestaurantData = async () => {
+      const fetchedRestaurant =
+        restaurants.find((restaurant) => restaurant.id === id) || null;
+      setRestaurant(fetchedRestaurant);
+    };
+
+    fetchRestaurantData();
+    console.log(restaurant);
+  }, [id]);
+
   return (
     <>
       <>{props.id}</>
+      <></>
+      <>{restaurant?.id}</>
+      <>{restaurant?.title}</>
+      <>{restaurant?.address}</>
+
       {/* Restaurant meals images */}
       <Box
         width={"100%"}
@@ -80,9 +103,8 @@ const Restaurant = (props: restaurantProps) => {
           }}
         />
       </Box>
-
       {/* Resatuarant Info  */}
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{ marginTop: { xs: "40px" } }}>
         <Grid2 container spacing={"20px"}>
           {/* Restaurant logo */}
           <Grid2
@@ -93,10 +115,10 @@ const Restaurant = (props: restaurantProps) => {
           >
             <Box
               component={"img"}
-              src={"/images/Menu/brands/brand1.png"}
-              alt={"Restaurant logo"}
-              //   width={{ xs: "100px", sm: "150px", md: "187px" }}
-              //   height={{ xs: "100px", sm: "150px", md: "186px" }}
+              src={restaurant?.logo}
+              alt={restaurant?.title}
+              width={{ xs: "187px", sm: "160px", md: "187px" }}
+              height={{ xs: "186px", sm: "159px", md: "186px" }}
             />
           </Grid2>
           {/* Restaurant info content */}
@@ -114,8 +136,10 @@ const Restaurant = (props: restaurantProps) => {
                 lineHeight={{ xs: "42px", sm: "54px" }}
                 letterSpacing="0%"
                 color={"#000000"}
+                textAlign={{ xs: "center", sm: "left" }}
               >
-                La Pino'z Pizza
+                {/* La Pino'z Pizza */}
+                {restaurant?.title}
               </Typography>
               <Stack
                 direction={"row"}
@@ -130,7 +154,8 @@ const Restaurant = (props: restaurantProps) => {
                   letterSpacing="0%"
                   color="#999999"
                 >
-                  Pizza, Fast Food, Beverages
+                  {/* Pizza, Fast Food, Beverages */}
+                  {restaurant?.cuisines.join(", ")}
                 </Typography>
                 <Typography
                   fontFamily={"Poppins"}
@@ -142,7 +167,7 @@ const Restaurant = (props: restaurantProps) => {
                 >
                   Average Cost:{" "}
                   <span style={{ fontWeight: "400", color: "#000000" }}>
-                    700rs per 2 person
+                    {restaurant?.avgCostPerPerson}rs per person
                   </span>
                 </Typography>
               </Stack>
@@ -154,7 +179,7 @@ const Restaurant = (props: restaurantProps) => {
                 letterSpacing="0%"
                 color="#999999"
               >
-                Vesu, Surat
+                {restaurant?.address}
               </Typography>
               <Typography
                 fontFamily={"Poppins"}
@@ -164,8 +189,8 @@ const Restaurant = (props: restaurantProps) => {
                 letterSpacing="0%"
                 color="#999999"
               >
-                <span style={{ color: "red" }}>Open Now</span> 11am – 11pm
-                (Today)
+                <span style={{ color: "red" }}>Open Now</span>{" "}
+                {restaurant?.timing}(Today)
               </Typography>
 
               {/* Buttons */}
@@ -208,7 +233,6 @@ const Restaurant = (props: restaurantProps) => {
           </Grid2>
         </Grid2>
       </Container>
-
       <Container maxWidth="lg" sx={{ margin: "80px auto" }}>
         <Typography
           fontFamily={"Poppins"}
@@ -252,7 +276,6 @@ const Restaurant = (props: restaurantProps) => {
           })}
         </Grid2>
       </Container>
-
       {/* <RestaurantOrderOnline /> */}
     </>
   );

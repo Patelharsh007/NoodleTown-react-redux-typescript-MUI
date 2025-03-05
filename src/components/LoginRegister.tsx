@@ -18,8 +18,6 @@ import {
   Visibility,
   VisibilityOff,
   Person,
-  Google,
-  Facebook,
 } from "@mui/icons-material";
 
 interface TabPanelProps {

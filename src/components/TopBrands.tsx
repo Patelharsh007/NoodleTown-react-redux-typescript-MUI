@@ -5,11 +5,6 @@ import TopBrandUI from "../UI/TopBrandUI";
 
 import restaurants from "../data/restaurantsData";
 
-type brands = {
-  brandName: string;
-  brandIcon: string;
-}[];
-
 const TopBrands = () => {
   return (
     <>
