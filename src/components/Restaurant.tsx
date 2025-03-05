@@ -240,35 +240,11 @@ const Restaurant = (props: restaurantProps) => {
           Menu
         </Typography>
 
-        <Grid2 container spacing={"30px"} padding={{ xs: "10px", sm: "0" }}>
-          {/* {DUMMY_MENU_DATA.map((menu) => {
-            return (
-              <Grid2
-                size={{ xs: 6, sm: 4 }}
-                marginTop={"30px"}
-                key={menu.title} //key is repeatiing when same data is passed
-              >
-                <Box
-                  component={"img"}
-                  src={menu.image}
-                  alt={"menu"}
-                  borderRadius={"20px"}
-                  width={"100%"}
-                />
-                <Typography
-                  margin={"16px"}
-                  fontFamily={"Poppins"}
-                  fontWeight={400}
-                  fontSize={"16px"}
-                  lineHeight={"24px"}
-                  letterSpacing="0%"
-                  color={"#000000"}
-                >
-                  {menu.title}
-                </Typography>
-              </Grid2>
-            );
-          })} */}
+        <Grid2
+          container
+          spacing={{ xs: "40px", sm: "30px" }}
+          padding={{ xs: "10px", sm: "0" }}
+        >
           {restaurant?.menuImages.map((image) => {
             return (
               <Grid2
@@ -298,14 +274,14 @@ const Restaurant = (props: restaurantProps) => {
                   color={"#000000"}
                   textAlign={"center"}
                 >
-                  {restaurant.title}
+                  Menu-1
+                  {/* {restaurant.title} */}
                 </Typography>
               </Grid2>
             );
           })}
         </Grid2>
       </Container>
-      {/* <RestaurantOrderOnline /> */}
     </>
   );
 };
