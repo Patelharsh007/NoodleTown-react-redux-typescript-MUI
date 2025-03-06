@@ -44,7 +44,7 @@ const mealItems: MealItem[] = [
       "Created in 1971, this breakfast classic continues to delight customers with its perfect portion size and satisfying combination of flavors.",
     ],
     price: 129,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "mcdonalds-dessert-1",
@@ -78,7 +78,7 @@ const mealItems: MealItem[] = [
       "Served hot and crispy, our World Famous Fries® are the ultimate companion to any McDonald's meal, or delicious enough to enjoy on their own.",
     ],
     price: 99,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "mcdonalds-mccafe-1",
@@ -95,7 +95,7 @@ const mealItems: MealItem[] = [
       "The perfect balance of coffee and sweetness makes this drink an ideal pick-me-up any time of day.",
     ],
     price: 199,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "mcdonalds-happy-1",
@@ -462,7 +462,7 @@ const mealItems: MealItem[] = [
       "Best enjoyed while warm, these individual-sized cakes are the perfect way to end any meal or satisfy a chocolate craving any time of day.",
     ],
     price: 129,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "dominos-beverage-1",
@@ -479,7 +479,7 @@ const mealItems: MealItem[] = [
       "Each serving is filled with perfectly carbonated Coca-Cola and just the right amount of ice to keep it cold throughout your meal.",
     ],
     price: 89,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "subway-sub-1",
@@ -706,7 +706,7 @@ const mealItems: MealItem[] = [
       "This pasta is perfect for those who love rich, creamy Italian-inspired dishes with a perfect balance of flavors.",
     ],
     price: 299,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "pizzahut-pasta-2",
@@ -723,7 +723,7 @@ const mealItems: MealItem[] = [
       "This pasta is perfect for those who love a classic, meat-based Italian dish with robust flavors.",
     ],
     price: 319,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "pizzahut-pasta-3",
@@ -934,7 +934,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who love the sweet, buttery taste of caramel combined with coffee in a cool, refreshing format.",
     ],
     price: 399,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "starbucks-frapp-3",
@@ -952,7 +952,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who love coffee and chocolate but want something more interesting than a regular mocha, with the added texture of chocolate chips.",
     ],
     price: 419,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "dunkin-donut-1",
@@ -1092,7 +1092,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who want a filling breakfast with bold, savory flavors.",
     ],
     price: 199,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "dunkin-breakfast-3",
@@ -1126,7 +1126,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who love the classic combination of vanilla cream and chocolate glaze.",
     ],
     price: 89,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "dunkin-donut-2",
@@ -1302,7 +1302,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who love their chicken sandwich with an extra kick of heat.",
     ],
     price: 189,
-    isPopular: true,
+    isPopular: false,
   },
 
   // Taco Bell Items
@@ -1322,7 +1322,7 @@ const mealItems: MealItem[] = [
       "A Taco Bell classic that delivers the perfect balance of flavors and textures in every bite.",
     ],
     price: 99,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "tacobell-taco-2",
@@ -1450,7 +1450,7 @@ const mealItems: MealItem[] = [
       "The perfect complement to any pizza order or great on their own for wing lovers.",
     ],
     price: 299,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "papajohns-wings-2",
@@ -1467,7 +1467,7 @@ const mealItems: MealItem[] = [
       "Perfect for those who love savory, garlicky flavors and want a different wing experience.",
     ],
     price: 299,
-    isPopular: true,
+    isPopular: false,
   },
   {
     id: "papajohns-wings-3",

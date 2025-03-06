@@ -1,11 +1,14 @@
 import {
   Box,
   Button,
+  ButtonGroup,
   Container,
   Grid2,
   Stack,
   Typography,
 } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import React, { useEffect, useState } from "react";
 
 import restaurants from "../data/restaurantsData";
@@ -14,53 +17,17 @@ import { RestaurantType } from "../data/restaurantTypes";
 import mealItems from "../data/mealItem";
 import { MealItemType } from "../data/mealItemTypes";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  decrementQuantity,
+  incrementQuantity,
+} from "../redux/slices/CartSlice";
+import { RootState } from "../redux/Store";
+
 type restaurantProps = {
   id: string;
 };
-
-type mealsData = {
-  category: string;
-  name: string;
-  image: string;
-  desc: string;
-  price: number;
-  quantity: number;
-};
-
-const meals_data: mealsData[] = [
-  {
-    category: "Pizzas",
-    name: "Pizza 1",
-    image: "/images/Pizza/Pizza1.jpeg",
-    desc: "A Classic Cheesy Margharita. Can't Go Wrong.",
-    price: 140,
-    quantity: 0,
-  },
-  {
-    category: "Pizzas",
-    name: "Pizza 2",
-    image: "/images/Pizza/Pizza2.jpeg",
-    desc: "A New Non-Cheesy Margharita. Can Go Wrong.",
-    price: 150,
-    quantity: 0,
-  },
-  {
-    category: "Pizzas",
-    name: "Pizza 3",
-    image: "/images/Pizza/Pizza3.jpeg",
-    desc: "A Classic Cheesy Margharita. Can't Go Wrong.",
-    price: 110,
-    quantity: 0,
-  },
-  {
-    category: "Pizzas",
-    name: "Pizza 4",
-    image: "/images/Pizza/Pizza4.jpeg",
-    desc: "A Classic Cheesy Margharita. Can't Go Wrong.",
-    price: 120,
-    quantity: 0,
-  },
-];
 
 const RestaurantOrderOnline = (props: restaurantProps) => {
   const id = props.id;
@@ -78,18 +45,17 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
     };
 
     fetchRestaurantData();
-    console.log(restaurant);
   }, [id]);
 
-  // Update the useEffect for meal items
+  // useEffect for meal items
   useEffect(() => {
     const fetchMealData = async () => {
       if (restaurant?.id) {
-        // Add null check for restaurant
+        // check for null  restaurant
         const fetchedMealItems = mealItems.filter(
           (meal) => meal.restaurantId === restaurant.id
         );
-        setMealItem(fetchedMealItems); // Remove the || null as we're using array
+        setMealItem(fetchedMealItems);
       }
     };
 
@@ -98,6 +64,49 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
+  };
+
+  //redux cart
+  const dispatch = useDispatch();
+
+  // Add selector to get cart items
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  const isItemInCart = (mealId: string) => {
+    return cartItems.some((item) => item.id === mealId);
+  };
+
+  const getItemQuantity = (mealId: string) => {
+    const cartItem = cartItems.find((item) => item.id === mealId);
+    return cartItem ? cartItem.quantity : 0;
+  };
+
+  const handleAddToCart = (meal: MealItemType) => {
+    if (!restaurant) return;
+
+    if (!isItemInCart(meal.id)) {
+      dispatch(
+        addToCart({
+          id: meal.id,
+          itemId: meal.id,
+          price: meal.price,
+          quantity: 1,
+          image: meal.image,
+          name: meal.title,
+          restaurantId: restaurant.id,
+          category: meal.category,
+          description: meal.shortDescription,
+        })
+      );
+    }
+  };
+
+  const handleIncrementMeal = (mealId: string) => {
+    dispatch(incrementQuantity(mealId));
+  };
+
+  const handleDecrementMeal = (mealId: string) => {
+    dispatch(decrementQuantity(mealId));
   };
 
   return (
@@ -162,7 +171,13 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                           lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
                           color="inherit"
                         >
-                          {category}
+                          {category} (
+                          {category === "Recommended"
+                            ? mealItem.filter((item) => item.isPopular).length
+                            : mealItem.filter(
+                                (item) => item.category === category
+                              ).length}
+                          )
                         </Typography>
                       </Button>
                     );
@@ -177,6 +192,12 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
             size={{ xs: 12, sm: 9 }}
             paddingLeft={{ xs: "0px", sm: "30px" }}
             marginTop={{ xs: "30px", sm: "0px" }}
+            sx={{
+              height: { xs: "auto", sm: "80vh" },
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            }}
           >
             <Typography
               fontFamily="Poppins"
@@ -193,88 +214,213 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
               spacing={{ xs: 1, sm: 2 }}
               marginTop={{ xs: "20px", sm: "50px" }}
               direction={{ xs: "column", sm: "row" }}
-            >
-              {mealItem.map((meal) => {
-                return (
-                  <>
-                    <Grid2 size={{ xs: 12, sm: 6 }}>
-                      <Box
-                        component={"img"}
-                        src={meal.image}
-                        alt={meal.title}
-                        width={{ xs: "100%", sm: "95%" }}
-                        margin={"auto"}
-                        // height={"100%"}
-                        height={{ xs: "190px", sm: "100%" }}
-                        borderRadius={"16px"}
-                        sx={{
-                          objectFit: "cover",
-                          objectPosition: "center center",
-                        }}
-                      />
-                    </Grid2>
+              paddingRight={"16px"}
+              sx={{
+                overflowY: { sm: "auto" },
+                maxHeight: { sm: "75vh" },
+                whiteSpace: { sm: "nowrap" },
+                msOverflowStyle: { sm: "none" },
+                scrollbarWidth: { sm: "thin" },
+                overscrollBehaviorY: { sm: "auto" },
+                scrollbarColor: { sm: "#f8f8f8 transparent" },
+                "&::-webkit-scrollbar": {
+                  display: { sm: "none" },
+                },
+                "&::-webkit-scrollbar-button": {
+                  display: { sm: "none" },
+                },
 
-                    <Grid2
-                      size={{ xs: 12, sm: 6 }}
-                      sx={{
-                        marginBottom: "50px",
-                      }}
-                    >
-                      <Stack spacing={{ xs: "2px", sm: "9px" }}>
-                        <Typography
-                          fontFamily="Poppins"
-                          fontWeight={400}
-                          fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                          lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
-                        >
-                          {meal.title}
-                        </Typography>
-                        <Typography
-                          fontFamily="Poppins"
-                          fontWeight={400}
-                          fontSize={{ xs: "14px", sm: "12px", md: "14px" }}
-                          lineHeight={{ xs: "21px", sm: "18px", md: "21px" }}
-                          color="#848484"
-                        >
-                          {meal.shortDescription}
-                        </Typography>
-                        <Typography
-                          fontFamily="Poppins"
-                          fontWeight={400}
-                          fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                          lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
-                        >
-                          ₹{meal.price}
-                        </Typography>
-                        <Button
+                overscrollBehavior: { sm: "auto" },
+
+                scrollBehavior: "smooth",
+              }}
+            >
+              {mealItem
+                .filter((meal) =>
+                  selectedCategory === "Recommended"
+                    ? meal.isPopular === true
+                    : meal.category === selectedCategory
+                )
+                .map((meal) => {
+                  return (
+                    <React.Fragment key={meal.id}>
+                      <Grid2 size={{ xs: 12, sm: 6 }}>
+                        <Box
+                          component={"img"}
+                          src={meal.image}
+                          alt={meal.title}
+                          width={{ xs: "100%", sm: "95%" }}
+                          margin={"auto"}
+                          // height={"100%"}
+                          height={{ xs: "190px", sm: "270px" }}
+                          borderRadius={"16px"}
                           sx={{
-                            // width: "100%",
-                            width: "175px",
-                            backgroundColor: "#FFA500",
-                            color: "#000000",
-                            "&:hover": {
-                              backgroundColor: "#FFC300",
-                              borderColor: "#FFC300",
-                              "& .MuiTypography-root": {
-                                color: "#FFFFFF",
-                              },
-                            },
+                            objectFit: "cover",
+                            objectPosition: "center center",
                           }}
+                        />
+                      </Grid2>
+
+                      <Grid2
+                        size={{ xs: 12, sm: 6 }}
+                        sx={{
+                          marginBottom: "50px",
+                        }}
+                      >
+                        <Stack
+                          spacing={{ xs: "2px", sm: "9px" }}
+                          paddingTop={{ sm: "5px" }}
                         >
                           <Typography
                             fontFamily="Poppins"
                             fontWeight={400}
                             fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                            lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
+                            lineHeight={{
+                              xs: "30px",
+                              sm: "28px",
+                              md: "30px",
+                            }}
                           >
-                            Add to Cart
+                            {meal.title}
                           </Typography>
-                        </Button>
-                      </Stack>
-                    </Grid2>
-                  </>
-                );
-              })}
+                          <Typography
+                            fontFamily="Poppins"
+                            fontWeight={400}
+                            fontSize={{ xs: "14px", sm: "12px", md: "14px" }}
+                            lineHeight={{
+                              xs: "21px",
+                              sm: "18px",
+                              md: "21px",
+                            }}
+                            color="#848484"
+                          >
+                            {meal.shortDescription}
+                          </Typography>
+                          <Typography
+                            fontFamily="Poppins"
+                            fontWeight={400}
+                            fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
+                            lineHeight={{
+                              xs: "30px",
+                              sm: "28px",
+                              md: "30px",
+                            }}
+                          >
+                            ₹{meal.price}
+                          </Typography>
+                          {isItemInCart(meal.id) ? (
+                            <ButtonGroup
+                              sx={{
+                                height: "45px",
+                                width: "175px",
+                              }}
+                            >
+                              <Button
+                                onClick={() => handleDecrementMeal(meal.id)}
+                                sx={{
+                                  flex: 1,
+                                  backgroundColor: "#999999",
+                                  color: "#ffffff",
+                                  "&:hover": {
+                                    backgroundColor: "#888888",
+                                    color: "#f3f3f3",
+                                  },
+                                }}
+                              >
+                                <RemoveIcon />
+                              </Button>
+                              <Button
+                                sx={{
+                                  flex: 2,
+                                  backgroundColor: "transparent",
+                                  color: "#000000",
+                                  borderLeft: "1px solid rgba(0,0,0,0.1)",
+                                  borderRight: "1px solid rgba(0,0,0,0.1)",
+                                  "&:hover": {
+                                    backgroundColor: "#f9f9f9",
+                                  },
+                                  cursor: "default",
+                                }}
+                                disableRipple
+                              >
+                                <Typography
+                                  fontFamily="Poppins"
+                                  fontWeight={400}
+                                  fontSize={{
+                                    xs: "18px",
+                                    sm: "16px",
+                                    md: "18px",
+                                  }}
+                                >
+                                  {getItemQuantity(meal.id)}
+                                </Typography>
+                              </Button>
+                              <Button
+                                onClick={() => handleIncrementMeal(meal.id)}
+                                sx={{
+                                  flex: 1,
+                                  backgroundColor: "#FFA500",
+                                  color: "#FFFFFF",
+                                  "&:hover": {
+                                    backgroundColor: "#FFC300",
+                                  },
+                                }}
+                              >
+                                <AddIcon />
+                              </Button>
+                            </ButtonGroup>
+                          ) : (
+                            <Button
+                              onClick={() => handleAddToCart(meal)}
+                              sx={{
+                                width: "175px",
+                                backgroundColor: "#FFA500",
+                                color: "#000000",
+                                "&:hover": {
+                                  backgroundColor: "#FFC300",
+                                  "& .MuiTypography-root": {
+                                    color: "#FFFFFF",
+                                  },
+                                },
+                              }}
+                            >
+                              <Typography
+                                fontFamily="Poppins"
+                                fontWeight={400}
+                                fontSize={{
+                                  xs: "20px",
+                                  sm: "18px",
+                                  md: "20px",
+                                }}
+                                lineHeight={{
+                                  xs: "30px",
+                                  sm: "28px",
+                                  md: "30px",
+                                }}
+                              >
+                                Add to Cart
+                              </Typography>
+                            </Button>
+                          )}
+                        </Stack>
+                      </Grid2>
+                    </React.Fragment>
+                  );
+                })}
+              {mealItem.filter((meal) =>
+                selectedCategory === "Recommended"
+                  ? true
+                  : meal.category === selectedCategory
+              ).length === 0 && (
+                <Typography
+                  fontFamily="Poppins"
+                  textAlign="center"
+                  width="100%"
+                  color="#666"
+                >
+                  No items available in this category
+                </Typography>
+              )}
             </Grid2>
           </Grid2>
         </Grid2>
