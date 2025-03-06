@@ -173,7 +173,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Burgers",
-    image: "https://images.unsplash.com/photo-1626082927389-6cd097cee6a3",
+    image:
+      "https://geekculture.co/wp-content/uploads/2021/09/KFC_Original-Recipe-STACKER_ALC.png",
     title: "Zinger Burger",
     shortDescription: "Legendary spicy chicken burger",
     fullDescription: [
@@ -190,7 +191,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Burgers",
-    image: "https://images.unsplash.com/photo-1626082927389-6cd097cee6a3",
+    image:
+      "https://kfcrestaurants.be/wp-content/uploads/2019/05/zinner-burger.jpg",
     title: "Tower Burger",
     shortDescription: "Towering chicken burger",
     fullDescription: [
@@ -207,7 +209,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Burgers",
-    image: "https://images.unsplash.com/photo-1626082927389-6cd097cee6a3",
+    image:
+      "https://kfcrestaurants.be/wp-content/uploads/2020/08/filetburger.jpg",
     title: "Classic Chicken Burger",
     shortDescription: "Simple chicken perfection",
     fullDescription: [
@@ -226,7 +229,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Box Meals",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58",
+    image:
+      "https://th.bing.com/th/id/OIP.81PcO5Xs0pKZAm2mwarELAHaHA?rs=1&pid=ImgDetMain",
     title: "Zinger Box",
     shortDescription: "Complete spicy meal deal",
     fullDescription: [
@@ -243,7 +247,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Box Meals",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58",
+    image:
+      "https://th.bing.com/th/id/OIP.C5PkDnqVVElrR-477Hk6aAHaFj?rs=1&pid=ImgDetMain",
     title: "Original Recipe Box",
     shortDescription: "Classic chicken feast",
     fullDescription: [
@@ -260,7 +265,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Box Meals",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58",
+    image:
+      "https://th.bing.com/th/id/OIP.4XRPM2Hduv9fJ2FG33aMKgHaHa?rs=1&pid=ImgDetMain",
     title: "Variety Box",
     shortDescription: "Best of both worlds",
     fullDescription: [
@@ -279,7 +285,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d",
+    image:
+      "https://th.bing.com/th/id/OIP.eyvtVsxJ_TYL_0jBuroKXgHaFj?rs=1&pid=ImgDetMain",
     title: "Secret Recipe Fries",
     shortDescription: "Seasoned potato fries",
     fullDescription: [
@@ -296,7 +303,7 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d",
+    image: "https://cdn.cheapism.com/images/colesaw-kfc.min-720x376.jpg",
     title: "Creamy Coleslaw",
     shortDescription: "Fresh vegetable slaw",
     fullDescription: [
@@ -313,7 +320,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d",
+    image:
+      "https://copykat.com/wp-content/uploads/2023/06/KFC-Mac-and-Cheese-Pin-13.jpg",
     title: "Mac & Cheese",
     shortDescription: "Creamy cheese pasta",
     fullDescription: [
@@ -332,7 +340,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Desserts",
-    image: "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    image:
+      "https://i0.wp.com/www.livewellbakeoften.com/wp-content/uploads/2017/02/Chocolate-Chip-Cookies-7.jpg?resize=1360,2040",
     title: "Chocolate Chip Cookie",
     shortDescription: "Freshly baked cookie",
     fullDescription: [
@@ -349,7 +358,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Desserts",
-    image: "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    image:
+      "https://th.bing.com/th/id/OIP.lNV7mbPX_ITwDl7AyzLgnQHaLH?rs=1&pid=ImgDetMain",
     title: "Hot Fudge Sundae",
     shortDescription: "Ice cream with hot fudge",
     fullDescription: [
@@ -366,7 +376,8 @@ const mealItems: MealItem[] = [
     restaurantId: "kfc-1",
     restaurantName: "KFC",
     category: "Desserts",
-    image: "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    image:
+      "https://th.bing.com/th/id/OIP.qbvMSk22nYQyf4I-q0SYhgAAAA?rs=1&pid=ImgDetMain",
     title: "Apple Turnover",
     shortDescription: "Warm apple pastry",
     fullDescription: [
@@ -418,7 +429,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dominos-1",
     restaurantName: "Domino's Pizza",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
+    image:
+      "https://www.ambitiouskitchen.com/wp-content/uploads/2023/02/Garlic-Bread-4.jpg",
     title: "Garlic Bread Supreme",
     shortDescription: "Cheesy garlic bread",
     fullDescription: [
@@ -452,7 +464,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dominos-1",
     restaurantName: "Domino's Pizza",
     category: "Desserts",
-    image: "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    image:
+      "https://www.yourhomebasedmom.com/wp-content/uploads/2020/02/chocoalte-lava-cake-for-two.jpg",
     title: "Chocolate Lava Cake",
     shortDescription: "Molten chocolate dessert",
     fullDescription: [
@@ -486,7 +499,8 @@ const mealItems: MealItem[] = [
     restaurantId: "subway-1",
     restaurantName: "Subway",
     category: "Subs",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://th.bing.com/th/id/OIP.MEznGNU36w48s_D1FUjqWQHaEK?rs=1&pid=ImgDetMain",
     title: "Italian B.M.T.",
     shortDescription: "Classic Italian-style sub",
     fullDescription: [
@@ -504,7 +518,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Subway",
     category: "Subs",
     title: "Chicken Teriyaki Sub",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://th.bing.com/th/id/OIP.Xxv4w4MUkl9d76Lo2CmkAAHaE6?rs=1&pid=ImgDetMain",
     shortDescription: "Sweet and savory chicken sub",
     fullDescription: [
       "Our Chicken Teriyaki Sub features tender chicken strips glazed with our signature teriyaki sauce, creating a perfect balance of sweet and savory flavors that's become a customer favorite.",
@@ -521,7 +536,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Subway",
     category: "Subs",
     title: "Veggie Delite",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://subwayisfresh.com.sg/wp-content/uploads/2022/01/veggie-delite-PH-594x334-1.jpeg",
     shortDescription: "Fresh vegetable sub",
     fullDescription: [
       "The Veggie Delite® is a symphony of fresh vegetables and flavors, perfect for vegetarians or anyone looking for a lighter option. We start with your choice of our freshly baked breads as the foundation.",
@@ -539,7 +555,8 @@ const mealItems: MealItem[] = [
     restaurantId: "subway-1",
     restaurantName: "Subway",
     category: "Salads",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
+    image:
+      "https://th.bing.com/th/id/OIP.tiDHdQvYhZx-GP-ujCB-0AHaLH?rs=1&pid=ImgDetMain",
     title: "Chicken Teriyaki Salad",
     shortDescription: "Asian-inspired chicken salad",
     fullDescription: [
