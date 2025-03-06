@@ -34,7 +34,8 @@ const mealItems: MealItem[] = [
     restaurantId: "mcdonalds-1",
     restaurantName: "McDonald's",
     category: "Breakfast",
-    image: "https://images.unsplash.com/photo-1530711654136-2a0c619c34b5",
+    image:
+      "https://www.eatingonadime.com/wp-content/uploads/2023/02/eod-egg-mcmuffin-11-1000x667.jpg",
     title: "Egg McMuffin",
     shortDescription: "Classic breakfast sandwich",
     fullDescription: [
@@ -85,7 +86,8 @@ const mealItems: MealItem[] = [
     restaurantId: "mcdonalds-1",
     restaurantName: "McDonald's",
     category: "McCafe",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    image:
+      "https://img.freepik.com/premium-photo/frappe-with-caramel-nuts-golden-background_756535-4545.jpg",
     title: "Caramel Frappé",
     shortDescription: "Blended iced coffee drink",
     fullDescription: [
@@ -102,7 +104,8 @@ const mealItems: MealItem[] = [
     restaurantId: "mcdonalds-1",
     restaurantName: "McDonald's",
     category: "Happy Meals",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+    image:
+      "https://mcdomenuph.com/wp-content/uploads/2024/03/4-pc.-Chicken-McNuggets-Happy-Meal.jpeg",
     title: "Chicken McNuggets Happy Meal",
     shortDescription: "Kids' favorite meal combo",
     fullDescription: [
@@ -591,7 +594,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Subway",
     category: "Salads",
     title: "Tuna Salad",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
+    image:
+      "https://i2.wp.com/wonkywonderful.com/wp-content/uploads/2019/07/mediterranean-tuna-salad-1-scaled.jpg?fit=985%2C1477&ssl=1",
     shortDescription: "Fresh tuna salad",
     fullDescription: [
       "Our Tuna Salad starts with flaky tuna blended with creamy mayonnaise to create a classic tuna salad that's both delicious and satisfying. This protein-rich mixture is served on a bed of crisp, fresh lettuce.",
@@ -609,7 +613,8 @@ const mealItems: MealItem[] = [
     restaurantId: "subway-1",
     restaurantName: "Subway",
     category: "Wraps",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://i2.wp.com/bensabaconlovers.com/wp-content/uploads/2021/11/Chicken-Bacon-Wrap-featured-A.jpg",
     title: "Chicken & Bacon Ranch",
     shortDescription: "Wrapped in a tortilla",
     fullDescription: [
@@ -627,7 +632,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Subway",
     category: "Wraps",
     title: "Italian B.M.T. Wrap",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://th.bing.com/th/id/OIP.gh8ou2tUFkzLBKj1TNfefwHaEI?rs=1&pid=ImgDetMain",
     shortDescription: "Classic sub in a wrap",
     fullDescription: [
       "Experience our famous Italian B.M.T.® in a convenient wrap format. We start with Genoa salami, spicy pepperoni, and Black Forest ham, carefully arranged on a soft tortilla.",
@@ -644,7 +650,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Subway",
     category: "Wraps",
     title: "Veggie Delite Wrap",
-    image: "https://images.unsplash.com/photo-1509722747041-616f39b57569",
+    image:
+      "https://th.bing.com/th/id/OIP.UH7iqShi4z1-VxtPdXH8RQAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Fresh veggie wrap",
     fullDescription: [
       "Our Veggie Delite® Wrap is a vegetarian favorite that proves you don't need meat to make a satisfying meal. We start with a soft tortilla as the foundation for this fresh and flavorful wrap.",
@@ -660,7 +667,8 @@ const mealItems: MealItem[] = [
     restaurantId: "pizzahut-1",
     restaurantName: "Pizza Hut",
     category: "Pizzas",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+    image:
+      "https://th.bing.com/th/id/OIP.8aoSilvz4x_Tvi7Zc9QK6wHaGl?rs=1&pid=ImgDetMain",
     title: "Supreme Pizza",
     shortDescription: "Loaded with toppings",
     fullDescription: [
@@ -678,7 +686,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Pizzas",
     title: "Pepperoni Lovers",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+    image:
+      "https://th.bing.com/th/id/OIP.Nxz7Y3b45edqQRJp-scqawAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Extra pepperoni pizza",
     fullDescription: [
       "Our Pepperoni Lovers Pizza is a celebration of America's favorite pizza topping. We start with our fresh hand-tossed dough and our signature pizza sauce as the foundation.",
@@ -695,7 +704,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Pizzas",
     title: "Veggie Lovers",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+    image:
+      "https://th.bing.com/th/id/OIP.PnOUKoVCYgGFoEHqYai0vwAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Fresh vegetable pizza",
     fullDescription: [
       "Our Veggie Lovers Pizza proves that a meatless pizza can be just as satisfying as any other. We start with our fresh hand-tossed dough and signature pizza sauce, providing the perfect base for a garden of vegetables.",
@@ -766,7 +776,8 @@ const mealItems: MealItem[] = [
     restaurantId: "pizzahut-1",
     restaurantName: "Pizza Hut",
     category: "Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.5tLDoOP1io__YXrMVgY-IQHaEK?rs=1&pid=ImgDetMain",
     title: "Buffalo Wings",
     shortDescription: "Classic spicy wings",
     fullDescription: [
@@ -784,7 +795,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Wings",
     title: "Honey BBQ Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.vy4if2eC2ZhW1HCgytoBAAAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Sweet and smoky wings",
     fullDescription: [
       "Our Honey BBQ Wings offer a perfect balance of sweet and smoky flavors. Each wing is carefully selected and fried until perfectly crispy, then tossed in our signature honey BBQ sauce.",
@@ -801,7 +813,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Wings",
     title: "Garlic Parmesan Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.MGx_zgho8PE--TkcKhIC0gHaHa?rs=1&pid=ImgDetMain",
     shortDescription: "Savory garlic wings",
     fullDescription: [
       "Our Garlic Parmesan Wings combine two beloved flavors in one delicious dish. Each wing is fried to perfection, then tossed in our special garlic Parmesan sauce that's rich, creamy, and full of flavor.",
@@ -818,7 +831,8 @@ const mealItems: MealItem[] = [
     restaurantId: "starbucks-1",
     restaurantName: "Starbucks",
     category: "Hot Coffee",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/71vD0S3IufL._SL1500_.jpg",
     title: "Caffe Latte",
     shortDescription: "Classic espresso drink",
     fullDescription: [
@@ -836,7 +850,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Hot Coffee",
     title: "Cappuccino",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    image:
+      "https://a1.soysuper.com/40356b7232994d3ea0b4633c6f47ba10.1280.0.0.0.wmark.ed7ddf4a.jpg",
     shortDescription: "Traditional Italian coffee",
     fullDescription: [
       "Our Cappuccino is a classic Italian coffee drink, expertly crafted with equal parts espresso, steamed milk, and foam. We start with our signature espresso roast, pulling the perfect shot with rich crema.",
@@ -853,7 +868,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Hot Coffee",
     title: "Americano",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+    image:
+      "https://th.bing.com/th/id/OIP.wpXlT-zLeQGR9-6QhMTlOAHaJt?rs=1&pid=ImgDetMain",
     shortDescription: "Espresso with hot water",
     fullDescription: [
       "Our Americano combines our rich, full-bodied espresso with hot water, creating a light layer of crema and a depth of flavor that's both delicate and complex. We start with our signature espresso roast, carefully pulled to ensure optimal extraction.",
@@ -871,7 +887,8 @@ const mealItems: MealItem[] = [
     restaurantId: "starbucks-1",
     restaurantName: "Starbucks",
     category: "Cold Coffee",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://th.bing.com/th/id/OIP.zTF1YgTy833S9VPdOop91wHaLH?rs=1&pid=ImgDetMain",
     title: "Iced Caramel Macchiato",
     shortDescription: "Sweet and refreshing",
     fullDescription: [
@@ -889,7 +906,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Cold Coffee",
     title: "Cold Brew",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://i5.walmartimages.com/seo/Starbucks-Cold-Brew-Premium-Coffee-Beverage-Black-Unsweet-40-fl-oz_8dcbbb3c-fef3-4429-b0cb-2c4056cf41ec.33229bf066c5f861d5b39fd581839cd6.jpeg",
     shortDescription: "Smooth, cold-steeped coffee",
     fullDescription: [
       "Our Cold Brew is handcrafted in small batches, slow-steeped in cool water for 20 hours to create a smooth, full-bodied coffee with low acidity. We use a special blend of beans chosen specifically for cold brewing.",
@@ -906,7 +924,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Cold Coffee",
     title: "Nitro Cold Brew",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://i5.walmartimages.com/asr/7ab03544-28e0-4273-a19e-f429513ea1e6.c3a12306ec3aeb46ac839662388029cd.jpeg",
     shortDescription: "Velvety smooth nitrogen-infused coffee",
     fullDescription: [
       "Our Nitro Cold Brew takes our signature Cold Brew to the next level by infusing it with nitrogen to create a velvety smooth, naturally sweet coffee with a cascading, creamy head of foam.",
@@ -924,7 +943,8 @@ const mealItems: MealItem[] = [
     restaurantId: "starbucks-1",
     restaurantName: "Starbucks",
     category: "Frappuccinos",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://imgix.bustle.com/uploads/image/2017/9/7/b5ab956b-87ea-4483-8376-af7983d0d395-mocha_affogato.JPG",
     title: "Mocha Frappuccino",
     shortDescription: "Blended coffee and chocolate drink",
     fullDescription: [
@@ -942,7 +962,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Frappuccinos",
     title: "Caramel Frappuccino",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://th.bing.com/th/id/OIP.p2zu1RVaJ49zUjq6fXY4oAAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Blended coffee and caramel drink",
     fullDescription: [
       "Our Caramel Frappuccino® combines coffee with buttery caramel sauce, milk, and ice to create a deliciously sweet frozen drink. We use our special Frappuccino® roast coffee as the base, ensuring the perfect coffee flavor.",
@@ -959,7 +980,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Starbucks",
     category: "Frappuccinos",
     title: "Java Chip Frappuccino",
-    image: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b",
+    image:
+      "https://th.bing.com/th/id/OIP.eavZpk7RGsSdlofdN0miKgHaHa?rs=1&pid=ImgDetMain",
     shortDescription: "Blended coffee with chocolate chips",
     fullDescription: [
       "Our Java Chip Frappuccino® combines coffee with rich mocha sauce and Frappuccino® chips to create a drink that's both smooth and crunchy",
@@ -976,7 +998,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dunkin-1",
     restaurantName: "Dunkin' Donuts",
     category: "Donuts",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
+    image:
+      "https://th.bing.com/th/id/OIP.tvjjOucIXGpptUUbhyqO6AHaGN?rs=1&pid=ImgDetMain",
     title: "Boston Kreme",
     shortDescription: "Classic cream-filled donut",
     fullDescription: [
@@ -994,7 +1017,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Donuts",
     title: "Glazed",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
+    image:
+      "https://i.pinimg.com/originals/f5/26/19/f52619c32ea9658285646e7d4e53820f.png",
     shortDescription: "Traditional glazed donut",
     fullDescription: [
       "Our Glazed donut is the perfect example of simplicity done right. Each donut starts with our signature yeast dough, carefully proofed to achieve the perfect texture and rise.",
@@ -1011,7 +1035,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Donuts",
     title: "Chocolate Frosted",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
+    image:
+      "https://th.bing.com/th/id/OIP.uwSv31A1tuzOPHSiDCWGSgAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Classic chocolate-topped donut",
     fullDescription: [
       "Our Chocolate Frosted donut starts with our perfect yeast donut base, topped with a rich chocolate frosting that's both flavorful and beautiful. Each donut begins with our carefully proofed and fried yeast dough.",
@@ -1029,7 +1054,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dunkin-1",
     restaurantName: "Dunkin' Donuts",
     category: "Coffee",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
+    image:
+      "https://dunkindonuts.com.sg/wp-content/uploads/2015/11/original-blend-1024x1024.jpg",
     title: "Original Blend",
     shortDescription: "Signature coffee blend",
     fullDescription: [
@@ -1047,7 +1073,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Coffee",
     title: "Dark Roast",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
+    image:
+      "https://th.bing.com/th/id/OIP.4Ycr-JcU-FPB9jEX6FgI3wHaJ4?rs=1&pid=ImgDetMain",
     shortDescription: "Bold and robust coffee",
     fullDescription: [
       "Our Dark Roast coffee offers a more robust flavor profile for those who prefer a bolder cup. We use specially selected Arabica beans that are roasted longer to develop deeper, more intense flavors.",
@@ -1064,7 +1091,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Coffee",
     title: "Cold Brew",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
+    image:
+      "https://dunkindonuts.com.sg/wp-content/uploads/2022/01/Iced-Cold-Brew-Coffee-600x510.jpg",
     shortDescription: "Smooth, cold-steeped coffee",
     fullDescription: [
       "Our Cold Brew coffee is crafted through a special steeping process that creates a remarkably smooth, naturally sweet flavor. We use a special blend of coffee beans selected specifically for cold brewing.",
@@ -1082,7 +1110,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dunkin-1",
     restaurantName: "Dunkin' Donuts",
     category: "Breakfast Sandwiches",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980",
+    image:
+      "https://th.bing.com/th/id/OIP.xot4W2CmcYNrq8PXzT5t8AAAAA?rs=1&pid=ImgDetMain",
     title: "Bacon, Egg & Cheese",
     shortDescription: "Classic breakfast sandwich",
     fullDescription: [
@@ -1100,7 +1129,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Breakfast Sandwiches",
     title: "Sausage, Egg & Cheese",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980",
+    image:
+      "https://th.bing.com/th/id/OIP.pI-UTJqkzPJZV2rbTcRqkAHaDt?rs=1&pid=ImgDetMain",
     shortDescription: "Hearty breakfast sandwich",
     fullDescription: [
       "Our Sausage, Egg & Cheese sandwich combines savory sausage with fresh eggs and melted cheese for a hearty breakfast. We start with a seasoned sausage patty that's cooked until perfectly browned.",
@@ -1117,130 +1147,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Dunkin' Donuts",
     category: "Breakfast Sandwiches",
     title: "Turkey Sausage, Egg White & Cheese",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980",
-    shortDescription: "Lighter breakfast option",
-    fullDescription: [
-      "Our Turkey Sausage, Egg White & Cheese sandwich offers a lighter alternative without sacrificing flavor. We start with a lean turkey sausage patty, seasoned to perfection.",
-      "Fresh egg whites are cooked to order and topped with reduced-fat cheese, creating a protein-rich breakfast that's lower in calories. Served on your choice of bagel, croissant, or English muffin.",
-      "Each sandwich is prepared fresh to order, ensuring the best taste and quality. The ingredients are carefully selected and combined to create a satisfying but lighter breakfast option.",
-      "Perfect for those who want a protein-rich breakfast with fewer calories.",
-    ],
-    price: 219,
-    isPopular: false,
-  },
-  {
-    id: "dunkin-donut-1",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Donuts",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
-    title: "Boston Kreme",
-    shortDescription: "Classic cream-filled donut",
-    fullDescription: [
-      "Our Boston Kreme donut is a classic favorite, featuring a light and fluffy yeast donut filled with smooth vanilla cream and topped with rich chocolate glaze. Each donut starts with our perfectly proofed and fried yeast dough.",
-      "The donut is generously filled with our signature vanilla cream, made with real vanilla for authentic flavor. The top is dipped in rich chocolate glaze that sets to a perfect shine.",
-      "Every Boston Kreme is carefully crafted to ensure the perfect ratio of donut to filling to chocolate. The result is a perfectly balanced treat that's been delighting customers for generations.",
-      "Perfect for those who love the classic combination of vanilla cream and chocolate glaze.",
-    ],
-    price: 89,
-    isPopular: false,
-  },
-  {
-    id: "dunkin-donut-2",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Donuts",
-    title: "Glazed",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
-    shortDescription: "Traditional glazed donut",
-    fullDescription: [
-      "Our Glazed donut is the perfect example of simplicity done right. Each donut starts with our signature yeast dough, carefully proofed to achieve the perfect texture and rise.",
-      "After frying to a golden brown, each donut is dipped in our special glaze while still warm. The glaze creates a sweet, slightly crispy exterior that gives way to a soft, fluffy interior.",
-      "The glaze sets to create a characteristic crackly surface that's both beautiful and delicious. Every bite offers the perfect combination of sweet glaze and tender donut.",
-      "Perfect for purists who appreciate the simple pleasure of a perfectly executed glazed donut.",
-    ],
-    price: 79,
-    isPopular: true,
-  },
-  {
-    id: "dunkin-donut-3",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Donuts",
-    title: "Chocolate Frosted",
-    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307",
-    shortDescription: "Classic chocolate-topped donut",
-    fullDescription: [
-      "Our Chocolate Frosted donut starts with our perfect yeast donut base, topped with a rich chocolate frosting that's both flavorful and beautiful. Each donut begins with our carefully proofed and fried yeast dough.",
-      "The donut is topped with our special chocolate frosting, made with real cocoa for authentic chocolate flavor. The frosting sets to create a perfect topping that's neither too soft nor too firm.",
-      "Every Chocolate Frosted donut is crafted to ensure the perfect ratio of donut to frosting. The result is a classic treat that satisfies any chocolate craving.",
-      "Perfect for chocolate lovers who appreciate the combination of fluffy donut and rich chocolate frosting.",
-    ],
-    price: 89,
-    isPopular: true,
-  },
-
-  // Category: Coffee
-  {
-    id: "dunkin-coffee-1",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Coffee",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
-    title: "Original Blend",
-    shortDescription: "Signature coffee blend",
-    fullDescription: [
-      "Our Original Blend coffee is what made us famous, featuring a smooth, medium-bodied flavor that millions of customers have come to love. We use premium Arabica beans, carefully selected and roasted to our exact specifications.",
-      "The coffee is brewed fresh throughout the day to ensure every cup is hot and delicious. Our special roasting process creates a perfectly balanced cup with no bitter aftertaste.",
-      "Each batch is carefully monitored for temperature and brewing time to ensure consistent quality. The result is a cup of coffee that's flavorful yet smooth, perfect for any time of day.",
-      "Perfect for those who appreciate a classic, well-balanced cup of coffee without any bitter notes.",
-    ],
-    price: 149,
-    isPopular: true,
-  },
-  {
-    id: "dunkin-coffee-2",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Coffee",
-    title: "Cold Brew",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd",
-    shortDescription: "Smooth, cold-steeped coffee",
-    fullDescription: [
-      "Our Cold Brew coffee is crafted through a special steeping process that creates a remarkably smooth, naturally sweet flavor. We use a special blend of coffee beans selected specifically for cold brewing.",
-      "The coffee is steeped in cold water for 12 hours, creating a less acidic, incredibly smooth drink. Served over ice, this coffee has a distinctive flavor profile that's different from traditional iced coffee.",
-      "Each batch is carefully filtered and kept cold to maintain optimal freshness and flavor. The result is a refreshing coffee that's smooth enough to drink black but also delicious with cream and sweetener.",
-      "Perfect for those who appreciate smooth, low-acid coffee with subtle chocolate notes.",
-    ],
-    price: 169,
-    isPopular: true,
-  },
-
-  // Category: Breakfast Sandwiches
-  {
-    id: "dunkin-breakfast-1",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Breakfast Sandwiches",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980",
-    title: "Bacon, Egg & Cheese",
-    shortDescription: "Classic breakfast sandwich",
-    fullDescription: [
-      "Our Bacon, Egg & Cheese sandwich is the perfect way to start your day. We start with a freshly cracked egg that's cooked to order, ensuring the perfect texture and temperature.",
-      "The egg is topped with crispy bacon and melted American cheese, creating a perfect combination of flavors and textures. All this is served on your choice of freshly baked bagel, croissant, or English muffin.",
-      "Each sandwich is assembled to order, ensuring it's hot and fresh when you receive it. The ingredients are carefully layered to ensure every bite contains the perfect balance of flavors.",
-      "Perfect for those who want a satisfying, protein-rich breakfast on the go.",
-    ],
-    price: 199,
-    isPopular: true,
-  },
-  {
-    id: "dunkin-breakfast-2",
-    restaurantId: "dunkin-1",
-    restaurantName: "Dunkin' Donuts",
-    category: "Breakfast Sandwiches",
-    title: "Turkey Sausage, Egg White & Cheese",
-    image: "https://images.unsplash.com/photo-1553909489-cd47e0907980",
+    image:
+      "https://th.bing.com/th/id/OIP.mjYplFunl5vZtpLCeoti6gHaHa?rs=1&pid=ImgDetMain",
     shortDescription: "Lighter breakfast option",
     fullDescription: [
       "Our Turkey Sausage, Egg White & Cheese sandwich offers a lighter alternative without sacrificing flavor. We start with a lean turkey sausage patty, seasoned to perfection.",
@@ -1256,7 +1164,8 @@ const mealItems: MealItem[] = [
     restaurantId: "burgerking-1",
     restaurantName: "Burger King",
     category: "Flame Grilled Burgers",
-    image: "https://images.unsplash.com/photo-1550547660-d9450f859349",
+    image:
+      "https://th.bing.com/th/id/OIP.MdKi5jS71GMT1a9yTAiTXQHaHa?rs=1&pid=ImgDetMain",
     title: "Whopper",
     shortDescription: "Signature flame-grilled burger",
     fullDescription: [
@@ -1274,7 +1183,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Burger King",
     category: "Flame Grilled Burgers",
     title: "Bacon King",
-    image: "https://images.unsplash.com/photo-1550547660-d9450f859349",
+    image:
+      "https://th.bing.com/th/id/OIP.rjtjRz0N8MrMKuKTVVHoSQHaHa?rs=1&pid=ImgDetMain",
     shortDescription: "Loaded bacon burger",
     fullDescription: [
       "The Bacon King sandwich features two ¼ pound savory flame-grilled beef patties, delivering twice the flame-grilled flavor in every bite.",
@@ -1292,7 +1202,8 @@ const mealItems: MealItem[] = [
     restaurantId: "burgerking-1",
     restaurantName: "Burger King",
     category: "Chicken & Fish",
-    image: "https://images.unsplash.com/photo-1585039261108-ec656e1916b5",
+    image:
+      "https://th.bing.com/th/id/R.0b2ddb7e3a244c9c12ba20617fc9e649?rik=vUGTRHWVyNwyDA&riu=http%3a%2f%2fbk-ca-prd.s3.amazonaws.com%2fsites%2fburgerking.ca%2ffiles%2fHERO_0005_Original_Chicken_Sandwich.png&ehk=XKpEsKAY3M4VNsjDg0tpWLgjl7a%2bqnWFM9UaZvh%2bi3M%3d&risl=&pid=ImgRaw&r=0",
     title: "Original Chicken Sandwich",
     shortDescription: "Classic chicken sandwich",
     fullDescription: [
@@ -1310,7 +1221,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Burger King",
     category: "Chicken & Fish",
     title: "Spicy Chicken Sandwich",
-    image: "https://images.unsplash.com/photo-1585039261108-ec656e1916b5",
+    image:
+      "https://i.pinimg.com/originals/66/e0/7d/66e07da3b592209129dd78121431d00c.jpg",
     shortDescription: "Fiery chicken sandwich",
     fullDescription: [
       "Our Spicy Chicken Sandwich takes our classic chicken sandwich and kicks up the heat with a special blend of peppers and spices in the breading.",
@@ -1329,7 +1241,8 @@ const mealItems: MealItem[] = [
     restaurantId: "tacobell-1",
     restaurantName: "Taco Bell",
     category: "Tacos",
-    image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
+    image:
+      "https://th.bing.com/th/id/OIP.X0f2S2uY54gVW0hz9ysMvAHaHh?rs=1&pid=ImgDetMain",
     title: "Crunchy Taco Supreme",
     shortDescription: "Classic crunchy taco",
     fullDescription: [
@@ -1347,7 +1260,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Taco Bell",
     category: "Tacos",
     title: "Soft Taco Supreme",
-    image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b",
+    image:
+      "https://th.bing.com/th/id/OIP.zaGYINszy089zU_OM4gD_gAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Classic soft taco",
     fullDescription: [
       "Our Soft Taco Supreme® features the same delicious seasoned beef wrapped in a warm, soft flour tortilla. The tortilla is steamed to ensure it's soft and pliable.",
@@ -1365,7 +1279,8 @@ const mealItems: MealItem[] = [
     restaurantId: "tacobell-1",
     restaurantName: "Taco Bell",
     category: "Burritos",
-    image: "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85",
+    image:
+      "https://th.bing.com/th/id/OIP.mfm152f5yofp_7bfgfOepgHaEx?rs=1&pid=ImgDetMain",
     title: "Bean Burrito",
     shortDescription: "Classic bean burrito",
     fullDescription: [
@@ -1383,7 +1298,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Taco Bell",
     category: "Burritos",
     title: "5-Layer Burrito",
-    image: "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85",
+    image:
+      "https://th.bing.com/th/id/OIP.sNJyWdUbPnRy83ZJp2fyBAAAAA?rs=1&pid=ImgDetMain",
     shortDescription: "Loaded five-layer burrito",
     fullDescription: [
       "Our 5-Layer Burrito is a carefully crafted combination of seasoned beef, refried beans, real cheddar cheese, nacho cheese sauce, and reduced-fat sour cream.",
@@ -1394,17 +1310,13 @@ const mealItems: MealItem[] = [
     price: 159,
     isPopular: true,
   },
-
-  //new
-
-  // Papa John's Items
-  // Category: Pizzas
   {
     id: "papajohns-pizza-1",
     restaurantId: "papajohns-1",
     restaurantName: "Papa John's",
     category: "Pizzas",
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+    image:
+      "https://th.bing.com/th/id/OIP.WjwfwaFgN_YEdJT9DweBlwHaEI?rs=1&pid=ImgDetMain",
     title: "The Works",
     shortDescription: "Loaded specialty pizza",
     fullDescription: [
@@ -1423,7 +1335,8 @@ const mealItems: MealItem[] = [
     category: "Pizzas",
     title: "BBQ Chicken Bacon",
     shortDescription: "Sweet and savory pizza",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://recipes.net/wp-content/uploads/2023/05/papa-johns-chicken-bacon-ranch-pizza-recipe_32dfbe2f2635238548c3727876566f03.jpeg",
     fullDescription: [
       "A delicious combination featuring grilled all-white chicken, crispy bacon, and fresh onions on top of our sweet and smoky BBQ sauce. The chicken is marinated and grilled to perfection.",
       "Made with our fresh, never frozen original dough that's hand-tossed and stretched to create the perfect crust. The BBQ sauce provides a tangy base that complements the toppings perfectly.",
@@ -1439,7 +1352,7 @@ const mealItems: MealItem[] = [
     restaurantName: "Papa John's",
     category: "Pizzas",
     title: "Garden Fresh",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image: "https://live.staticflickr.com/5582/14887007175_36ac399378_b.jpg",
     shortDescription: "Vegetarian specialty pizza",
     fullDescription: [
       "Our Garden Fresh pizza celebrates fresh vegetables with a medley of crisp green peppers, fresh-cut onions, baby portabella mushrooms, ripe black olives, and vine-ripened Roma tomatoes.",
@@ -1457,7 +1370,8 @@ const mealItems: MealItem[] = [
     restaurantId: "papajohns-1",
     restaurantName: "Papa John's",
     category: "Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.Mn3cWhaV_ueYX1_lnD8J3gHaEZ?rs=1&pid=ImgDetMain",
     title: "Buffalo Wings",
     shortDescription: "Classic buffalo wings",
     fullDescription: [
@@ -1475,7 +1389,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Papa John's",
     category: "Wings",
     title: "Garlic Parmesan Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.AhplhPWAKmxqjScaWGtCPQHaEZ?rs=1&pid=ImgDetMain",
     shortDescription: "Savory garlic wings",
     fullDescription: [
       "Eight pieces of our premium chicken wings tossed in a rich garlic parmesan sauce. The sauce combines real garlic, butter, and aged parmesan cheese.",
@@ -1492,7 +1407,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Papa John's",
     category: "Wings",
     title: "Honey Chipotle Wings",
-    image: "https://images.unsplash.com/photo-1608039755872-cdf4e9ff4eb7",
+    image:
+      "https://th.bing.com/th/id/OIP.2p8HNvCVFb7uGsZobzO7FwHaFX?rs=1&pid=ImgDetMain",
 
     shortDescription: "Sweet and spicy wings",
     fullDescription: [
@@ -1511,7 +1427,8 @@ const mealItems: MealItem[] = [
     restaurantId: "papajohns-1",
     restaurantName: "Papa John's",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
+    image:
+      "https://th.bing.com/th/id/OIP.OoOfkDJOhb-IupgW4EUSnwHaE8?rs=1&pid=ImgDetMain",
     title: "Garlic Parmesan Breadsticks",
     shortDescription: "Savory breadsticks",
     fullDescription: [
@@ -1528,7 +1445,8 @@ const mealItems: MealItem[] = [
     restaurantId: "papajohns-1",
     restaurantName: "Papa John's",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
+    image:
+      "https://th.bing.com/th/id/OIP.FuVvNrZrMfp6qfID4w1F8QHaEZ?rs=1&pid=ImgDetMain",
     title: "Cheesesticks",
     shortDescription: "Cheese-covered breadsticks",
     fullDescription: [
@@ -1545,7 +1463,8 @@ const mealItems: MealItem[] = [
     restaurantId: "papajohns-1",
     restaurantName: "Papa John's",
     category: "Sides",
-    image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5",
+    image:
+      "https://th.bing.com/th/id/OIP.PmTFZnCL49ttjl_xKDwNewHaFX?rs=1&pid=ImgDetMain",
     title: "Jalapeño Popper Rolls",
     shortDescription: "Spicy cheese-filled rolls",
     fullDescription: [
