@@ -194,7 +194,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
             marginTop={{ xs: "30px", sm: "0px" }}
             sx={{
               height: { xs: "auto", sm: "80vh" },
-              overflow: "hidden",
+              overflowY: "hidden",
               display: "flex",
               flexDirection: "column",
             }}
@@ -212,26 +212,28 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
               container
               size={12}
               spacing={{ xs: 1, sm: 2 }}
-              marginTop={{ xs: "20px", sm: "50px" }}
+              marginTop={{ xs: "20px", sm: "30px" }}
               direction={{ xs: "column", sm: "row" }}
               paddingRight={"16px"}
               sx={{
                 overflowY: { sm: "auto" },
                 maxHeight: { sm: "75vh" },
-                whiteSpace: { sm: "nowrap" },
+                whiteSpace: { sm: "normal" },
                 msOverflowStyle: { sm: "none" },
                 scrollbarWidth: { sm: "thin" },
                 overscrollBehaviorY: { sm: "auto" },
                 scrollbarColor: { sm: "#f8f8f8 transparent" },
+                overflowX: "hidden",
+                "& .MuiTypography-root": {
+                  wordBreak: "break-word",
+                  whiteSpace: "normal",
+                },
                 "&::-webkit-scrollbar": {
                   display: { sm: "none" },
                 },
                 "&::-webkit-scrollbar-button": {
                   display: { sm: "none" },
                 },
-
-                overscrollBehavior: { sm: "auto" },
-
                 scrollBehavior: "smooth",
               }}
             >
@@ -244,7 +246,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                 .map((meal) => {
                   return (
                     <React.Fragment key={meal.id}>
-                      <Grid2 size={{ xs: 12, sm: 6 }}>
+                      <Grid2 size={{ xs: 12, sm: 6 }} paddingY={"10px"}>
                         <Box
                           component={"img"}
                           src={meal.image}
