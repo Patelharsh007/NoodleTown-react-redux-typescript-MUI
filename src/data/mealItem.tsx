@@ -1,6 +1,6 @@
 type MealItem = {
   id: string;
-  restaurantId: string;
+  restaurantId?: string;
   restaurantName: string;
   category: string;
   image: string;

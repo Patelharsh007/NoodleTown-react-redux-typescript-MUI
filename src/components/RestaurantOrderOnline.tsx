@@ -25,6 +25,7 @@ import {
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
 import { showInfoToast, showSuccessToast } from "../UI/ToastContainer";
+import { Link, Navigate } from "react-router-dom";
 
 type restaurantProps = {
   id: string;
@@ -257,20 +258,25 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                   return (
                     <React.Fragment key={meal.id}>
                       <Grid2 size={{ xs: 12, sm: 6 }} paddingY={"10px"}>
-                        <Box
-                          component={"img"}
-                          src={meal.image}
-                          alt={meal.title}
-                          width={{ xs: "100%", sm: "95%" }}
-                          margin={"auto"}
-                          // height={"100%"}
-                          height={{ xs: "190px", sm: "270px" }}
-                          borderRadius={"16px"}
-                          sx={{
-                            objectFit: "cover",
-                            objectPosition: "center center",
-                          }}
-                        />
+                        <Link
+                          to={`/productDetails/${meal.id}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Box
+                            component={"img"}
+                            src={meal.image}
+                            alt={meal.title}
+                            width={{ xs: "100%", sm: "95%" }}
+                            margin={"auto"}
+                            // height={"100%"}
+                            height={{ xs: "190px", sm: "270px" }}
+                            borderRadius={"16px"}
+                            sx={{
+                              objectFit: "cover",
+                              objectPosition: "center center",
+                            }}
+                          />
+                        </Link>
                       </Grid2>
 
                       <Grid2
@@ -322,9 +328,14 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                           </Typography>
                           {isItemInCart(meal.id) ? (
                             <ButtonGroup
+                              disableElevation
                               sx={{
                                 height: "45px",
                                 width: "175px",
+                                "& .MuiButtonGroup-grouped:not(:last-of-type)":
+                                  {
+                                    borderColor: "transparent",
+                                  },
                               }}
                             >
                               <Button
@@ -344,12 +355,12 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                               <Button
                                 sx={{
                                   flex: 2,
-                                  backgroundColor: "transparent",
+                                  backgroundColor: "#f9f9f9",
                                   color: "#000000",
                                   borderLeft: "1px solid rgba(0,0,0,0.1)",
                                   borderRight: "1px solid rgba(0,0,0,0.1)",
                                   "&:hover": {
-                                    backgroundColor: "#f9f9f9",
+                                    backgroundColor: "#d9d9d9",
                                   },
                                   cursor: "default",
                                 }}
@@ -387,12 +398,9 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                               sx={{
                                 width: "175px",
                                 backgroundColor: "#FFA500",
-                                color: "#000000",
+                                color: "#fff",
                                 "&:hover": {
                                   backgroundColor: "#FFC300",
-                                  "& .MuiTypography-root": {
-                                    color: "#FFFFFF",
-                                  },
                                 },
                               }}
                             >

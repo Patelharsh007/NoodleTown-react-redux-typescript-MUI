@@ -8,7 +8,8 @@ import Cart from "./pages/Cart";
 import RestaurantPage from "./pages/RestaurantPage";
 import LoginRegisterPage from "./pages/LoginRegisterPage";
 import { ToastContainer } from "react-toastify";
-import MealProduct from "./pages/MealProduct";
+import ProductDetails from "./pages/ProductDetails";
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +20,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/restaurantPage/:id" element={<RestaurantPage />} />
-        <Route path="/mealProduct/:id" element={<MealProduct />} />{" "}
+        <Route path="/productDetails/:id" element={<ProductDetails />} />{" "}
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <ToastContainer />

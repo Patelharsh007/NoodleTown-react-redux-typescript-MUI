@@ -51,11 +51,19 @@ const CartComponent = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleIncrement = (itemId: string) => {
+    const item = cartItems.find((item) => item.id === itemId);
     dispatch(incrementQuantity(itemId));
+    if (item) {
+      showInfoToast(`${item.name} quantity increased`);
+    }
   };
 
   const handleDecrement = (itemId: string) => {
+    const item = cartItems.find((item) => item.id === itemId);
     dispatch(decrementQuantity(itemId));
+    if (item) {
+      showInfoToast(`${item.name} quantity decreased`);
+    }
   };
 
   const [selectedAddress, setSelectedAddress] = useState<string>("");
