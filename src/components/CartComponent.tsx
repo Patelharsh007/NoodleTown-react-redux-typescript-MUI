@@ -3,13 +3,18 @@ import {
   Button,
   ButtonGroup,
   Divider,
+  FormControlLabel,
   Grid2,
+  Paper,
+  Radio,
+  RadioGroup,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import React, { useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -17,8 +22,28 @@ import { RootState } from "../redux/Store";
 import {
   incrementQuantity,
   decrementQuantity,
+  clearCart,
 } from "../redux/slices/CartSlice";
 
+import { showSuccessToast, showInfoToast } from "../UI/ToastContainer";
+
+interface Address {
+  id: string;
+  street: string;
+  city: string;
+  state: string;
+  pincode: string;
+}
+
+// Add these interfaces after existing Address interface
+interface NewAddress {
+  street: string;
+  city: string;
+  state: string;
+  pincode: string;
+}
+
+//main component
 const CartComponent = () => {
   const dispatch = useDispatch();
 
@@ -33,19 +58,128 @@ const CartComponent = () => {
     dispatch(decrementQuantity(itemId));
   };
 
+  const [selectedAddress, setSelectedAddress] = useState<string>("");
+  const [addresses, setAddresses] = useState<Address[]>([
+    {
+      id: "1",
+      street: "ABCD",
+      city: "SURAT",
+      state: "GUJARAT",
+      pincode: "987654",
+    },
+  ]);
+  const [showAddressForm, setShowAddressForm] = useState(false);
+  const [newAddress, setNewAddress] = useState<NewAddress>({
+    street: "",
+    city: "",
+    state: "",
+    pincode: "",
+  });
+  const [orderPlaced, setOrderPlaced] = useState(false);
+
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const discount = 0;
+  const deliveryCharges = 40;
+  const total = subtotal - discount + deliveryCharges;
+
+  const handleAddAddress = () => {
+    if (
+      !newAddress.street ||
+      !newAddress.city ||
+      !newAddress.state ||
+      !newAddress.pincode
+    )
+      return;
+
+    const address: Address = {
+      id: String(Date.now()),
+      ...newAddress,
+    };
+
+    setAddresses([...addresses, address]);
+    setNewAddress({
+      street: "",
+      city: "",
+      state: "",
+      pincode: "",
+    });
+    setShowAddressForm(false);
+  };
+
+  const handleCheckout = () => {
+    if (!selectedAddress || cartItems.length === 0) return;
+
+    setOrderPlaced(true);
+    showSuccessToast(
+      "🎉 Thank you for your order! Your delicious meal is on its way."
+    );
+
+    setTimeout(() => {
+      dispatch(clearCart());
+      setOrderPlaced(false);
+      setSelectedAddress("");
+      setShowAddressForm(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 5000);
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+    showSuccessToast("The entire cart is Emptied. ");
+  };
+
   return (
     <>
       <Box maxWidth={"1600px"} width={"90%"} margin={"auto"} marginTop={"30px"}>
-        <Typography
-          fontFamily={"Poppins"}
-          fontWeight={500}
-          fontSize={{ xs: "28px", sm: "32px" }}
-          lineHeight={{ xs: "40px", sm: "48px" }}
-          letterSpacing={"0%"}
-          marginBottom={"30px"}
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="space-between"
+          alignItems={{ xs: "flex-start", sm: "center" }}
+          marginBottom="30px"
         >
-          Your Cart {cartItems.length > 0 ? `(${cartItems.length})` : ""}
-        </Typography>
+          <Typography
+            fontFamily={"Poppins"}
+            fontWeight={500}
+            fontSize={{ xs: "28px", sm: "32px" }}
+            lineHeight={{ xs: "40px", sm: "48px" }}
+            letterSpacing={"0%"}
+            marginBottom={"30px"}
+            textAlign={"left"}
+          >
+            Your Cart {cartItems.length > 0 ? `(${cartItems.length})` : ""}
+          </Typography>
+          {cartItems.length > 0 && (
+            <Button
+              startIcon={<DeleteOutlineIcon />}
+              onClick={handleClearCart}
+              sx={{
+                alignSelf: { xs: "flex-end", sm: "center" },
+                color: "#666",
+                backgroundColor: "#f5f5f5",
+                borderRadius: "8px",
+                padding: "8px 16px",
+                "&:hover": {
+                  backgroundColor: "#ffebcc",
+                  color: "#FFA500",
+                },
+                "& .MuiSvgIcon-root": {
+                  fontSize: "20px",
+                },
+              }}
+            >
+              <Typography
+                fontFamily="Poppins"
+                fontWeight={400}
+                fontSize={{ xs: "14px", sm: "16px" }}
+              >
+                Clear Cart
+              </Typography>
+            </Button>
+          )}
+        </Stack>
 
         <Grid2 container spacing={3} margin={"30px 0"}>
           {cartItems.length > 0 ? (
@@ -86,7 +220,7 @@ const CartComponent = () => {
                           WebkitLineClamp: 2,
                           WebkitBoxOrient: "vertical",
                           minHeight: { xs: "48px", sm: "56px", md: "60px" },
-                          maxWidth: "70%", // Limit width to allow space for price
+                          maxWidth: "70%",
                         }}
                       >
                         {item.name}
@@ -99,7 +233,7 @@ const CartComponent = () => {
                         letterSpacing={"0%"}
                         color={"#FFA500"}
                         sx={{
-                          whiteSpace: "nowrap", // Keep price on one line
+                          whiteSpace: "nowrap",
                         }}
                       >
                         ₹{item.price}
@@ -116,7 +250,7 @@ const CartComponent = () => {
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
                         overflow: "hidden",
-                        WebkitLineClamp: 2, // Limit to 2 lines
+                        WebkitLineClamp: 2,
                         textOverflow: "ellipsis",
                       }}
                     >
@@ -266,7 +400,7 @@ const CartComponent = () => {
                       </Typography>
                     </Stack>
 
-                    {/* Order Now Button */}
+                    {/* Order Now Button
                     <Button
                       sx={{
                         backgroundColor: "#FFA500",
@@ -285,7 +419,7 @@ const CartComponent = () => {
                       >
                         Order Now
                       </Typography>
-                    </Button>
+                    </Button> */}
                   </Stack>
                 </Box>
               </Grid2>
@@ -302,6 +436,259 @@ const CartComponent = () => {
             </Typography>
           )}
         </Grid2>
+        {cartItems.length > 0 && (
+          <>
+            <Paper
+              elevation={0}
+              sx={{
+                backgroundColor: "#F9F9F9",
+                padding: { xs: "20px", sm: "30px" },
+                borderRadius: "17px",
+                marginTop: "30px",
+              }}
+            >
+              <Grid2 container spacing={4}>
+                {/* Address Section */}
+                <Grid2 size={{ xs: 12, md: 6 }}>
+                  <Typography
+                    fontFamily="Poppins"
+                    fontWeight={500}
+                    fontSize={{ xs: "20px", sm: "24px" }}
+                    marginBottom="20px"
+                  >
+                    Select Delivery Address
+                  </Typography>
+
+                  {/* Address List */}
+                  <RadioGroup
+                    value={selectedAddress}
+                    onChange={(e) => setSelectedAddress(e.target.value)}
+                  >
+                    {addresses.map((address) => (
+                      <FormControlLabel
+                        key={address.id}
+                        value={address.id}
+                        control={
+                          <Radio
+                            sx={{
+                              color: "#FFA500",
+                              "&.Mui-checked": {
+                                color: "#FFA500",
+                              },
+                            }}
+                          />
+                        }
+                        label={
+                          <Typography
+                            fontFamily="Poppins"
+                            fontSize={{ xs: "14px", sm: "16px" }}
+                            color="#666"
+                          >
+                            {`${address.street}, ${address.city}, ${address.state} - ${address.pincode}`}
+                          </Typography>
+                        }
+                        sx={{ marginBottom: "10px" }}
+                      />
+                    ))}
+                  </RadioGroup>
+
+                  {/* Add Address Form */}
+                  {showAddressForm ? (
+                    <Box sx={{ mt: 2 }}>
+                      <Stack spacing={2}>
+                        <TextField
+                          label="Street Address"
+                          fullWidth
+                          size="small"
+                          value={newAddress.street}
+                          onChange={(e) =>
+                            setNewAddress({
+                              ...newAddress,
+                              street: e.target.value,
+                            })
+                          }
+                        />
+                        <Grid2 container spacing={2}>
+                          <Grid2 size={{ xs: 6 }}>
+                            <TextField
+                              label="City"
+                              fullWidth
+                              size="small"
+                              value={newAddress.city}
+                              onChange={(e) =>
+                                setNewAddress({
+                                  ...newAddress,
+                                  city: e.target.value,
+                                })
+                              }
+                            />
+                          </Grid2>
+                          <Grid2 size={{ xs: 6 }}>
+                            <TextField
+                              label="State"
+                              fullWidth
+                              size="small"
+                              value={newAddress.state}
+                              onChange={(e) =>
+                                setNewAddress({
+                                  ...newAddress,
+                                  state: e.target.value,
+                                })
+                              }
+                            />
+                          </Grid2>
+                        </Grid2>
+                        <TextField
+                          label="Pincode"
+                          fullWidth
+                          size="small"
+                          value={newAddress.pincode}
+                          onChange={(e) => {
+                            // Only allow numbers and limit to 6 digits
+                            const value = e.target.value
+                              .replace(/[^0-9]/g, "")
+                              .slice(0, 6);
+                            setNewAddress({
+                              ...newAddress,
+                              pincode: value,
+                            });
+                          }}
+                          error={
+                            newAddress.pincode !== "" &&
+                            newAddress.pincode.length !== 6
+                          }
+                          helperText={
+                            newAddress.pincode !== "" &&
+                            newAddress.pincode.length !== 6
+                              ? "Pincode must be 6 digits"
+                              : ""
+                          }
+                          inputProps={{
+                            inputMode: "numeric",
+                            pattern: "[0-9]*",
+                          }}
+                        />
+                        <Stack direction="row" spacing={2}>
+                          <Button
+                            onClick={() => setShowAddressForm(false)}
+                            sx={{ color: "#666" }}
+                          >
+                            Cancel
+                          </Button>
+                          <Button
+                            onClick={handleAddAddress}
+                            sx={{
+                              backgroundColor: "#FFA500",
+                              color: "#fff",
+                              "&:hover": { backgroundColor: "#ff8c00" },
+                            }}
+                          >
+                            Save Address
+                          </Button>
+                        </Stack>
+                      </Stack>
+                    </Box>
+                  ) : (
+                    <Button
+                      onClick={() => setShowAddressForm(true)}
+                      sx={{
+                        backgroundColor: "#FFA500",
+                        color: "#fff",
+                        mt: 2,
+                        "&:hover": { backgroundColor: "#ff8c00" },
+                      }}
+                    >
+                      Add New Address
+                    </Button>
+                  )}
+                </Grid2>
+
+                {/* Order Summary Section */}
+                <Grid2 size={{ xs: 12, md: 6 }}>
+                  <Typography
+                    fontFamily="Poppins"
+                    fontWeight={500}
+                    fontSize={{ xs: "20px", sm: "24px" }}
+                    marginBottom="20px"
+                  >
+                    Order Summary
+                  </Typography>
+
+                  <Stack
+                    spacing={2}
+                    sx={{ backgroundColor: "#fff", p: 3, borderRadius: "8px" }}
+                  >
+                    <Stack direction="row" justifyContent="space-between">
+                      <Typography fontFamily="Poppins" color="#666">
+                        Subtotal
+                      </Typography>
+                      <Typography fontFamily="Poppins">₹{subtotal}</Typography>
+                    </Stack>
+                    <Stack direction="row" justifyContent="space-between">
+                      <Typography fontFamily="Poppins" color="#666">
+                        Discount
+                      </Typography>
+                      <Typography fontFamily="Poppins" color="green">
+                        -₹{discount}
+                      </Typography>
+                    </Stack>
+                    <Stack direction="row" justifyContent="space-between">
+                      <Typography fontFamily="Poppins" color="#666">
+                        Delivery Charges
+                      </Typography>
+                      <Typography fontFamily="Poppins">
+                        ₹{deliveryCharges}
+                      </Typography>
+                    </Stack>
+                    <Divider />
+                    <Stack direction="row" justifyContent="space-between">
+                      <Typography fontFamily="Poppins" fontWeight={500}>
+                        Total
+                      </Typography>
+                      <Typography
+                        fontFamily="Poppins"
+                        fontWeight={500}
+                        color="#FFA500"
+                      >
+                        ₹{total}
+                      </Typography>
+                    </Stack>
+
+                    <Button
+                      onClick={handleCheckout}
+                      disabled={!selectedAddress || cartItems.length === 0}
+                      sx={{
+                        backgroundColor: "#FFA500",
+                        color: "#fff",
+                        padding: "15px",
+                        mt: 2,
+                        "&:hover": { backgroundColor: "#ff8c00" },
+                        "&.Mui-disabled": { backgroundColor: "#ccc" },
+                      }}
+                    >
+                      <Typography fontFamily="Poppins">
+                        Proceed to Checkout
+                      </Typography>
+                    </Button>
+                  </Stack>
+                </Grid2>
+              </Grid2>
+            </Paper>
+
+            {/* Order Confirmation Message */}
+            {orderPlaced && (
+              <Typography
+                textAlign="center"
+                fontFamily="Poppins"
+                fontSize="1.2rem"
+                color="green"
+                marginTop={4}
+              >
+                🎉 Thank you for your order! Your delicious meal is on its way.
+              </Typography>
+            )}
+          </>
+        )}
       </Box>
     </>
   );

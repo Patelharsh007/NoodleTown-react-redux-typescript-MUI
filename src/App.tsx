@@ -7,6 +7,8 @@ import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import RestaurantPage from "./pages/RestaurantPage";
 import LoginRegisterPage from "./pages/LoginRegisterPage";
+import { ToastContainer } from "react-toastify";
+import MealProduct from "./pages/MealProduct";
 function App() {
   return (
     <div className="App">
@@ -16,9 +18,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/restaurantPage/:id" element={<RestaurantPage />} />{" "}
+        <Route path="/restaurantPage/:id" element={<RestaurantPage />} />
+        <Route path="/mealProduct/:id" element={<MealProduct />} />{" "}
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

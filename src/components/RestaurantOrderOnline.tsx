@@ -24,6 +24,7 @@ import {
   incrementQuantity,
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
+import { showInfoToast, showSuccessToast } from "../UI/ToastContainer";
 
 type restaurantProps = {
   id: string;
@@ -98,15 +99,24 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
           description: meal.shortDescription,
         })
       );
+      showSuccessToast(`${meal.title} added to cart succesfully`);
     }
   };
 
   const handleIncrementMeal = (mealId: string) => {
+    const item = cartItems.find((item) => item.id === mealId);
     dispatch(incrementQuantity(mealId));
+    if (item) {
+      showInfoToast(`${item.name} quantity increased`);
+    }
   };
 
   const handleDecrementMeal = (mealId: string) => {
+    const item = cartItems.find((item) => item.id === mealId);
     dispatch(decrementQuantity(mealId));
+    if (item) {
+      showInfoToast(`${item.name} quantity decreased`);
+    }
   };
 
   return (
