@@ -5,11 +5,16 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { Badge, Stack, Box } from "@mui/material";
 
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/Store";
+
 type NavbarProps = {
   linkColor?: string;
 };
 
 const Navbar = (props: NavbarProps) => {
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
   return (
     <>
       <Box maxWidth={"1600px"} width={"90%"} margin={"25px auto"}>
@@ -90,7 +95,7 @@ const Navbar = (props: NavbarProps) => {
                 }}
               >
                 <Badge
-                  badgeContent={5}
+                  badgeContent={cartItems.length}
                   sx={{
                     "& .MuiBadge-badge": {
                       backgroundColor: "#ffc300",
