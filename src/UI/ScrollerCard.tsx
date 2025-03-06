@@ -76,26 +76,25 @@ const ScrollerCard = (props: ScrollerCardProp) => {
           />
 
           <Box height={"150px"} margin={"25px 20px"}>
-            <Stack direction={"row"} justifyContent={"space-between"}>
-              <Typography
-                fontFamily={"Inter"}
-                fontWeight={600}
-                fontSize={"18px"}
-                lineHeight={"25.2px"}
-                letterSpacing={"0%"}
-              >
-                {props.Card.title}
-              </Typography>
-              <Typography
-                fontFamily={"Inter"}
-                fontWeight={400}
-                fontSize={"12px"}
-                lineHeight={"16.8px"}
-                letterSpacing={"0%"}
-              >
-                32 min
-              </Typography>
-            </Stack>
+            <Typography
+              fontFamily={"Inter"}
+              fontWeight={600}
+              fontSize={"18px"}
+              lineHeight={"25.2px"}
+              letterSpacing={"0%"}
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                // minHeight: { xs: "48px", sm: "56px", md: "60px" },
+                maxWidth: "70%",
+              }}
+            >
+              {props.Card.title}
+            </Typography>
+
             <Typography
               marginTop={"10px"}
               fontFamily={"Inter"}
@@ -113,7 +112,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 textOverflow: "ellipsis",
               }}
             >
-              Dough, Mozzarella, Cheddar, Blue, Parmesan, dshjxnmz
+              {props.Card.description}
             </Typography>
             <Typography
               marginTop={"30px"}
