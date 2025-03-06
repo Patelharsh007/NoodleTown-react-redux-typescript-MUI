@@ -227,7 +227,7 @@ const CartComponent = () => {
                           display: "-webkit-box",
                           WebkitLineClamp: 2,
                           WebkitBoxOrient: "vertical",
-                          minHeight: { xs: "48px", sm: "56px", md: "60px" },
+                          // minHeight: { xs: "48px", sm: "56px", md: "60px" },
                           maxWidth: "70%",
                         }}
                       >

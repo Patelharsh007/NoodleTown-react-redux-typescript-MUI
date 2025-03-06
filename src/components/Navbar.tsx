@@ -73,7 +73,7 @@ const Navbar = (props: NavbarProps) => {
               width={{ xs: "100%", sm: "auto" }}
             >
               <Link
-                to="/cart"
+                to="/loginRegister"
                 style={{
                   textDecoration: "none",
                   color: props.linkColor,

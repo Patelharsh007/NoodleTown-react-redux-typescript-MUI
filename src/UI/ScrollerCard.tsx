@@ -3,7 +3,13 @@ import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
 
 type ScrollerCardProp = {
-  Card: { imageurl: string };
+  Card: {
+    imageurl: string;
+    title?: string;
+    price?: number;
+    description?: string;
+    isPopular?: boolean;
+  };
 };
 
 const ScrollerCard = (props: ScrollerCardProp) => {
@@ -56,6 +62,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
           <Box
             component={"img"}
             src={props.Card.imageurl}
+            alt={props.Card.title}
             width={"200px"}
             height={"208px"}
             margin={"20px 40px 0"}
@@ -77,7 +84,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 lineHeight={"25.2px"}
                 letterSpacing={"0%"}
               >
-                Silician
+                {props.Card.title}
               </Typography>
               <Typography
                 fontFamily={"Inter"}

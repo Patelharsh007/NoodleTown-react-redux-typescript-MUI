@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 
 import ScrollerCard from "../UI/ScrollerCard";
+import mealItems from "../data/mealItem";
 
 type Category = "Pizza" | "Burger" | "Chinese" | "Drinks" | "Dessert";
 
@@ -91,6 +92,20 @@ const ItemCarosuel = () => {
   const handleCategoryChange = (category: Category) => {
     setItemCategory(category);
   };
+
+  const categories = Array.from(
+    new Set(mealItems.map((item) => item.category))
+  );
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    categories[0] || ""
+  );
+
+  //filter item based on selected category
+
+  const filteredItems = selectedCategory
+    ? mealItems.filter((item) => item.category === selectedCategory)
+    : mealItems;
+
   return (
     <>
       <Box
@@ -123,7 +138,6 @@ const ItemCarosuel = () => {
           display={{ xs: "none", sm: "block" }}
         />
       </Box>
-
       <Box
         maxWidth={"1400px"}
         margin={"auto"}
@@ -134,10 +148,10 @@ const ItemCarosuel = () => {
         justifyContent={"center"}
         gap={"15px"}
       >
-        {["Pizza", "Burger", "Chinese", "Drinks", "Dessert"].map((category) => (
+        {categories.map((category) => (
           <Button
             key={category}
-            onClick={() => handleCategoryChange(category as Category)}
+            onClick={() => setSelectedCategory(category)}
             sx={{
               padding: "10px 20px",
               fontSize: "16px",
@@ -162,56 +176,81 @@ const ItemCarosuel = () => {
           </Button>
         ))}
       </Box>
-
       <Box
-        maxWidth={"1800px"}
-        margin={"auto"}
-        marginBottom={"100px"}
-        padding={"20px"}
-        display={"flex"}
-        flexDirection={"row"}
-        gap={"30px"}
+        maxWidth="1800px"
+        margin="auto"
+        marginBottom="100px"
+        padding="20px"
         sx={{
-          overflowX: "scroll",
-          overflowY: "hidden",
-          whiteSpace: "nowrap",
-          msOverflowStyle: "none",
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
-          scrollbarWidth: "thin",
-          overscrollBehaviorX: "contain",
-          scrollbarColor: "#f8f8f8 transparent",
-          "&::-webkit-scrollbar-button": {
-            display: "none", // Remove the arrows completely
+          position: "relative",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            right: 0,
+            top: 0,
+            height: "100%",
+            width: "100px",
+            background:
+              "linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))",
+            pointerEvents: "none",
+            display: { xs: "none", md: "block" },
           },
         }}
       >
-        {/* Map Function to render each item of scroller */}
-        {itemCategory === "Pizza" &&
-          pizza_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "30px",
+            overflowX: "auto",
+            overflowY: "hidden",
+            scrollBehavior: "smooth",
+            msOverflowStyle: "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+            scrollbarWidth: "none",
+            padding: "4px", // Add padding to show box-shadow
+            justifyContent: filteredItems.length < 4 ? "center" : "flex-start",
+            minHeight: "400px", // Set minimum height to prevent layout shift
+          }}
+        >
+          {filteredItems.map((item) => (
+            <Box
+              key={item.id}
+              sx={{
+                flex: "0 0 auto",
+                width: {
+                  xs: "calc(100% - 30px)",
+                  sm: "calc(50% - 30px)",
+                  md: "calc(33.33% - 30px)",
+                  lg:
+                    filteredItems.length < 4
+                      ? `calc(${100 / filteredItems.length}% - 30px)`
+                      : "calc(25% - 30px)",
+                },
+                maxWidth: {
+                  xs: "100%",
+                  sm: "300px",
+                },
+                // transition: "transform 0.2s ease",
+                // "&:hover": {
+                //   transform: "translateY(-5px)",
+                // },
+              }}
+            >
+              <ScrollerCard
+                Card={{
+                  imageurl: item.image,
+                  title: item.title,
+                  price: item.price,
+                  description: item.shortDescription,
+                  isPopular: item.isPopular,
+                }}
+              />
+            </Box>
           ))}
-        {itemCategory === "Burger" &&
-          burger_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
-          ))}
-        {itemCategory === "Chinese" &&
-          chinese_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
-          ))}
-        {itemCategory === "Chinese" &&
-          chinese_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
-          ))}
-        {itemCategory === "Drinks" &&
-          drinks_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
-          ))}
-        {itemCategory === "Dessert" &&
-          dessert_carddetails.map((item, index) => (
-            <ScrollerCard key={index} Card={item} />
-          ))}
+        </Box>
       </Box>
     </>
   );
