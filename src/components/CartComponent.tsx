@@ -30,6 +30,7 @@ import {
   showInfoToast,
   showErrorToast,
 } from "../UI/ToastContainer";
+import { Link } from "react-router-dom";
 
 interface Address {
   id: string;
@@ -224,19 +225,21 @@ const CartComponent = () => {
                   //   margin={{ xs: "10px", sm: "30px" }}
                   sx={{ backgroundColor: "#F9F9F9" }}
                 >
-                  <Box
-                    component={"img"}
-                    alt={item.image}
-                    src={item.image}
-                    marginBottom={"30px"}
-                    height={{ xs: "250px", sm: "190px" }}
-                    width={"100%"}
-                    borderRadius={"16px"}
-                    sx={{
-                      objectFit: "cover",
-                      objectPosition: "center center",
-                    }}
-                  />
+                  <Link to={`/product/${item.id}`}>
+                    <Box
+                      component={"img"}
+                      alt={item.image}
+                      src={item.image}
+                      marginBottom={"30px"}
+                      height={{ xs: "250px", sm: "190px" }}
+                      width={"100%"}
+                      borderRadius={"16px"}
+                      sx={{
+                        objectFit: "cover",
+                        objectPosition: "center center",
+                      }}
+                    />
+                  </Link>
                   <Stack spacing={{ xs: 1.5, sm: 2 }}>
                     <Stack direction={"row"} justifyContent={"space-between"}>
                       <Typography

@@ -6,9 +6,9 @@ import FoodByWeatherCard from "../UI/FoodByWeatherCard";
 import mealItems from "../data/mealItem";
 
 const FoodByWeather = () => {
-  const num = Math.random();
+  const num1 = Math.random();
 
-  const weatherMeals = mealItems.sort(() => num - 0.5).slice(0, 6);
+  const weatherMeals = mealItems.sort(() => num1 - 0.5).slice(0, 6);
 
   return (
     <>

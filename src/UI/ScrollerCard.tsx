@@ -96,7 +96,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             </Typography>
           </Box>
           <Link
-            to={`/productDetails/${props.Card.id}`}
+            to={`/product/${props.Card.id}`}
             style={{ textDecoration: "none" }}
           >
             <Box

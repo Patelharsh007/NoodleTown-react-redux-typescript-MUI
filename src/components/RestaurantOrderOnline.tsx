@@ -266,7 +266,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                     <React.Fragment key={meal.id}>
                       <Grid2 size={{ xs: 12, sm: 6 }} paddingY={"10px"}>
                         <Link
-                          to={`/productDetails/${meal.id}`}
+                          to={`/product/${meal.id}`}
                           style={{ textDecoration: "none" }}
                         >
                           <Box
