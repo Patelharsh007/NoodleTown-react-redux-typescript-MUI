@@ -7,85 +7,6 @@ import mealItems from "../data/mealItem";
 
 type Category = "Pizza" | "Burger" | "Chinese" | "Drinks" | "Dessert";
 
-type Carddetails = {
-  imageurl: string;
-}[];
-
-const pizza_carddetails: Carddetails = [
-  { imageurl: "images/Pizza/Pizza1.jpeg" },
-  { imageurl: "images/Pizza/Pizza2.jpeg" },
-  { imageurl: "images/Pizza/Pizza3.jpeg" },
-  { imageurl: "images/Pizza/Pizza4.jpeg" },
-  { imageurl: "images/Pizza/Pizza5.jpeg" },
-  { imageurl: "images/Pizza/Pizza6.jpeg" },
-  { imageurl: "images/Pizza/Pizza1.jpeg" },
-  { imageurl: "images/Pizza/Pizza2.jpeg" },
-  { imageurl: "images/Pizza/Pizza3.jpeg" },
-  { imageurl: "images/Pizza/Pizza4.jpeg" },
-  { imageurl: "images/Pizza/Pizza5.jpeg" },
-  { imageurl: "images/Pizza/Pizza6.jpeg" },
-];
-
-const dessert_carddetails: Carddetails = [
-  { imageurl: "images/Dessert/Dessert1.jpeg" },
-  { imageurl: "images/Dessert/Dessert2.jpeg" },
-  { imageurl: "images/Dessert/Dessert3.jpeg" },
-  { imageurl: "images/Dessert/Dessert4.jpeg" },
-  { imageurl: "images/Dessert/Dessert5.jpeg" },
-  { imageurl: "images/Dessert/Dessert6.jpeg" },
-  { imageurl: "images/Dessert/Dessert1.jpeg" },
-  { imageurl: "images/Dessert/Dessert2.jpeg" },
-  { imageurl: "images/Dessert/Dessert3.jpeg" },
-  { imageurl: "images/Dessert/Dessert4.jpeg" },
-  { imageurl: "images/Dessert/Dessert5.jpeg" },
-  { imageurl: "images/Dessert/Dessert6.jpeg" },
-];
-
-const burger_carddetails: Carddetails = [
-  { imageurl: "images/Burger/Burger1.jpeg" },
-  { imageurl: "images/Burger/Burger2.jpeg" },
-  { imageurl: "images/Burger/Burger3.jpeg" },
-  { imageurl: "images/Burger/Burger4.jpeg" },
-  { imageurl: "images/Burger/Burger5.jpeg" },
-  { imageurl: "images/Burger/Burger6.jpeg" },
-  { imageurl: "images/Burger/Burger1.jpeg" },
-  { imageurl: "images/Burger/Burger2.jpeg" },
-  { imageurl: "images/Burger/Burger3.jpeg" },
-  { imageurl: "images/Burger/Burger4.jpeg" },
-  { imageurl: "images/Burger/Burger5.jpeg" },
-  { imageurl: "images/Burger/Burger6.jpeg" },
-];
-
-const chinese_carddetails: Carddetails = [
-  { imageurl: "images/Chinese/Chinese1.jpeg" },
-  { imageurl: "images/Chinese/Chinese2.jpeg" },
-  { imageurl: "images/Chinese/Chinese3.jpeg" },
-  { imageurl: "images/Chinese/Chinese4.jpeg" },
-  { imageurl: "images/Chinese/Chinese5.jpeg" },
-  { imageurl: "images/Chinese/Chinese6.jpeg" },
-  { imageurl: "images/Chinese/Chinese1.jpeg" },
-  { imageurl: "images/Chinese/Chinese2.jpeg" },
-  { imageurl: "images/Chinese/Chinese3.jpeg" },
-  { imageurl: "images/Chinese/Chinese4.jpeg" },
-  { imageurl: "images/Chinese/Chinese5.jpeg" },
-  { imageurl: "images/Chinese/Chinese6.jpeg" },
-];
-
-const drinks_carddetails: Carddetails = [
-  { imageurl: "images/Drinks/Drinks1.jpeg" },
-  { imageurl: "images/Drinks/Drinks2.jpeg" },
-  { imageurl: "images/Drinks/Drinks3.jpeg" },
-  { imageurl: "images/Drinks/Drinks4.jpeg" },
-  { imageurl: "images/Drinks/Drinks5.jpeg" },
-  { imageurl: "images/Drinks/Drinks6.jpeg" },
-  { imageurl: "images/Drinks/Drinks1.jpeg" },
-  { imageurl: "images/Drinks/Drinks2.jpeg" },
-  { imageurl: "images/Drinks/Drinks3.jpeg" },
-  { imageurl: "images/Drinks/Drinks4.jpeg" },
-  { imageurl: "images/Drinks/Drinks5.jpeg" },
-  { imageurl: "images/Drinks/Drinks6.jpeg" },
-];
-
 const ItemCarosuel = () => {
   const [itemCategory, setItemCategory] = useState<Category>("Pizza");
 
@@ -256,23 +177,13 @@ const ItemCarosuel = () => {
               key={item.id}
               sx={{
                 flex: "0 0 auto",
-
                 // transition: "transform 0.2s ease",
                 // "&:hover": {
                 //   transform: "translateY(-5px)",
                 // },
               }}
             >
-              <ScrollerCard
-                Card={{
-                  imageurl: item.image,
-                  title: item.title,
-                  price: item.price,
-                  description: item.shortDescription,
-                  isPopular: item.isPopular,
-                  restaurantName: item.restaurantName,
-                }}
-              />
+              <ScrollerCard Card={item} />
             </Box>
           ))}
         </Box>

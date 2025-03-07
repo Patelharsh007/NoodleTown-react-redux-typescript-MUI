@@ -25,7 +25,7 @@ import {
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
 import { showInfoToast, showSuccessToast } from "../UI/ToastContainer";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type restaurantProps = {
   id: string;
@@ -49,11 +49,9 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
     fetchRestaurantData();
   }, [id]);
 
-  // useEffect for meal items
   useEffect(() => {
     const fetchMealData = async () => {
       if (restaurant?.id) {
-        // check for null  restaurant
         const fetchedMealItems = mealItems.filter(
           (meal) => meal.restaurantId === restaurant.id
         );
@@ -71,7 +69,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
   //redux cart
   const dispatch = useDispatch();
 
-  // Add selector to get cart items
+  // .selector to get cart items
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const isItemInCart = (mealId: string) => {
@@ -195,10 +193,11 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
                   }
                 )
               ) : (
-                <p>Loading...</p> // or handle the case when restaurant is null/undefined
+                <p>Loading...</p>
               )}
             </Stack>
           </Grid2>
+
           <Grid2
             size={{ xs: 12, sm: 9 }}
             paddingLeft={{ xs: "0px", sm: "30px" }}

@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
 
-type ScrollerCardProp = {
-  Card: {
-    imageurl: string;
-    title?: string;
-    price?: number;
-    description?: string;
-    isPopular?: boolean;
-    restaurantName?: string;
-  };
-};
+import { useDispatch, UseDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/slices/CartSlice";
+import { showSuccessToast } from "./ToastContainer";
+
+import { MealItemType } from "../data/mealItemTypes";
+import { RootState } from "../redux/Store";
+import { Link } from "react-router-dom";
+
+interface ScrollerCardProp {
+  Card: MealItemType;
+}
 
 const ScrollerCard = (props: ScrollerCardProp) => {
+  const dispatch = useDispatch();
+
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
+  const isItemInCart = (mealId: string) => {
+    return cartItems.some((item) => item.id === mealId);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: props.Card.id,
+        itemId: props.Card.id,
+        price: props.Card.price,
+        quantity: 1,
+        image: props.Card.image,
+        name: props.Card.title,
+        restaurantId: props.Card.restaurantId,
+        category: props.Card.category,
+        description: props.Card.shortDescription,
+      })
+    );
+    showSuccessToast(`${props.Card.title} added to cart succesfully`);
+  };
+
   return (
     <Box height={"550px"} mx="auto">
       <Box
@@ -60,21 +86,26 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               Popular
             </Typography>
           </Box>
-          <Box
-            component={"img"}
-            src={props.Card.imageurl}
-            alt={props.Card.title}
-            width={"200px"}
-            height={"208px"}
-            margin={"20px 40px 0"}
-            borderRadius={"10px"}
-            boxShadow={"10px 5px 10px 0px #8F5C201A"}
-            sx={{
-              objectFit: "cover",
-              objectPosition: "center center",
-              overflowY: "hidden",
-            }}
-          />
+          <Link
+            to={`/productDetails/${props.Card.id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <Box
+              component={"img"}
+              src={props.Card.image}
+              alt={props.Card.title}
+              width={"200px"}
+              height={"208px"}
+              margin={"20px 40px 0"}
+              borderRadius={"10px"}
+              boxShadow={"10px 5px 10px 0px #8F5C201A"}
+              sx={{
+                objectFit: "cover",
+                objectPosition: "center center",
+                overflowY: "hidden",
+              }}
+            />
+          </Link>
 
           {/* <Box height={"150px"} margin={"25px 20px"}> */}
           <Stack marginTop={"20px"} spacing={"10px"}>
@@ -135,7 +166,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 textOverflow: "ellipsis",
               }}
             >
-              {props.Card.description}
+              {props.Card.shortDescription}
             </Typography>
 
             <Typography
@@ -148,7 +179,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               letterSpacing={"0%"}
               textAlign={"center"}
             >
-              ₹{props.Card.price}
+              ₹ {props.Card.price}
             </Typography>
           </Stack>
           {/* </Box> */}
@@ -180,11 +211,17 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             zIndex={3}
             sx={{
               cursor: "pointer",
+              backgroundColor: "#fff",
+              transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "#F6B716",
+                transform: "scale(1.1)",
                 "& .MuiSvgIcon-root": {
                   color: "#ffffff",
                 },
+              },
+              "&:active": {
+                transform: "scale(0.95)",
               },
             }}
           >
@@ -194,6 +231,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 position: "absolute",
                 top: "5px",
                 left: "5px",
+                transition: "color 0.3s ease",
               }}
             />
           </Box>

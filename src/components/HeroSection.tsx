@@ -59,7 +59,7 @@ const HeroSection = () => {
           display={"flex"}
           flexDirection={"column"}
           gap={{ xs: "40px", sm: "80px" }}
-          marginTop={{ xs: "120px", sm: "200px" }}
+          marginTop={{ xs: "90px", sm: "140px" }}
         >
           <Stack
             direction="column"
