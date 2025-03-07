@@ -1,8 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 type BestDelieveredBoxProps = {
-  box: { imageurl: string; title: string };
+  box: { id: string; imageurl: string; title: string };
 };
 
 const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
@@ -18,17 +19,22 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
         justifyContent={"space-between"}
         position={"relative"}
       >
-        <Box
-          component={"img"}
-          src={props.box.imageurl}
-          alt={props.box.title}
-          width={"246px"}
-          height={"246px"}
-          borderRadius={"50%"}
-          style={{
-            objectFit: "cover",
-          }}
-        />
+        <Link
+          to={`/product/${props.box.id}`}
+          style={{ textDecoration: "none" }}
+        >
+          <Box
+            component={"img"}
+            src={props.box.imageurl}
+            alt={props.box.title}
+            width={"246px"}
+            height={"246px"}
+            borderRadius={"50%"}
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </Link>
         <Typography
           fontFamily={"Poppins"}
           fontSize={"20px"}

@@ -11,7 +11,11 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-import { showSuccessToast, showInfoToast } from "../UI/ToastContainer";
+import {
+  showSuccessToast,
+  showInfoToast,
+  showErrorToast,
+} from "../UI/ToastContainer";
 
 import mealItems from "../data/mealItem";
 import { MealItemType } from "../data/mealItemTypes";
@@ -58,9 +62,16 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
     showSuccessToast(`${meal.title} added to cart`);
   };
 
-  const handleIncrement = () => {
-    dispatch(incrementQuantity(meal.id));
-    showInfoToast(`${meal.title} quantity increased`);
+  const handleIncrement = (itemId: string) => {
+    const item = cartItems.find((item) => item.id === itemId);
+    if (item && item.quantity >= 5) {
+      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
+      return;
+    }
+    dispatch(incrementQuantity(itemId));
+    if (item) {
+      showInfoToast(`${item.name} quantity increased`);
+    }
   };
 
   const handleDecrement = () => {
@@ -214,7 +225,7 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
                     </Typography>
                   </Button>
                   <Button
-                    onClick={handleIncrement}
+                    onClick={() => handleIncrement(meal.id)}
                     sx={{
                       flex: 1,
                       backgroundColor: "#FFA500",

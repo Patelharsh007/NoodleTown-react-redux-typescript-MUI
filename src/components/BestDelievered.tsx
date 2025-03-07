@@ -2,6 +2,10 @@ import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import BestDelieveredBox from "../UI/BestDelieveredBox";
 
+import restaurants from "../data/restaurantsData";
+import { RestaurantType } from "../data/restaurantTypes";
+import mealItems from "../data/mealItem";
+
 type dummy_best_delieverd_data = {
   imageurl: string;
   title: string;
@@ -23,6 +27,10 @@ const DUMMY_BEST_DELIEVERED_DATA: dummy_best_delieverd_data = [
 ];
 
 const BestDelievered: React.FC = () => {
+  const num1 = Math.random();
+
+  const bestMeals = mealItems.sort(() => num1 - 0.3).slice(0, 3);
+
   return (
     <>
       <Box
@@ -79,8 +87,17 @@ const BestDelievered: React.FC = () => {
             },
           }}
         >
-          {DUMMY_BEST_DELIEVERED_DATA.map((item) => {
+          {/* {DUMMY_BEST_DELIEVERED_DATA.map((item) => {
             return <BestDelieveredBox box={item} key={item.title} />;
+          })} */}
+
+          {bestMeals.map((item) => {
+            return (
+              <BestDelieveredBox
+                box={{ id: item.id, imageurl: item.image, title: item.title }}
+                key={item.title}
+              />
+            );
           })}
         </Box>
       </Box>

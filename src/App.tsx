@@ -9,10 +9,12 @@ import RestaurantPage from "./pages/RestaurantPage";
 import Auth from "./pages/Auth";
 import { ToastContainer } from "react-toastify";
 import ProductDetails from "./pages/ProductDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/auth" element={<Auth />} />
