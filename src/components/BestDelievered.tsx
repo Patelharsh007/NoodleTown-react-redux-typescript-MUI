@@ -22,7 +22,7 @@ const DUMMY_BEST_DELIEVERED_DATA: dummy_best_delieverd_data = [
   },
 ];
 
-const BestDelievered = () => {
+const BestDelievered: React.FC = () => {
   return (
     <>
       <Box

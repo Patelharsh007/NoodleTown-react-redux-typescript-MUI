@@ -57,7 +57,7 @@ const TopBrands = () => {
           {/* Rendering all brands */}
           {restaurants.map((restaurant) => (
             <Link
-              to={`/restaurantPage/${restaurant.id}`}
+              to={`/restaurant/${restaurant.id}`}
               key={restaurant.id}
               style={{ textDecoration: "none", color: "inherit" }}
             >

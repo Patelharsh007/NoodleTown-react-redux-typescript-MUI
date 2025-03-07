@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import ProductDetailsCompo from "../components/ProductDetailsCompo";
+import Product from "../components/Product";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const ProductDetails = () => {
   return (
     <>
       <Navbar linkColor="#000000" />
-      <ProductDetailsCompo id={id} />
+      <Product id={id} />
     </>
   );
 };

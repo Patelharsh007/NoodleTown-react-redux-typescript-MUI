@@ -3,7 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 import React from "react";
 
-const InstagramBox = () => {
+const InstagramBox: React.FC = () => {
   return (
     <>
       <Box

@@ -41,7 +41,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-export const LoginRegister = () => {
+export const LoginRegister: React.FC = () => {
   const navigate = useNavigate();
   const [tab, setTab] = useState(0);
   const [showPassword, setShowPassword] = useState(false);

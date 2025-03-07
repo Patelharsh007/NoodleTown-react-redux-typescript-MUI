@@ -16,8 +16,8 @@ type restaurantProps = {
   id: string;
 };
 
-const Restaurant = (props: restaurantProps) => {
-  const id = props.id;
+const Restaurant: React.FC<restaurantProps> = ({ id }) => {
+  // const restaurantId = id;
   const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
 
   useEffect(() => {

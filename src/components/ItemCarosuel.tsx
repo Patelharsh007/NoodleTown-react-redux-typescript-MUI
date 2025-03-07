@@ -7,7 +7,7 @@ import mealItems from "../data/mealItem";
 
 type Category = string;
 
-const ItemCarosuel = () => {
+const ItemCarosuel: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>("");
   const getTopCategories = () => {
     // CategoryCount item(object)

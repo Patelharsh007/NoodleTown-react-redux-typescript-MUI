@@ -9,7 +9,7 @@ type dummy_dining_out_data = {
   statement: string;
 }[];
 
-const DiningOut = () => {
+const DiningOut: React.FC = () => {
   const DUMMY_DINING_OUT_DATA: dummy_dining_out_data = [
     {
       imgurl: "/images/Dining_Out/img1.jpeg",

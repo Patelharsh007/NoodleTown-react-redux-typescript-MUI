@@ -27,7 +27,7 @@ const DUMMY_FOOD_BY_CATEGORY_DATA: foodByCategoryGroup[] = [
   },
 ];
 
-const FoodCategoryGroup = () => {
+const FoodCategoryGroup: React.FC = () => {
   return (
     <>
       <Box

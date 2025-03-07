@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Grid2, Container } from "@mui/material";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <Container
       sx={{

@@ -12,7 +12,7 @@ type NavbarProps = {
   linkColor?: string;
 };
 
-const Navbar = (props: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({ linkColor }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
@@ -59,7 +59,7 @@ const Navbar = (props: NavbarProps) => {
                 to="/menu"
                 style={{
                   textDecoration: "none",
-                  color: props.linkColor,
+                  color: linkColor,
                 }}
               >
                 Menu
@@ -76,7 +76,7 @@ const Navbar = (props: NavbarProps) => {
                 to="/auth"
                 style={{
                   textDecoration: "none",
-                  color: props.linkColor,
+                  color: linkColor,
                   padding: "0 20px",
                   // paddingX:"20px"
                 }}
@@ -89,7 +89,7 @@ const Navbar = (props: NavbarProps) => {
                 to="/cart"
                 style={{
                   textDecoration: "none",
-                  color: props.linkColor,
+                  color: linkColor,
                   padding: "0 15px",
                   // paddingX:"20px",
                 }}
@@ -99,7 +99,7 @@ const Navbar = (props: NavbarProps) => {
                   sx={{
                     "& .MuiBadge-badge": {
                       backgroundColor: "#ffc300",
-                      color: props.linkColor,
+                      color: linkColor,
                     },
                   }}
                 >

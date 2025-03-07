@@ -28,10 +28,10 @@ type productDetailProp = {
   id: string;
 };
 
-const ProductDetailsCompo = (props: productDetailProp) => {
+const Product: React.FC<productDetailProp> = ({ id }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const meal = mealItems.find((item) => item.id === props.id);
+  const meal = mealItems.find((item) => item.id === id);
 
   if (!meal) {
     return <Navigate to="/" replace />;
@@ -263,4 +263,4 @@ const ProductDetailsCompo = (props: productDetailProp) => {
   );
 };
 
-export default ProductDetailsCompo;
+export default Product;

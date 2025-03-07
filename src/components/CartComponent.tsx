@@ -49,7 +49,7 @@ interface NewAddress {
 }
 
 //main component
-const CartComponent = () => {
+const CartComponent: React.FC = () => {
   const dispatch = useDispatch();
 
   //get items of cart from redux satore

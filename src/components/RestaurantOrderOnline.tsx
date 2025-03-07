@@ -35,8 +35,7 @@ type restaurantProps = {
   id: string;
 };
 
-const RestaurantOrderOnline = (props: restaurantProps) => {
-  const id = props.id;
+const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
   const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
   const [mealItem, setMealItem] = useState<MealItemType[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(

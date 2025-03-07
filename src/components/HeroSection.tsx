@@ -12,7 +12,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Navbar from "./Navbar";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState("Surat");
   const [searchValue, setSearchValue] = useState("");
 

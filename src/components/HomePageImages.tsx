@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-const HomePageImages = () => {
+const HomePageImages: React.FC = () => {
   return (
     <>
       {/* PizzaImageBanner */}
