@@ -161,42 +161,43 @@ const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
               {restaurant && restaurant.categories ? (
                 ["Recommended", ...restaurant.categories].map(
                   (category, index) => {
-                    const isSelected = selectedCategory === category;
-                    return (
-                      <Button
-                        key={index}
-                        onClick={() => handleCategoryClick(category)}
-                        sx={{
-                          color: isSelected ? "#FFFFFF" : "#000000",
-                          backgroundColor: isSelected
-                            ? "#FFC300"
-                            : "transparent",
-                          "&:hover": {
-                            backgroundColor: "#FFC300",
-                            borderColor: "#FFC300",
-                            "& .MuiTypography-root": {
-                              color: "#FFFFFF",
+                    const categoryCount =
+                      category === "Recommended"
+                        ? mealItem.filter((item) => item.isPopular).length
+                        : mealItem.filter((item) => item.category === category)
+                            .length;
+                    if (categoryCount > 0) {
+                      const isSelected = selectedCategory === category;
+                      return (
+                        <Button
+                          key={index}
+                          onClick={() => handleCategoryClick(category)}
+                          sx={{
+                            color: isSelected ? "#FFFFFF" : "#000000",
+                            backgroundColor: isSelected
+                              ? "#FFC300"
+                              : "transparent",
+                            "&:hover": {
+                              backgroundColor: "#FFC300",
+                              borderColor: "#FFC300",
+                              "& .MuiTypography-root": {
+                                color: "#FFFFFF",
+                              },
                             },
-                          },
-                        }}
-                      >
-                        <Typography
-                          fontFamily="Poppins"
-                          fontWeight={400}
-                          fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                          lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
-                          color="inherit"
+                          }}
                         >
-                          {category} (
-                          {category === "Recommended"
-                            ? mealItem.filter((item) => item.isPopular).length
-                            : mealItem.filter(
-                                (item) => item.category === category
-                              ).length}
-                          )
-                        </Typography>
-                      </Button>
-                    );
+                          <Typography
+                            fontFamily="Poppins"
+                            fontWeight={400}
+                            fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
+                            lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
+                            color="inherit"
+                          >
+                            {category} ({categoryCount})
+                          </Typography>
+                        </Button>
+                      );
+                    }
                   }
                 )
               ) : (
