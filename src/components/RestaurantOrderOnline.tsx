@@ -24,7 +24,11 @@ import {
   incrementQuantity,
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
-import { showInfoToast, showSuccessToast } from "../UI/ToastContainer";
+import {
+  showErrorToast,
+  showInfoToast,
+  showSuccessToast,
+} from "../UI/ToastContainer";
 import { Link } from "react-router-dom";
 
 type restaurantProps = {
@@ -104,6 +108,10 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
 
   const handleIncrementMeal = (mealId: string) => {
     const item = cartItems.find((item) => item.id === mealId);
+    if (item && item.quantity >= 5) {
+      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
+      return;
+    }
     dispatch(incrementQuantity(mealId));
     if (item) {
       showInfoToast(`${item.name} quantity increased`);
@@ -148,7 +156,7 @@ const RestaurantOrderOnline = (props: restaurantProps) => {
               },
             }}
           >
-            <Stack marginTop={{ xs: "0px", sm: "50px" }}>
+            <Stack marginTop={{ xs: "0px", sm: "50px" }} spacing={1}>
               {/* {restaurant?.categories.unshift("Recommended")} */}
 
               {restaurant && restaurant.categories ? (

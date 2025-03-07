@@ -3,8 +3,12 @@ import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
 
 import { useDispatch, UseDispatch, useSelector } from "react-redux";
-import { addToCart } from "../redux/slices/CartSlice";
-import { showSuccessToast } from "./ToastContainer";
+import { addToCart, removeFromCart } from "../redux/slices/CartSlice";
+import {
+  showErrorToast,
+  showInfoToast,
+  showSuccessToast,
+} from "./ToastContainer";
 
 import { MealItemType } from "../data/mealItemTypes";
 import { RootState } from "../redux/Store";
@@ -24,20 +28,25 @@ const ScrollerCard = (props: ScrollerCardProp) => {
   };
 
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        id: props.Card.id,
-        itemId: props.Card.id,
-        price: props.Card.price,
-        quantity: 1,
-        image: props.Card.image,
-        name: props.Card.title,
-        restaurantId: props.Card.restaurantId,
-        category: props.Card.category,
-        description: props.Card.shortDescription,
-      })
-    );
-    showSuccessToast(`${props.Card.title} added to cart succesfully`);
+    if (isItemInCart(props.Card.id)) {
+      dispatch(removeFromCart(props.Card.id));
+      showInfoToast(`${props.Card.title} removed from cart`);
+    } else {
+      dispatch(
+        addToCart({
+          id: props.Card.id,
+          itemId: props.Card.id,
+          price: props.Card.price,
+          quantity: 1,
+          image: props.Card.image,
+          name: props.Card.title,
+          restaurantId: props.Card.restaurantId,
+          category: props.Card.category,
+          description: props.Card.shortDescription,
+        })
+      );
+      showSuccessToast(`${props.Card.title} added to cart succesfully`);
+    }
   };
 
   return (
@@ -200,9 +209,11 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             }}
           />
           <Box
+            component={"button"}
+            onClick={handleAddToCart}
             id={"circle"}
-            width={"30px"}
-            height={"30px"}
+            width={"33px"}
+            height={"33px"}
             borderRadius={"50%"}
             border={"2px solid rgba(236, 238, 246, 1)"}
             position={"absolute"}
@@ -211,10 +222,15 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             zIndex={3}
             sx={{
               cursor: "pointer",
-              backgroundColor: "#fff",
+              backgroundColor: isItemInCart(props.Card.id) ? "#F6B716" : "#fff",
+              color: isItemInCart(props.Card.id) ? "#fff" : "#000000",
               transition: "all 0.3s ease",
               "&:hover": {
-                backgroundColor: "#F6B716",
+                backgroundColor: isItemInCart(props.Card.id)
+                  ? "#ff8c00"
+                  : "#F6B716",
+                color: isItemInCart(props.Card.id) ? "#fff" : "#000000",
+
                 transform: "scale(1.1)",
                 "& .MuiSvgIcon-root": {
                   color: "#ffffff",
@@ -227,7 +243,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
           >
             <ShoppingBag
               sx={{
-                fontSize: "20px",
+                fontSize: "18px",
                 position: "absolute",
                 top: "5px",
                 left: "5px",

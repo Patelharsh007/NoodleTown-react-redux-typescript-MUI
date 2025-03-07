@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Box, Button, Typography } from "@mui/material";
 
 import ScrollerCard from "../UI/ScrollerCard";
 import mealItems from "../data/mealItem";
 
-type Category = "Pizza" | "Burger" | "Chinese" | "Drinks" | "Dessert";
+type Category = string;
 
 const ItemCarosuel = () => {
-  const [itemCategory, setItemCategory] = useState<Category>("Pizza");
-
-  const handleCategoryChange = (category: Category) => {
-    setItemCategory(category);
-  };
-
+  const [selectedCategory, setSelectedCategory] = useState<Category>("");
   const getTopCategories = () => {
     // CategoryCount item(object)
     const categoryCount: { [key: string]: number } = {};
@@ -45,9 +40,11 @@ const ItemCarosuel = () => {
   // top categories
   const categories = getTopCategories();
 
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    categories[0] || ""
-  );
+  useEffect(() => {
+    if (categories.length > 0 && !selectedCategory) {
+      setSelectedCategory(categories[0]);
+    }
+  }, [categories]);
 
   //filter item based on selected category
   const filteredItems = selectedCategory
@@ -105,12 +102,12 @@ const ItemCarosuel = () => {
               fontSize: "16px",
               cursor: "pointer",
               border:
-                itemCategory === category
+                selectedCategory === category
                   ? "2px solid #F6B716"
                   : "2px solid #ECEEF6",
               borderRadius: "45px",
-              bgcolor: itemCategory === category ? "#F6B716" : "#ECEEF6",
-              color: itemCategory === category ? "white" : "inherit",
+              bgcolor: selectedCategory === category ? "#F6B716" : "#ECEEF6",
+              color: selectedCategory === category ? "white" : "inherit",
               textTransform: "none",
 
               "&:hover": {
@@ -177,10 +174,10 @@ const ItemCarosuel = () => {
               key={item.id}
               sx={{
                 flex: "0 0 auto",
-                // transition: "transform 0.2s ease",
-                // "&:hover": {
-                //   transform: "translateY(-5px)",
-                // },
+                transition: "transform 0.2s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
               }}
             >
               <ScrollerCard Card={item} />

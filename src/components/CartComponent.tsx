@@ -25,7 +25,11 @@ import {
   clearCart,
 } from "../redux/slices/CartSlice";
 
-import { showSuccessToast, showInfoToast } from "../UI/ToastContainer";
+import {
+  showSuccessToast,
+  showInfoToast,
+  showErrorToast,
+} from "../UI/ToastContainer";
 
 interface Address {
   id: string;
@@ -52,6 +56,10 @@ const CartComponent = () => {
 
   const handleIncrement = (itemId: string) => {
     const item = cartItems.find((item) => item.id === itemId);
+    if (item && item.quantity >= 5) {
+      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
+      return;
+    }
     dispatch(incrementQuantity(itemId));
     if (item) {
       showInfoToast(`${item.name} quantity increased`);
@@ -66,6 +74,7 @@ const CartComponent = () => {
     }
   };
 
+  // Address
   const [selectedAddress, setSelectedAddress] = useState<string>("");
   const [addresses, setAddresses] = useState<Address[]>([
     {
@@ -83,13 +92,29 @@ const CartComponent = () => {
     state: "",
     pincode: "",
   });
+
+  // Checkout--- totaldiscount etc
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [discount, setDiscount] = useState(0);
+  const [couponCode, setCouponCode] = useState("");
+  const [couponError, setCouponError] = useState<string | null>(null);
+
+  const handleApplyCoupon = () => {
+    if (couponCode.length === 6) {
+      setDiscount(50); //static copuon value
+      showSuccessToast("Coupon applied: Got ₹50/- off");
+      setCouponError(null);
+    } else {
+      setCouponError("Please entervalid 6 digit coupon code");
+      setDiscount(0);
+    }
+  };
 
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  const discount = 0;
+
   const deliveryCharges = 40;
   const total = subtotal - discount + deliveryCharges;
 
@@ -264,51 +289,6 @@ const CartComponent = () => {
                     >
                       {item.description}
                     </Typography>
-                    {/* <Stack
-                        direction={"column"}
-                        justifyContent={"space-between"}
-                        spacing={1}
-                      >
-                        <TextField
-                          id="search-value"
-                          name="search"
-                          placeholder="Apply coupon code"
-                          fullWidth
-                          sx={{
-                            backgroundColor: "#F3F3F3",
-                            color: "#848484",
-                            fontFamily: "Poppins",
-                            fontWeight: 400,
-                            fontSize: { xs: "12px", sm: "14px" },
-                            lineHeight: { xs: "19px", sm: "21px" },
-                            letterSpacing: "0%",
-                            "& .MuiOutlinedInput-root": {
-                              height: { xs: "40px", sm: "auto" },
-                            },
-                          }}
-                        />
-                        <Button
-                          sx={{
-                            backgroundColor: "#FFA500",
-                            paddingX: { xs: "15px", sm: "25px" },
-                            minWidth: { xs: "100%", sm: "auto" },
-                            height: { xs: "40px", sm: "auto" },
-                            "&:hover": {
-                              backgroundColor: "#ff8c00",
-                            },
-                          }}
-                        >
-                          <Typography
-                            fontFamily={"Poppins"}
-                            fontWeight={400}
-                            fontSize={{ xs: "14px", sm: "16px", md: "18px" }}
-                            lineHeight={{ xs: "21px", sm: "24px", md: "27px" }}
-                            color={"#FFFFFF"}
-                          >
-                            Apply
-                          </Typography>
-                        </Button>
-                      </Stack> */}
 
                     {/* Quantity Controls */}
                     <ButtonGroup
@@ -626,6 +606,60 @@ const CartComponent = () => {
                     spacing={2}
                     sx={{ backgroundColor: "#fff", p: 3, borderRadius: "8px" }}
                   >
+                    <Stack
+                      direction={{ xs: "column", sm: "row" }}
+                      justifyContent={"space-between"}
+                      spacing={1}
+                    >
+                      <TextField
+                        value={couponCode}
+                        onChange={(e) =>
+                          setCouponCode(e.target.value.toUpperCase())
+                        }
+                        placeholder="Apply coupon code"
+                        fullWidth
+                        error={Boolean(couponError)}
+                        helperText={
+                          couponCode !== "" && couponCode.length !== 6
+                            ? "Coupon Code must be 6 letter long"
+                            : ""
+                        }
+                        sx={{
+                          backgroundColor: "#F3F3F3",
+                          color: "#848484",
+                          fontFamily: "Poppins",
+                          fontWeight: 400,
+                          fontSize: { xs: "12px", sm: "14px" },
+                          lineHeight: { xs: "19px", sm: "21px" },
+                          letterSpacing: "0%",
+                          "& .MuiOutlinedInput-root": {
+                            height: { xs: "40px", sm: "auto" },
+                          },
+                        }}
+                      />
+                      <Button
+                        onClick={handleApplyCoupon}
+                        sx={{
+                          backgroundColor: "#FFA500",
+                          paddingX: { xs: "15px", sm: "25px" },
+                          minWidth: { xs: "100%", sm: "auto" },
+                          height: { xs: "40px", sm: "auto" },
+                          "&:hover": {
+                            backgroundColor: "#ff8c00",
+                          },
+                        }}
+                      >
+                        <Typography
+                          fontFamily={"Poppins"}
+                          fontWeight={400}
+                          fontSize={{ xs: "14px", sm: "16px", md: "18px" }}
+                          lineHeight={{ xs: "21px", sm: "24px", md: "27px" }}
+                          color={"#FFFFFF"}
+                        >
+                          Apply
+                        </Typography>
+                      </Button>
+                    </Stack>
                     <Stack direction="row" justifyContent="space-between">
                       <Typography fontFamily="Poppins" color="#666">
                         Subtotal

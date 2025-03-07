@@ -28,7 +28,6 @@ const Restaurant = (props: restaurantProps) => {
     };
 
     fetchRestaurantData();
-    console.log(restaurant);
   }, [id]);
 
   return (
