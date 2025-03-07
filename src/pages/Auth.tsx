@@ -1,7 +1,7 @@
 import React from "react";
 import LoginRegister from "../components/LoginRegister";
 
-const LoginRegisterPage = () => {
+const Auth = () => {
   return (
     <>
       <LoginRegister />
@@ -9,4 +9,4 @@ const LoginRegisterPage = () => {
   );
 };
 
-export default LoginRegisterPage;
+export default Auth;

@@ -253,10 +253,10 @@ const CartComponent: React.FC = () => {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           display: "-webkit-box",
-                          WebkitLineClamp: 2,
+                          WebkitLineClamp: 2, // This will truncate the text after 2 lines
                           WebkitBoxOrient: "vertical",
-                          // minHeight: { xs: "48px", sm: "56px", md: "60px" },
                           maxWidth: "70%",
+                          minHeight: "52px", // Ensures consistent height even if the text is short
                         }}
                       >
                         {item.name}

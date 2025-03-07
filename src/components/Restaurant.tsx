@@ -11,13 +11,14 @@ import {
 
 import restaurants from "../data/restaurantsData";
 import { RestaurantType } from "../data/restaurantTypes";
+import { useNavigate } from "react-router-dom";
 
 type restaurantProps = {
   id: string;
 };
 
 const Restaurant: React.FC<restaurantProps> = ({ id }) => {
-  // const restaurantId = id;
+  const navigate = useNavigate();
   const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
 
   useEffect(() => {
@@ -29,6 +30,26 @@ const Restaurant: React.FC<restaurantProps> = ({ id }) => {
 
     fetchRestaurantData();
   }, [id]);
+
+  const handleOrderOnline = () => {
+    navigate("/cart");
+  };
+  const handleDirection = () => {
+    if (restaurant) {
+      const mapUrl = `https://www.google.com/maps/search/?q=${encodeURIComponent(
+        restaurant.title
+      )}}`;
+
+      // Open the map in a new tab
+      window.open(mapUrl, "_blank");
+    } else {
+      console.error("Restaurant is null");
+    }
+  };
+  const handleShare = () => {
+    // Open the map in a new tab
+    window.open("https://www.instagram.com", "_blank");
+  };
 
   return (
     <>
@@ -189,7 +210,6 @@ const Restaurant: React.FC<restaurantProps> = ({ id }) => {
                       paddingy: { xs: 1, sm: 1.5 },
                       border: "2px solid #FFA500",
                       color: "#000000",
-                      //   transition: "all 0.3s ease",
                       "&:hover": {
                         backgroundColor: "#FFA500",
                         borderColor: "#FFA500",
@@ -197,6 +217,17 @@ const Restaurant: React.FC<restaurantProps> = ({ id }) => {
                           color: "#FFFFFF",
                         },
                       },
+                    }}
+                    onClick={() => {
+                      if (text === "Order Online") {
+                        handleOrderOnline();
+                      }
+                      if (text === "Directions") {
+                        handleDirection();
+                      }
+                      if (text === "Share") {
+                        handleShare();
+                      }
                     }}
                   >
                     <Typography

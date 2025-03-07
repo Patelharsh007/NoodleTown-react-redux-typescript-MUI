@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import RestaurantPage from "./pages/RestaurantPage";
-import LoginRegisterPage from "./pages/LoginRegisterPage";
+import Auth from "./pages/Auth";
 import { ToastContainer } from "react-toastify";
 import ProductDetails from "./pages/ProductDetails";
 
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/auth" element={<LoginRegisterPage />} />
+        <Route path="/auth" element={<Auth />} />
         <Route path="/home" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
