@@ -1,8 +1,10 @@
 import { Grid2, Box, Stack, Typography } from "@mui/material";
 import React from "react";
 
+import { MealItemType } from "../data/mealItemTypes";
+
 type foodByWeatherCardProp = {
-  Card: { foodName: string; foodTime: string; foodImage: string };
+  Card: MealItemType;
 };
 
 const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
@@ -10,7 +12,7 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
     <Grid2 size={{ xs: 6, sm: 4 }}>
       <Box
         component={"img"}
-        src={props.Card.foodImage}
+        src={props.Card.image}
         alt={"food-by-weather"}
         height={{ xs: "200px", sm: "220px", md: "260px" }}
         width={"100%"}
@@ -29,7 +31,7 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
           letterSpacing={"0%"}
           color={"#000000"}
         >
-          {props.Card.foodName}
+          {props.Card.title}
         </Typography>
         <Typography
           fontFamily={"Poppins"}
@@ -39,7 +41,7 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
           letterSpacing={"0%"}
           color={"#999999"}
         >
-          {props.Card.foodTime}
+          {props.Card.shortDescription}
         </Typography>
       </Stack>
     </Grid2>

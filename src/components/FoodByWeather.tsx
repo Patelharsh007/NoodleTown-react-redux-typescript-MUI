@@ -3,46 +3,13 @@ import { Box, Grid2, Typography } from "@mui/material";
 
 import FoodByWeatherCard from "../UI/FoodByWeatherCard";
 
-type foodByWeatherType = {
-  foodName: string;
-  foodTime: string;
-  foodImage: string;
-};
-
-const DUMMY_FOOD_BY_WEATHER_DATA: foodByWeatherType[] = [
-  {
-    foodName: "Vadapav",
-    foodTime: "20 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather1.png",
-  },
-  {
-    foodName: "Panipuri",
-    foodTime: "20 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather2.png",
-  },
-  {
-    foodName: "Pav Bhaji",
-    foodTime: "30 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather3.png",
-  },
-  {
-    foodName: "Ice-Cream",
-    foodTime: "20 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather4.png",
-  },
-  {
-    foodName: "Sandwich",
-    foodTime: "20 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather5.png",
-  },
-  {
-    foodName: "Pizza",
-    foodTime: "40 Min",
-    foodImage: "/images/Menu/foodWeather/foodWeather6.png",
-  },
-];
+import mealItems from "../data/mealItem";
 
 const FoodByWeather = () => {
+  const num = Math.random();
+
+  const weatherMeals = mealItems.sort(() => num - 0.5).slice(0, 6);
+
   return (
     <>
       <Box
@@ -67,8 +34,8 @@ const FoodByWeather = () => {
           spacing={{ xs: "20px", sm: "40px", md: "50px" }}
           marginY={"50px"}
         >
-          {DUMMY_FOOD_BY_WEATHER_DATA.map((food) => (
-            <FoodByWeatherCard Card={food} key={food.foodName} />
+          {weatherMeals.map((food) => (
+            <FoodByWeatherCard Card={food} key={food.id} />
           ))}
         </Grid2>
       </Box>
