@@ -6,7 +6,7 @@ type DiningOutProps = {
   Card: { imgurl: string; heading: string; statement: string };
 };
 
-const DiningOutCard = (props: DiningOutProps) => {
+const DiningOutCard: React.FC<DiningOutProps> = ({ Card }) => {
   return (
     <>
       <Link to={`/menu`} style={{ textDecoration: "none" }}>
@@ -21,8 +21,8 @@ const DiningOutCard = (props: DiningOutProps) => {
         >
           <Box
             component="img"
-            src={props.Card.imgurl}
-            alt={props.Card.heading}
+            src={Card.imgurl}
+            alt={Card.heading}
             height={{ xs: "100px", sm: "126px" }}
             width={{ xs: "280px", sm: "343px" }}
             borderRadius={"8px 8px 0px 0px"}
@@ -40,7 +40,7 @@ const DiningOutCard = (props: DiningOutProps) => {
             letterSpacing={"0%"}
             color={"#000000"}
           >
-            {props.Card.heading}
+            {Card.heading}
           </Typography>
           <Typography
             paddingLeft={{ xs: "13px", sm: "15px" }}
@@ -52,7 +52,7 @@ const DiningOutCard = (props: DiningOutProps) => {
             letterSpacing={"0%"}
             color={"#000000"}
           >
-            {props.Card.statement}
+            {Card.statement}
           </Typography>
         </Box>
       </Link>

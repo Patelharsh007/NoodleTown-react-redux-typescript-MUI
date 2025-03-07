@@ -6,7 +6,7 @@ type BestDelieveredBoxProps = {
   box: { id: string; imageurl: string; title: string };
 };
 
-const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
+const BestDelieveredBox: React.FC<BestDelieveredBoxProps> = ({ box }) => {
   return (
     <>
       <Box
@@ -19,14 +19,11 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
         justifyContent={"space-between"}
         position={"relative"}
       >
-        <Link
-          to={`/product/${props.box.id}`}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={`/product/${box.id}`} style={{ textDecoration: "none" }}>
           <Box
             component={"img"}
-            src={props.box.imageurl}
-            alt={props.box.title}
+            src={box.imageurl}
+            alt={box.title}
             width={"246px"}
             height={"246px"}
             borderRadius={"50%"}
@@ -43,7 +40,7 @@ const BestDelieveredBox = (props: BestDelieveredBoxProps) => {
           letterSpacing={0}
           textAlign={"center"}
         >
-          {props.box.title}
+          {box.title}
         </Typography>
       </Box>
     </>

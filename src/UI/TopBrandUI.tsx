@@ -5,7 +5,7 @@ type topBrandUiProp = {
   restaurant: { id: string; title: string; logo: string };
 };
 
-const TopBrandUI = (props: topBrandUiProp) => {
+const TopBrandUI: React.FC<topBrandUiProp> = ({ restaurant }) => {
   return (
     <Stack
       direction={"column"}
@@ -15,8 +15,8 @@ const TopBrandUI = (props: topBrandUiProp) => {
     >
       <Box
         component={"img"}
-        src={props.restaurant.logo}
-        alt={props.restaurant.title}
+        src={restaurant.logo}
+        alt={restaurant.title}
         width={{ xs: "100px", sm: "150px", md: "187px" }}
         height={{ xs: "100px", sm: "150px", md: "186px" }}
       />
@@ -28,7 +28,7 @@ const TopBrandUI = (props: topBrandUiProp) => {
         lineHeight={{ xs: "22px", sm: "27px", md: "30px" }}
         letterSpacing={"0%"}
       >
-        {props.restaurant.title}
+        {restaurant.title}
       </Typography>
     </Stack>
   );

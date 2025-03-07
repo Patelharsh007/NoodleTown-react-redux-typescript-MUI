@@ -18,7 +18,7 @@ interface ScrollerCardProp {
   Card: MealItemType;
 }
 
-const ScrollerCard = (props: ScrollerCardProp) => {
+const ScrollerCard: React.FC<ScrollerCardProp> = ({ Card }) => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -28,24 +28,24 @@ const ScrollerCard = (props: ScrollerCardProp) => {
   };
 
   const handleAddToCart = () => {
-    if (isItemInCart(props.Card.id)) {
-      dispatch(removeFromCart(props.Card.id));
-      showInfoToast(`${props.Card.title} removed from cart`);
+    if (isItemInCart(Card.id)) {
+      dispatch(removeFromCart(Card.id));
+      showInfoToast(`${Card.title} removed from cart`);
     } else {
       dispatch(
         addToCart({
-          id: props.Card.id,
-          itemId: props.Card.id,
-          price: props.Card.price,
+          id: Card.id,
+          itemId: Card.id,
+          price: Card.price,
           quantity: 1,
-          image: props.Card.image,
-          name: props.Card.title,
-          restaurantId: props.Card.restaurantId,
-          category: props.Card.category,
-          description: props.Card.shortDescription,
+          image: Card.image,
+          name: Card.title,
+          restaurantId: Card.restaurantId,
+          category: Card.category,
+          description: Card.shortDescription,
         })
       );
-      showSuccessToast(`${props.Card.title} added to cart succesfully`);
+      showSuccessToast(`${Card.title} added to cart succesfully`);
     }
   };
 
@@ -95,14 +95,11 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               Popular
             </Typography>
           </Box>
-          <Link
-            to={`/product/${props.Card.id}`}
-            style={{ textDecoration: "none" }}
-          >
+          <Link to={`/product/${Card.id}`} style={{ textDecoration: "none" }}>
             <Box
               component={"img"}
-              src={props.Card.image}
-              alt={props.Card.title}
+              src={Card.image}
+              alt={Card.title}
               width={"200px"}
               height={"208px"}
               margin={"20px 40px 0"}
@@ -135,7 +132,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 maxWidth: "100%",
               }}
             >
-              {props.Card.restaurantName}
+              {Card.restaurantName}
             </Typography>
             <Typography
               fontFamily={"Inter"}
@@ -154,7 +151,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 maxWidth: "100%",
               }}
             >
-              {props.Card.title}
+              {Card.title}
             </Typography>
 
             <Typography
@@ -175,7 +172,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 textOverflow: "ellipsis",
               }}
             >
-              {props.Card.shortDescription}
+              {Card.shortDescription}
             </Typography>
 
             <Typography
@@ -188,7 +185,7 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               letterSpacing={"0%"}
               textAlign={"center"}
             >
-              ₹ {props.Card.price}
+              ₹ {Card.price}
             </Typography>
           </Stack>
           {/* </Box> */}
@@ -222,14 +219,12 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             zIndex={3}
             sx={{
               cursor: "pointer",
-              backgroundColor: isItemInCart(props.Card.id) ? "#F6B716" : "#fff",
-              color: isItemInCart(props.Card.id) ? "#fff" : "#000000",
+              backgroundColor: isItemInCart(Card.id) ? "#F6B716" : "#fff",
+              color: isItemInCart(Card.id) ? "#fff" : "#000000",
               transition: "all 0.3s ease",
               "&:hover": {
-                backgroundColor: isItemInCart(props.Card.id)
-                  ? "#ff8c00"
-                  : "#F6B716",
-                color: isItemInCart(props.Card.id) ? "#fff" : "#000000",
+                backgroundColor: isItemInCart(Card.id) ? "#ff8c00" : "#F6B716",
+                color: isItemInCart(Card.id) ? "#fff" : "#000000",
 
                 transform: "scale(1.1)",
                 "& .MuiSvgIcon-root": {

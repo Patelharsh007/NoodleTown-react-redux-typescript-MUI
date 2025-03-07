@@ -8,13 +8,13 @@ type foodByWeatherCardProp = {
   Card: MealItemType;
 };
 
-const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
+const FoodByWeatherCard: React.FC<foodByWeatherCardProp> = ({ Card }) => {
   return (
     <Grid2 size={{ xs: 6, sm: 4 }}>
-      <Link to={`/product/${props.Card.id}`}>
+      <Link to={`/product/${Card.id}`}>
         <Box
           component={"img"}
-          src={props.Card.image}
+          src={Card.image}
           alt={"food-by-weather"}
           height={{ xs: "200px", sm: "220px", md: "260px" }}
           width={"100%"}
@@ -34,7 +34,7 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
           letterSpacing={"0%"}
           color={"#000000"}
         >
-          {props.Card.title}
+          {Card.title}
         </Typography>
         <Typography
           fontFamily={"Poppins"}
@@ -44,7 +44,7 @@ const FoodByWeatherCard = (props: foodByWeatherCardProp) => {
           letterSpacing={"0%"}
           color={"#999999"}
         >
-          {props.Card.shortDescription}
+          {Card.shortDescription}
         </Typography>
       </Stack>
     </Grid2>

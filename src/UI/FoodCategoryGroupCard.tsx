@@ -9,7 +9,7 @@ type foodCategoryGroupProp = {
   };
 };
 
-const FoodCategoryGroupCard = (props: foodCategoryGroupProp) => {
+const FoodCategoryGroupCard: React.FC<foodCategoryGroupProp> = ({ Card }) => {
   return (
     <>
       <Grid2
@@ -37,7 +37,7 @@ const FoodCategoryGroupCard = (props: foodCategoryGroupProp) => {
         {/* Image */}
         <Box
           component={"img"}
-          src={props.Card.groupImage}
+          src={Card.groupImage}
           width={"100%"}
           height={"100%"}
           sx={{
@@ -63,7 +63,7 @@ const FoodCategoryGroupCard = (props: foodCategoryGroupProp) => {
             color={"#ffffff"}
             paddingX={"5px"}
           >
-            {props.Card.groupName}
+            {Card.groupName}
           </Typography>
           <Typography
             fontFamily={"Poppins"}
@@ -74,7 +74,7 @@ const FoodCategoryGroupCard = (props: foodCategoryGroupProp) => {
             paddingX={"5px"}
             sx={{ mt: { xs: 0.5, sm: 1 } }}
           >
-            {props.Card.groupDetails}
+            {Card.groupDetails}
           </Typography>
         </Stack>
       </Grid2>
