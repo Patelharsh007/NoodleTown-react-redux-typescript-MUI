@@ -101,28 +101,15 @@ const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
           description: meal.shortDescription,
         })
       );
-      showSuccessToast(`${meal.title} added to cart succesfully`);
     }
   };
 
   const handleIncrementMeal = (mealId: string) => {
-    const item = cartItems.find((item) => item.id === mealId);
-    if (item && item.quantity >= 5) {
-      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
-      return;
-    }
     dispatch(incrementQuantity(mealId));
-    if (item) {
-      showInfoToast(`${item.name} quantity increased`);
-    }
   };
 
   const handleDecrementMeal = (mealId: string) => {
-    const item = cartItems.find((item) => item.id === mealId);
     dispatch(decrementQuantity(mealId));
-    if (item) {
-      showInfoToast(`${item.name} quantity decreased`);
-    }
   };
 
   return (

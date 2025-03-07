@@ -56,23 +56,11 @@ const CartComponent: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleIncrement = (itemId: string) => {
-    const item = cartItems.find((item) => item.id === itemId);
-    if (item && item.quantity >= 5) {
-      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
-      return;
-    }
     dispatch(incrementQuantity(itemId));
-    if (item) {
-      showInfoToast(`${item.name} quantity increased`);
-    }
   };
 
   const handleDecrement = (itemId: string) => {
-    const item = cartItems.find((item) => item.id === itemId);
     dispatch(decrementQuantity(itemId));
-    if (item) {
-      showInfoToast(`${item.name} quantity decreased`);
-    }
   };
 
   // Address
@@ -157,12 +145,11 @@ const CartComponent: React.FC = () => {
       setSelectedAddress("");
       setShowAddressForm(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 5000);
+    }, 2000);
   };
 
   const handleClearCart = () => {
     dispatch(clearCart());
-    showSuccessToast("The entire cart is Emptied. ");
   };
 
   return (

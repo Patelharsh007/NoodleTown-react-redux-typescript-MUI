@@ -11,8 +11,8 @@ const BestDelieveredBox: React.FC<BestDelieveredBoxProps> = ({ box }) => {
     <>
       <Box
         id="best-deivered-box"
-        width={"246px"}
-        height={"317px"}
+        width={{ sm: "246px", md: "200px", lg: "246px" }}
+        height={{ sm: "317px", md: "280px", lg: "317px" }}
         padding={{ sm: "30px", md: "10px" }}
         display={"flex"}
         flexDirection={"column"}
@@ -24,8 +24,8 @@ const BestDelieveredBox: React.FC<BestDelieveredBoxProps> = ({ box }) => {
             component={"img"}
             src={box.imageurl}
             alt={box.title}
-            width={"246px"}
-            height={"246px"}
+            width={{ sm: "246px", md: "200px", lg: "246px" }}
+            height={{ sm: "246px", md: "200px", lg: "246px" }}
             borderRadius={"50%"}
             style={{
               objectFit: "cover",

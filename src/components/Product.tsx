@@ -59,24 +59,14 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
         restaurantId: meal.restaurantId || "default", // Add this line
       })
     );
-    showSuccessToast(`${meal.title} added to cart`);
   };
 
   const handleIncrement = (itemId: string) => {
-    const item = cartItems.find((item) => item.id === itemId);
-    if (item && item.quantity >= 5) {
-      showErrorToast(`Maximum quantity limit (5) reached for ${item.name}`);
-      return;
-    }
     dispatch(incrementQuantity(itemId));
-    if (item) {
-      showInfoToast(`${item.name} quantity increased`);
-    }
   };
 
-  const handleDecrement = () => {
-    dispatch(decrementQuantity(meal.id));
-    showInfoToast(`${meal.title} quantity decreased`);
+  const handleDecrement = (itemId: string) => {
+    dispatch(decrementQuantity(itemId));
   };
 
   return (
@@ -115,6 +105,17 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
             }}
           >
             {/* Title and Price */}
+            <Stack>
+              <Typography
+                fontFamily="Poppins"
+                fontWeight={700}
+                fontSize={{ xs: "26px", sm: "30px", md: "36px" }}
+                color="#000"
+                sx={{ lineHeight: 1.2 }}
+              >
+                {meal.restaurantName}
+              </Typography>
+            </Stack>
             <Stack
               direction={{ xs: "column", sm: "row" }}
               alignItems={{ xs: "flex-start", sm: "center" }}
@@ -193,7 +194,7 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
                   }}
                 >
                   <Button
-                    onClick={handleDecrement}
+                    onClick={() => handleDecrement(meal.id)}
                     sx={{
                       flex: 1,
                       backgroundColor: "#999999",

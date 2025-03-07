@@ -450,7 +450,8 @@ const mealItems: MealItem[] = [
     restaurantId: "dominos-1",
     restaurantName: "Domino's Pizza",
     category: "Pasta",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    image:
+      "https://th.bing.com/th/id/OIP.wkMEa6Wq_jWc_R7aFbyWYQAAAA?rs=1&pid=ImgDetMain",
     title: "Italiano Pasta Alfredo",
     shortDescription: "Creamy pasta perfection",
     fullDescription: [
@@ -723,7 +724,8 @@ const mealItems: MealItem[] = [
     restaurantId: "pizzahut-1",
     restaurantName: "Pizza Hut",
     category: "Pasta",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    image:
+      "https://th.bing.com/th/id/OIP.O0U36iHMv_jMYg2nAjiZbgHaHa?rs=1&pid=ImgDetMain",
     title: "Creamy Tuscan Pasta",
     shortDescription: "Rich and creamy pasta",
     fullDescription: [
@@ -741,7 +743,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Pasta",
     title: "Meaty Marinara",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    image:
+      "https://th.bing.com/th/id/OIP.oogPc8uEEEa7paHe0VuG3wHaGU?rs=1&pid=ImgDetMain",
     shortDescription: "Classic meat sauce pasta",
     fullDescription: [
       "Our Meaty Marinara Pasta features perfectly cooked rotini pasta topped with our hearty meat sauce. The sauce is made with premium ground beef and Italian sausage, slow-simmered with tomatoes and Italian herbs.",
@@ -758,7 +761,8 @@ const mealItems: MealItem[] = [
     restaurantName: "Pizza Hut",
     category: "Pasta",
     title: "Veggie Primavera",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    image:
+      "https://th.bing.com/th/id/OIP.zC3eHk-V0j2tJ1HaEpuenwHaEK?rs=1&pid=ImgDetMain",
     shortDescription: "Fresh vegetable pasta",
     fullDescription: [
       "Our Veggie Primavera Pasta is a celebration of fresh vegetables and Italian flavors. We start with perfectly cooked rotini pasta as the foundation for this colorful and nutritious dish.",

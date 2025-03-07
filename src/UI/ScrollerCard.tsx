@@ -45,7 +45,6 @@ const ScrollerCard: React.FC<ScrollerCardProp> = ({ Card }) => {
           description: Card.shortDescription,
         })
       );
-      showSuccessToast(`${Card.title} added to cart succesfully`);
     }
   };
 
