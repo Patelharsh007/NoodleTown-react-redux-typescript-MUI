@@ -93,15 +93,42 @@ const ItemCarosuel = () => {
     setItemCategory(category);
   };
 
-  const categories = Array.from(
-    new Set(mealItems.map((item) => item.category))
-  );
+  const getTopCategories = () => {
+    // CategoryCount item(object)
+    const categoryCount: { [key: string]: number } = {};
+
+    // Count occurrences of each category
+    mealItems.forEach((item) => {
+      if (categoryCount[item.category]) {
+        categoryCount[item.category]++;
+      } else {
+        categoryCount[item.category] = 1;
+      }
+    });
+
+    // array of [{name:category,count:count-of-items}]
+    const categoryArray = Object.keys(categoryCount).map((category) => ({
+      name: category,
+      count: categoryCount[category],
+    }));
+
+    //sort descending and then get top 6 and then cretes array of only name
+    const topCategories = categoryArray
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 6)
+      .map((item) => item.name);
+
+    return topCategories;
+  };
+
+  // top categories
+  const categories = getTopCategories();
+
   const [selectedCategory, setSelectedCategory] = useState<string>(
     categories[0] || ""
   );
 
   //filter item based on selected category
-
   const filteredItems = selectedCategory
     ? mealItems.filter((item) => item.category === selectedCategory)
     : mealItems;
@@ -164,7 +191,7 @@ const ItemCarosuel = () => {
               bgcolor: itemCategory === category ? "#F6B716" : "#ECEEF6",
               color: itemCategory === category ? "white" : "inherit",
               textTransform: "none",
-              transition: "all 0.3s ease",
+
               "&:hover": {
                 opacity: 0.8,
                 bgcolor: "#f8c33d",
@@ -183,6 +210,7 @@ const ItemCarosuel = () => {
         padding="20px"
         sx={{
           position: "relative",
+          overflowX: "hidden",
           "&::after": {
             content: '""',
             position: "absolute",
@@ -194,6 +222,7 @@ const ItemCarosuel = () => {
               "linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))",
             pointerEvents: "none",
             display: { xs: "none", md: "block" },
+            zIndex: 1,
           },
         }}
       >
@@ -210,9 +239,16 @@ const ItemCarosuel = () => {
               display: "none",
             },
             scrollbarWidth: "none",
-            padding: "4px", // Add padding to show box-shadow
-            justifyContent: filteredItems.length < 4 ? "center" : "flex-start",
-            minHeight: "400px", // Set minimum height to prevent layout shift
+            padding: "4px",
+            width: "100%",
+            height: "100%",
+            justifyContent: filteredItems.length <= 5 ? "center" : "flex-start", // Conditional centering
+            "&:hover": {
+              cursor: filteredItems.length > 4 ? "grab" : "default",
+            },
+            "&:active": {
+              cursor: filteredItems.length > 4 ? "grabbing" : "default",
+            },
           }}
         >
           {filteredItems.map((item) => (
@@ -220,19 +256,7 @@ const ItemCarosuel = () => {
               key={item.id}
               sx={{
                 flex: "0 0 auto",
-                width: {
-                  xs: "calc(100% - 30px)",
-                  sm: "calc(50% - 30px)",
-                  md: "calc(33.33% - 30px)",
-                  lg:
-                    filteredItems.length < 4
-                      ? `calc(${100 / filteredItems.length}% - 30px)`
-                      : "calc(25% - 30px)",
-                },
-                maxWidth: {
-                  xs: "100%",
-                  sm: "300px",
-                },
+
                 // transition: "transform 0.2s ease",
                 // "&:hover": {
                 //   transform: "translateY(-5px)",
@@ -246,6 +270,7 @@ const ItemCarosuel = () => {
                   price: item.price,
                   description: item.shortDescription,
                   isPopular: item.isPopular,
+                  restaurantName: item.restaurantName,
                 }}
               />
             </Box>

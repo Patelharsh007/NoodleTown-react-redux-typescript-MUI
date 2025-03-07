@@ -9,6 +9,7 @@ type ScrollerCardProp = {
     price?: number;
     description?: string;
     isPopular?: boolean;
+    restaurantName?: string;
   };
 };
 
@@ -75,13 +76,15 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             }}
           />
 
-          <Box height={"150px"} margin={"25px 20px"}>
+          {/* <Box height={"150px"} margin={"25px 20px"}> */}
+          <Stack marginTop={"20px"} spacing={"10px"}>
             <Typography
               fontFamily={"Inter"}
               fontWeight={600}
               fontSize={"18px"}
               lineHeight={"25.2px"}
               letterSpacing={"0%"}
+              textAlign={"center"}
               sx={{
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -89,7 +92,26 @@ const ScrollerCard = (props: ScrollerCardProp) => {
                 WebkitLineClamp: 2,
                 WebkitBoxOrient: "vertical",
                 // minHeight: { xs: "48px", sm: "56px", md: "60px" },
-                maxWidth: "70%",
+                maxWidth: "100%",
+              }}
+            >
+              {props.Card.restaurantName}
+            </Typography>
+            <Typography
+              fontFamily={"Inter"}
+              fontWeight={600}
+              fontSize={"18px"}
+              lineHeight={"25.2px"}
+              letterSpacing={"0%"}
+              textAlign={"center"}
+              sx={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                // minHeight: { xs: "48px", sm: "56px", md: "60px" },
+                maxWidth: "100%",
               }}
             >
               {props.Card.title}
@@ -99,9 +121,10 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               marginTop={"10px"}
               fontFamily={"Inter"}
               fontWeight={400}
-              fontSize={"12px"}
+              fontSize={"15px"}
               lineHeight={"16.8px"}
               letterSpacing={"0%"}
+              textAlign={"center"}
               sx={{
                 whiteSpace: "normal",
                 wordWrap: "break-word",
@@ -114,9 +137,10 @@ const ScrollerCard = (props: ScrollerCardProp) => {
             >
               {props.Card.description}
             </Typography>
+
             <Typography
               marginTop={"30px"}
-              padding={"20px"}
+              padding={"15px"}
               fontFamily={"Inter"}
               fontWeight={300}
               fontSize={"24px"}
@@ -124,9 +148,11 @@ const ScrollerCard = (props: ScrollerCardProp) => {
               letterSpacing={"0%"}
               textAlign={"center"}
             >
-              7000NGN
+              ₹{props.Card.price}
             </Typography>
-          </Box>
+          </Stack>
+          {/* </Box> */}
+
           <Box
             id={"triangle"}
             height={"50px"}

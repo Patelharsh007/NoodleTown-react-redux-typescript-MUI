@@ -39,6 +39,19 @@ const TopBrands = () => {
             "&::-webkit-scrollbar-button": {
               display: "none",
             },
+
+            "&:hover": {
+              sm: { cursor: restaurants.length > 3 ? "grabbing" : "default" },
+              md: {
+                cursor: restaurants.length > 4 ? "grabbing" : "default",
+              },
+            },
+            "&:active": {
+              sm: { cursor: restaurants.length > 3 ? "grabbing" : "default" },
+              md: {
+                cursor: restaurants.length > 4 ? "grabbing" : "default",
+              },
+            },
           }}
         >
           {/* Rendering all brands */}
