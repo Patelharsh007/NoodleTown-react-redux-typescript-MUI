@@ -100,7 +100,7 @@ const AddressForm = () => {
         onChange={(e) => handleSelectAddress(e)}
       >
         {addressItems.map((address) => (
-          <Stack direction={"row"} alignItems={"center"}>
+          <Stack direction={"row"} marginBottom={"10px"} alignItems={"center"}>
             <FormControlLabel
               key={address.id}
               value={address.id}
@@ -123,12 +123,11 @@ const AddressForm = () => {
                   {`${address.street}, ${address.city}, ${address.state} - ${address.pincode}`}
                 </Typography>
               }
-              sx={{ marginBottom: "10px" }}
             />
             <Box
               component={"button"}
               fontSize={"0px"}
-              borderRadius={"50%"}
+              height={"30px"}
               borderColor={"transparent"}
               sx={{
                 "&:hover": {
