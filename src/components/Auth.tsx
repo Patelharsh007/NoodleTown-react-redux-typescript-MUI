@@ -20,6 +20,8 @@ import {
   Person,
 } from "@mui/icons-material";
 import { assets } from "../assets/assets";
+import { useDispatch } from "react-redux";
+import { login, signUp } from "../redux/slices/AuthSlice";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -42,7 +44,9 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-export const LoginRegister: React.FC = () => {
+export const Auth: React.FC = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const [tab, setTab] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
@@ -97,7 +101,21 @@ export const LoginRegister: React.FC = () => {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      navigate("/");
+      if (tab === 0) {
+        // Login logic
+        const user = { email: formData.email, password: formData.password };
+        dispatch(signUp(user));
+        navigate("/user");
+      } else if (tab === 1) {
+        // Sign-up logic
+        const userData = {
+          email: formData.email,
+          fullName: formData.fullName,
+          password: formData.password,
+        };
+        dispatch(login(userData));
+        navigate("/user"); // Navigate to authenticated page
+      }
     }
   };
 
@@ -414,4 +432,4 @@ export const LoginRegister: React.FC = () => {
   );
 };
 
-export default LoginRegister;
+export default Auth;

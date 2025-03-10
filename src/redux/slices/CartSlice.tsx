@@ -21,11 +21,6 @@ interface CartState {
   items: CartItem[];
 }
 
-// const initialState: CartState = {
-//   items: [],
-// };
-
-// Load the cart data from localStorage or initialize an empty cart
 const loadCartFromLocalStorage = (): CartState => {
   const storedCart = localStorage.getItem("cart");
   if (storedCart) {
@@ -34,7 +29,6 @@ const loadCartFromLocalStorage = (): CartState => {
   return { items: [] };
 };
 
-// Helper function to save the cart data to localStorage
 const saveCartToLocalStorage = (state: CartState) => {
   localStorage.setItem("cart", JSON.stringify(state.items));
 };

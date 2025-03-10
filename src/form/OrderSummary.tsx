@@ -1,5 +1,4 @@
 import {
-  Paper,
   Grid2,
   Typography,
   Stack,
@@ -33,7 +32,6 @@ interface OrderItem {
 
 const OrderSummary = () => {
   // Checkout--- totaldiscount etc
-  const [orderPlaced, setOrderPlaced] = useState(false);
   const [discount, setDiscount] = useState(0);
   const [couponCode, setCouponCode] = useState("");
 
@@ -89,9 +87,7 @@ const OrderSummary = () => {
 
     dispatch(placeOrder(order));
     dispatch(deselectAddress());
-    setOrderPlaced(true);
     setTimeout(() => {
-      setOrderPlaced(false);
       dispatch(clearCart());
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 3000);

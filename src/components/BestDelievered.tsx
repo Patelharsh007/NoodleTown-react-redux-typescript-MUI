@@ -1,30 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import BestDelieveredBox from "../UI/BestDelieveredBox";
-
-import restaurants from "../data/restaurantsData";
-import { RestaurantType } from "../data/restaurantTypes";
 import mealItems from "../data/mealItem";
-
-type dummy_best_delieverd_data = {
-  imageurl: string;
-  title: string;
-}[];
-
-const DUMMY_BEST_DELIEVERED_DATA: dummy_best_delieverd_data = [
-  {
-    imageurl: "/images/Best_Delievered/img1.jpeg",
-    title: "Chicken Noodles",
-  },
-  {
-    imageurl: "/images/Best_Delievered/img2.jpeg",
-    title: "French Fries",
-  },
-  {
-    imageurl: "/images/Best_Delievered/img3.jpeg",
-    title: "Avacado Mint Noodles",
-  },
-];
 
 const BestDelievered: React.FC = () => {
   const num1 = Math.random();
@@ -106,3 +83,23 @@ const BestDelievered: React.FC = () => {
 };
 
 export default BestDelievered;
+
+// type dummy_best_delieverd_data = {
+//   imageurl: string;
+//   title: string;
+// }[];
+
+// const DUMMY_BEST_DELIEVERED_DATA: dummy_best_delieverd_data = [
+//   {
+//     imageurl: "/images/Best_Delievered/img1.jpeg",
+//     title: "Chicken Noodles",
+//   },
+//   {
+//     imageurl: "/images/Best_Delievered/img2.jpeg",
+//     title: "French Fries",
+//   },
+//   {
+//     imageurl: "/images/Best_Delievered/img3.jpeg",
+//     title: "Avacado Mint Noodles",
+//   },
+// ];

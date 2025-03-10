@@ -285,7 +285,6 @@ const CartComponent: React.FC = () => {
             </Typography>
           )}
         </Grid2>
-        {/* {cartItems.length > 0 && <OrderSummary />} */}
         {cartItems.length > 0 && (
           <Paper
             elevation={0}

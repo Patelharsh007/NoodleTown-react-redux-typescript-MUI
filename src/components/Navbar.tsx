@@ -73,7 +73,7 @@ const Navbar: React.FC<NavbarProps> = ({ linkColor }) => {
               width={{ xs: "100%", sm: "auto" }}
             >
               <Link
-                to="/auth"
+                to="/user"
                 style={{
                   textDecoration: "none",
                   color: linkColor,
