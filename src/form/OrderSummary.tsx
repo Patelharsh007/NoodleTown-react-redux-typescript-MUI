@@ -12,13 +12,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 import { clearCart } from "../redux/slices/CartSlice";
 import { showSuccessToast } from "../UI/ToastContainer";
+import { placeOrder } from "../redux/slices/OrderSlice";
+import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
+
+interface OrderItem {
+  id: string;
+  Date: Date | string;
+  address: string;
+  items: {
+    itemName: string;
+    quantity: number;
+    price: number;
+    itemTotal: number;
+  }[];
+  subTotal: number;
+  discount: number;
+  total: number;
+  status: string;
+}
 
 const OrderSummary = () => {
   // Checkout--- totaldiscount etc
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [discount, setDiscount] = useState(0);
   const [couponCode, setCouponCode] = useState("");
-  const [couponError, setCouponError] = useState<string | null>(null);
+
   const dispatch = useDispatch();
 
   //Redux
@@ -26,15 +44,14 @@ const OrderSummary = () => {
   const selectedAddress = useSelector(
     (state: RootState) => state.seletedAddress.item
   );
+  const orders = useSelector((state: RootState) => state.order.orders);
 
   //coupon logic
   const handleApplyCoupon = () => {
     if (couponCode.length === 6) {
       setDiscount(50); //static copuon value
       showSuccessToast("Coupon applied: Got ₹50/- off");
-      setCouponError(null);
     } else {
-      setCouponError("Please entervalid 6 digit coupon code");
       setDiscount(0);
     }
   };
@@ -50,16 +67,34 @@ const OrderSummary = () => {
   const handleCheckout = () => {
     if (!selectedAddress || cartItems.length === 0) return;
 
-    setOrderPlaced(true);
-    showSuccessToast(
-      "🎉 Thank you for your order! Your delicious meal is on its way."
-    );
+    //  order object
+    const order: OrderItem = {
+      id: String(Date.now()), // unique id
+      Date: new Date().toISOString(), // date
+      address: `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state} - ${selectedAddress.pincode}`,
+      items: cartItems.map((item) => ({
+        itemName: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        itemTotal: item.price * item.quantity,
+      })),
+      subTotal: cartItems.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      ),
+      discount: discount,
+      total: total,
+      status: "pending",
+    };
 
+    dispatch(placeOrder(order));
+    dispatch(deselectAddress());
+    setOrderPlaced(true);
     setTimeout(() => {
-      dispatch(clearCart());
       setOrderPlaced(false);
+      dispatch(clearCart());
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 2000);
+    }, 3000);
   };
 
   return (
@@ -94,7 +129,6 @@ const OrderSummary = () => {
             onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
             placeholder="Apply coupon code"
             fullWidth
-            error={Boolean(couponError)}
             helperText={
               couponCode !== "" && couponCode.length !== 6
                 ? "Coupon Code must be 6 letter long"

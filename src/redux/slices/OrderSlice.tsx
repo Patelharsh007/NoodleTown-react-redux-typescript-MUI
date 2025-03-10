@@ -12,7 +12,7 @@ interface OrderItem {
     itemTotal: number;
   }[];
   subTotal: number;
-  discount: string;
+  discount: number;
   total: number;
   status: string;
 }
@@ -30,7 +30,7 @@ const loadOrderFromLocalStorage = (): OrderState => {
 };
 
 const saveOrderToLocalStorage = (state: OrderState) => {
-  localStorage.setItem("cart", JSON.stringify(state.orders));
+  localStorage.setItem("order", JSON.stringify(state.orders));
 };
 
 const OrderSlice = createSlice({

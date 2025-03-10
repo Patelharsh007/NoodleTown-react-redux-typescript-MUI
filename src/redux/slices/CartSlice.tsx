@@ -77,7 +77,7 @@ const CartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items = [];
-      showSuccessToast("The entire cart is Emptied. ");
+      showInfoToast("The entire cart is Emptied. ");
       saveCartToLocalStorage(state);
     },
   },
