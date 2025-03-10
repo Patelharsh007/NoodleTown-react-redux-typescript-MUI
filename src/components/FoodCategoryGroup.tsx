@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid2 } from "@mui/material";
 
 import FoodCategoryGroupCard from "../UI/FoodCategoryGroupCard";
+import { assets } from "../assets/assets";
 
 type foodByCategoryGroup = {
   groupName: string;
@@ -13,17 +14,17 @@ const DUMMY_FOOD_BY_CATEGORY_DATA: foodByCategoryGroup[] = [
   {
     groupName: "Veggie friendly",
     groupDetails: "29 places near you",
-    groupImage: "images/Menu/foodGroupCategory/img1.png",
+    groupImage: `${assets.images.menuCategory.img1}`,
   },
   {
     groupName: "Authentic",
     groupDetails: "15 places near you",
-    groupImage: "images/Menu/foodGroupCategory/img2.jpg",
+    groupImage: `${assets.images.menuCategory.img2}`,
   },
   {
     groupName: "Trending this week",
     groupDetails: "10 places near you",
-    groupImage: "images/Menu/foodGroupCategory/img3.jpg",
+    groupImage: `${assets.images.menuCategory.img3}`,
   },
 ];
 

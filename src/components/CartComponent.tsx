@@ -25,11 +25,7 @@ import {
   clearCart,
 } from "../redux/slices/CartSlice";
 
-import {
-  showSuccessToast,
-  showInfoToast,
-  showErrorToast,
-} from "../UI/ToastContainer";
+import { showSuccessToast } from "../UI/ToastContainer";
 import { Link } from "react-router-dom";
 
 interface Address {

@@ -1,7 +1,8 @@
 import { Box, Grid2, Link, Typography } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
 import React from "react";
+
+import { assets } from "../assets/assets";
 
 const InstagramBox: React.FC = () => {
   return (
@@ -32,7 +33,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img1.jpg"}
+              src={`${assets.images.gridInsta.img1}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}
@@ -41,7 +42,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img2.jpg"}
+              src={`${assets.images.gridInsta.img2}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}
@@ -50,7 +51,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img3.jpg"}
+              src={`${assets.images.gridInsta.img3}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}
@@ -59,7 +60,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }} display={{ xs: "none", sm: "block" }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img4.jpg"}
+              src={`${assets.images.gridInsta.img4}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}
@@ -68,7 +69,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }} display={{ xs: "none", sm: "block" }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img5.jpg"}
+              src={`${assets.images.gridInsta.img5}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}
@@ -77,7 +78,7 @@ const InstagramBox: React.FC = () => {
           <Grid2 size={{ xs: 6, sm: 4 }}>
             <Box
               component={"img"}
-              src={"/images/InstaBox/img6.jpg"}
+              src={`${assets.images.gridInsta.img6}`}
               alt="Pizza-Image"
               height={{ xs: "180px", sm: "240px", lg: "325px" }}
               width={"100%"}

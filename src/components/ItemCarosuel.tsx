@@ -4,6 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 
 import ScrollerCard from "../UI/ScrollerCard";
 import mealItems from "../data/mealItem";
+import { assets } from "../assets/assets";
 
 type Category = string;
 
@@ -61,7 +62,7 @@ const ItemCarosuel: React.FC = () => {
       >
         <Box
           component={"img"}
-          src={"/images/Pizza/vector1.png"}
+          src={`${assets.images.popularReceipes.img1}`}
           width={{ xs: "100px", sm: "150px" }}
           display={{ xs: "none", sm: "block" }}
         />
@@ -77,7 +78,7 @@ const ItemCarosuel: React.FC = () => {
         </Typography>
         <Box
           component={"img"}
-          src={"/images/Pizza/vector2.png"}
+          src={`${assets.images.popularReceipes.img2}`}
           width={{ xs: "100px", sm: "150px" }}
           height={{ xs: "120px", sm: "160px", lg: "180px" }}
           display={{ xs: "none", sm: "block" }}

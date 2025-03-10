@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { assets } from "../assets/assets";
 
 const HomePageImages: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const HomePageImages: React.FC = () => {
         position={"relative"}
         zIndex={1}
         sx={{
-          backgroundImage: 'url("../images/bannerPizza.png")',
+          backgroundImage: `url(${assets.images.bannerPizza})`,
           backgroundPosition: "center center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -85,7 +86,7 @@ const HomePageImages: React.FC = () => {
         >
           <Box
             component="img"
-            src="images/Grid-Images/img4.jpg"
+            src={`${assets.images.gridLayout.img1}`}
             borderRadius={"17px"}
             width={"100%"}
             height={"100%"}
@@ -123,7 +124,7 @@ const HomePageImages: React.FC = () => {
         >
           <Box
             component="img"
-            src="images/Grid-Images/img2.jpeg"
+            src={`${assets.images.gridLayout.img2}`}
             borderRadius={"16px"}
             width={"100%"}
             height={"100%"}
@@ -142,7 +143,7 @@ const HomePageImages: React.FC = () => {
         >
           <Box
             component="img"
-            src="images/Grid-Images/img3.jpeg"
+            src={`${assets.images.gridLayout.img3}`}
             borderRadius={"16px"}
             width={"100%"}
             height={"100%"}

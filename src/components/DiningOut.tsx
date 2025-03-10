@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 
 import DiningOutCard from "../UI/DiningOutCard";
+import { assets } from "../assets/assets";
 
 type dummy_dining_out_data = {
   imgurl: string;
@@ -12,17 +13,17 @@ type dummy_dining_out_data = {
 const DiningOut: React.FC = () => {
   const DUMMY_DINING_OUT_DATA: dummy_dining_out_data = [
     {
-      imgurl: "/images/Dining_Out/img1.jpeg",
+      imgurl: `${assets.images.diningOut.diningOut1}`,
       heading: "Dining Out",
       statement: "Explore curated lists of top restaurants",
     },
     {
-      imgurl: "/images/Dining_Out/img2.jpeg",
+      imgurl: `${assets.images.diningOut.diningOut2}`,
       heading: "Dining Out",
       statement: "Explore curated lists of top restaurants",
     },
     {
-      imgurl: "/images/Dining_Out/img3.jpeg",
+      imgurl: `${assets.images.diningOut.diningOut3}`,
       heading: "Dining Out",
       statement: "Explore curated lists of top restaurants",
     },

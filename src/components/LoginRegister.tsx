@@ -19,6 +19,7 @@ import {
   VisibilityOff,
   Person,
 } from "@mui/icons-material";
+import { assets } from "../assets/assets";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -105,7 +106,7 @@ export const LoginRegister: React.FC = () => {
       maxWidth={false}
       sx={{
         minHeight: "100vh",
-        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/auth-bg.jpg')`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${assets.images.auth.authBg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
         backgroundSize: "cover",
@@ -127,7 +128,7 @@ export const LoginRegister: React.FC = () => {
       >
         <Box
           component="img"
-          src="/images/logo.png"
+          src={`${assets.images.auth.authLogo}`}
           alt="Noodletown"
           sx={{
             width: "80px",

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid2, Container } from "@mui/material";
+import { assets } from "../assets/assets";
 
 const Footer: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
         }}
       >
         <img
-          src="images/footer/mobile1.jpeg"
+          src={`${assets.images.footer.mobile}`}
           alt=""
           style={{
             width: "100%",
@@ -64,7 +65,7 @@ const Footer: React.FC = () => {
               <a href="https://play.google.com/">
                 <Box
                   component={"img"}
-                  src="images/footer/playstore.png"
+                  src={`${assets.images.footer.playstore}`}
                   alt=""
                   width={{ xs: "80px", sm: "150px" }}
                   height={{ xs: "45px", sm: "90px" }}
@@ -78,7 +79,7 @@ const Footer: React.FC = () => {
               <a href="https://www.apple.com/in/app-store/">
                 <Box
                   component={"img"}
-                  src="images/footer/appstore.png"
+                  src={`${assets.images.footer.appstore}`}
                   alt=""
                   width={{ xs: "80px", sm: "150px" }}
                   height={{ xs: "45px", sm: "90px" }}

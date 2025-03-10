@@ -1,3 +1,5 @@
+import { assets } from "../assets/assets";
+
 // Type of restaurants
 type Restaurant = {
   id: string;
@@ -19,7 +21,7 @@ const restaurants: Restaurant[] = [
   {
     id: "kfc-1",
     title: "KFC",
-    logo: "/images/Menu/brands/brand3.png",
+    logo: `${assets.images.restaurantLogo.kfc}`,
     posterImages: [
       "https://b.zmtcdn.com/data/pictures/4/2700044/9410759d611db9c62c3acc23c1f27e06.jpg?fit=around|750:500&crop=750:500;*,*",
       "https://static.vecteezy.com/system/resources/thumbnails/028/647/940/small_2x/fried-chicken-wings-with-kethcup-generative-ai-photo.jpg",
@@ -146,7 +148,7 @@ const restaurants: Restaurant[] = [
   {
     id: "mcdonalds-1",
     title: "McDonald's",
-    logo: "/images/Menu/brands/brand6.png",
+    logo: `${assets.images.restaurantLogo.macD}`,
     posterImages: [
       "https://viver-myexlusive-server.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2024/08/24072656/CompressJPEG.Online_1_100kb_2364-1024x521.jpg",
       "https://s7d1.scene7.com/is/image/mcdonalds/1PUB_bestburger_trendingnow:publication-column-mobile?resmode=sharp2",
@@ -177,7 +179,7 @@ const restaurants: Restaurant[] = [
   {
     id: "starbucks-1",
     title: "Starbucks",
-    logo: "/images/Menu/brands/brand5.png",
+    logo: `${assets.images.restaurantLogo.starBucks}`,
     posterImages: [
       "https://img.etimg.com/thumb/width-420,height-315,imgsize-91518,resizemode-75,msid-116510855/industry/cons-products/food/starbucks-fully-committed-to-indian-market-says-india-jv-tata-starbucks/starbucks.jpg",
       "https://assets.gqindia.com/photos/5cdc75d38e62990b13f38389/4:3/w_1440,h_1080,c_limit/starbucks-cup-hed-2013.jpg",
@@ -240,7 +242,7 @@ const restaurants: Restaurant[] = [
   {
     id: "burgerking-1",
     title: "Burger King",
-    logo: "/images/Menu/brands/brand4.png",
+    logo: `${assets.images.restaurantLogo.burgerKing}`,
     posterImages: [
       "https://lh3.googleusercontent.com/aYUUZKXpJHVFlaI5ADj1-0VAMClDR8al-qwk1JHZ3ZZPLJvw2w_f2p-U2m7M2zZNot6o7JDxyyMxmopZ6ADsJtC_kFDBxiQPf0tPsaHI=w1200-rw",
       "https://t3.ftcdn.net/jpg/04/13/22/78/360_F_413227880_HiUXEU9zICBzyQeRexFsHus19E8WNJDU.jpg",
@@ -303,7 +305,7 @@ const restaurants: Restaurant[] = [
   {
     id: "papajohns-1",
     title: "Papa John's",
-    logo: "https://scontent.famd1-2.fna.fbcdn.net/v/t39.30808-6/404288179_739837711493147_6882084349773332253_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Dq_d6zhR_v0Q7kNvgG-roho&_nc_oc=Adib0CLq_YPzTIUGv32Q81vaKka83evqnTehj5XSA3fJlDB_9EmA2v5at-gnjvi7FHRAqrva1R5x-NXhNPURZPG2&_nc_zt=23&_nc_ht=scontent.famd1-2.fna&_nc_gid=AUb246aPKZ3_nI1oGp0LL5Q&oh=00_AYD0VlnAPFZTe_PVbpRHSvxPB8EjGKSdoWgjOeXoWFyKYw&oe=67CDFA6C",
+    logo: "https://production-zenput-static.s3.amazonaws.com/static/i/site/logos/papa-johns-logo.png",
     posterImages: [
       "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_150,q_auto:low,fl_lossy,dpr_2.0,c_fill,f_auto,h_150/wyivgk1pvqowswlg1gnl",
       "https://images.deliveryhero.io/image/fd-ph/LH/xtaj-listing.jpg",

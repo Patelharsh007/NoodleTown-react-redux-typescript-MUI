@@ -11,6 +11,7 @@ import {
 
 import SearchIcon from "@mui/icons-material/Search";
 import Navbar from "./Navbar";
+import { assets } from "../assets/assets";
 
 const HeroSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState("Surat");
@@ -36,7 +37,7 @@ const HeroSection: React.FC = () => {
         alignItems={"center"}
         justifyContent={"flex-start"}
         sx={{
-          background: 'url("/images/hero.jpg")',
+          backgroundImage: `url(${assets.images.heroImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
