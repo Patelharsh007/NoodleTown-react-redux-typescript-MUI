@@ -11,7 +11,8 @@ import { ToastContainer } from "react-toastify";
 import ProductDetails from "./pages/ProductDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import Auth from "./components/Auth";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./UI/ProtectedRoute";
+import Orders from "./components/Orders";
 
 function App() {
   return (
@@ -33,6 +34,14 @@ function App() {
         <Route path="/restaurant/:id" element={<RestaurantPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />{" "}
         <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <ToastContainer />
     </div>

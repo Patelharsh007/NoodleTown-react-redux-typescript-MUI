@@ -1,5 +1,6 @@
 // authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { showErrorToast, showSuccessToast } from "../../UI/ToastContainer";
 
 interface AuthItem {
   isAuthenticated: boolean;
@@ -61,6 +62,7 @@ const authSlice = createSlice({
         password: "",
       };
       localStorage.removeItem("auth");
+      showSuccessToast("User Logged Out succesfully.");
     },
   },
 });
