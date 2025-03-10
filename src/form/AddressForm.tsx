@@ -8,12 +8,14 @@ import {
   Stack,
   TextField,
   Button,
+  IconButton,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
-import { addAddress } from "../redux/slices/AddressSlice";
+import { addAddress, removeAddress } from "../redux/slices/AddressSlice";
 import { selectAddress } from "../redux/slices/SelectedAddressSlice";
+import Remove from "@mui/icons-material/Remove";
 
 interface Address {
   id: string;
@@ -98,30 +100,52 @@ const AddressForm = () => {
         onChange={(e) => handleSelectAddress(e)}
       >
         {addressItems.map((address) => (
-          <FormControlLabel
-            key={address.id}
-            value={address.id}
-            control={
-              <Radio
-                sx={{
-                  color: "#FFA500",
-                  "&.Mui-checked": {
+          <Stack direction={"row"} alignItems={"center"}>
+            <FormControlLabel
+              key={address.id}
+              value={address.id}
+              control={
+                <Radio
+                  sx={{
                     color: "#FFA500",
-                  },
-                }}
+                    "&.Mui-checked": {
+                      color: "#FFA500",
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography
+                  fontFamily="Poppins"
+                  fontSize={{ xs: "14px", sm: "16px" }}
+                  color="#666"
+                >
+                  {`${address.street}, ${address.city}, ${address.state} - ${address.pincode}`}
+                </Typography>
+              }
+              sx={{ marginBottom: "10px" }}
+            />
+            <Box
+              component={"button"}
+              fontSize={"0px"}
+              borderRadius={"50%"}
+              borderColor={"transparent"}
+              sx={{
+                "&:hover": {
+                  Color: "#f9f9f9",
+                  backgroundColor: "#E8E8E8",
+                },
+              }}
+              onClick={() => {
+                dispatch(removeAddress(address.id));
+              }}
+            >
+              <Remove
+                fontSize={"small"}
+                sx={{ margin: "0px", padding: "0px" }}
               />
-            }
-            label={
-              <Typography
-                fontFamily="Poppins"
-                fontSize={{ xs: "14px", sm: "16px" }}
-                color="#666"
-              >
-                {`${address.street}, ${address.city}, ${address.state} - ${address.pincode}`}
-              </Typography>
-            }
-            sx={{ marginBottom: "10px" }}
-          />
+            </Box>
+          </Stack>
         ))}
       </RadioGroup>
 
