@@ -104,7 +104,7 @@ export const Auth: React.FC = () => {
       if (tab === 0) {
         // Login logic
         const user = { email: formData.email, password: formData.password };
-        dispatch(signUp(user));
+        dispatch(login(user));
         navigate("/user");
       } else if (tab === 1) {
         // Sign-up logic
@@ -113,7 +113,7 @@ export const Auth: React.FC = () => {
           fullName: formData.fullName,
           password: formData.password,
         };
-        dispatch(login(userData));
+        dispatch(signUp(userData));
         navigate("/user"); // Navigate to authenticated page
       }
     }
@@ -427,6 +427,16 @@ export const Auth: React.FC = () => {
             </Button>
           </Stack>
         </TabPanel>
+        <Typography
+          paddingTop={"50px"}
+          textAlign="center"
+          fontFamily="Poppins"
+          color="#666"
+          mb={3}
+          fontSize="0.9rem"
+        >
+          Go to HomePage
+        </Typography>
       </Box>
     </Container>
   );
