@@ -10,12 +10,12 @@ import {
   showSuccessToast,
 } from "./ToastContainer";
 
-import { MealItemType } from "../data/mealItemTypes";
 import { RootState } from "../redux/Store";
 import { Link } from "react-router-dom";
+import { MealItem } from "../types/type";
 
 interface ScrollerCardProp {
-  Card: MealItemType;
+  Card: MealItem;
 }
 
 const ScrollerCard: React.FC<ScrollerCardProp> = ({ Card }) => {

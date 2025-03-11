@@ -12,10 +12,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import React, { useEffect, useState } from "react";
 
 import restaurants from "../data/restaurantsData";
-import { RestaurantType } from "../data/restaurantTypes";
 
 import mealItems from "../data/mealItem";
-import { MealItemType } from "../data/mealItemTypes";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,20 +22,17 @@ import {
   incrementQuantity,
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
-import {
-  showErrorToast,
-  showInfoToast,
-  showSuccessToast,
-} from "../UI/ToastContainer";
+
 import { Link } from "react-router-dom";
+import { MealItem, RestaurantItem } from "../types/type";
 
 type restaurantProps = {
   id: string;
 };
 
 const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
-  const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
-  const [mealItem, setMealItem] = useState<MealItemType[]>([]);
+  const [restaurant, setRestaurant] = useState<RestaurantItem | null>(null);
+  const [mealItem, setMealItem] = useState<MealItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(
     "Recommended"
   );
@@ -84,7 +79,7 @@ const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
     return cartItem ? cartItem.quantity : 0;
   };
 
-  const handleAddToCart = (meal: MealItemType) => {
+  const handleAddToCart = (meal: MealItem) => {
     if (!restaurant) return;
 
     if (!isItemInCart(meal.id)) {

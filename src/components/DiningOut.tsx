@@ -4,14 +4,14 @@ import { Box } from "@mui/material";
 import DiningOutCard from "../UI/DiningOutCard";
 import { assets } from "../assets/assets";
 
-type dummy_dining_out_data = {
+interface dummy_dining_out_data {
   imgurl: string;
   heading: string;
   statement: string;
-}[];
+}
 
 const DiningOut: React.FC = () => {
-  const DUMMY_DINING_OUT_DATA: dummy_dining_out_data = [
+  const DUMMY_DINING_OUT_DATA: dummy_dining_out_data[] = [
     {
       imgurl: `${assets.images.diningOut.diningOut1}`,
       heading: "Dining Out",

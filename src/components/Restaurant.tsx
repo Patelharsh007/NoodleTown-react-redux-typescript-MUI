@@ -10,16 +10,16 @@ import {
 } from "@mui/material";
 
 import restaurants from "../data/restaurantsData";
-import { RestaurantType } from "../data/restaurantTypes";
 import { useNavigate } from "react-router-dom";
+import { RestaurantItem } from "../types/type";
 
-type restaurantProps = {
+interface restaurantProps {
   id: string;
-};
+}
 
 const Restaurant: React.FC<restaurantProps> = ({ id }) => {
   const navigate = useNavigate();
-  const [restaurant, setRestaurant] = useState<RestaurantType | null>(null);
+  const [restaurant, setRestaurant] = useState<RestaurantItem | null>(null);
 
   useEffect(() => {
     const fetchRestaurantData = async () => {

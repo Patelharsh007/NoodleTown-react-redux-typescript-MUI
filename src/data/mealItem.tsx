@@ -1,15 +1,4 @@
-type MealItem = {
-  id: string;
-  restaurantId: string;
-  restaurantName: string;
-  category: string;
-  image: string;
-  title: string;
-  shortDescription: string;
-  fullDescription: string[];
-  price: number;
-  isPopular: boolean;
-};
+import { MealItem } from "../types/type";
 
 const mealItems: MealItem[] = [
   {

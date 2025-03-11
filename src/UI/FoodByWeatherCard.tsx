@@ -1,11 +1,11 @@
 import { Grid2, Box, Stack, Typography } from "@mui/material";
 import React from "react";
 
-import { MealItemType } from "../data/mealItemTypes";
 import { Link } from "react-router-dom";
+import { MealItem } from "../types/type";
 
 type foodByWeatherCardProp = {
-  Card: MealItemType;
+  Card: MealItem;
 };
 
 const FoodByWeatherCard: React.FC<foodByWeatherCardProp> = ({ Card }) => {

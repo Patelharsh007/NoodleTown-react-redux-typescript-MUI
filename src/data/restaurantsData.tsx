@@ -1,23 +1,7 @@
 import { assets } from "../assets/assets";
+import { RestaurantItem } from "../types/type";
 
-// Type of restaurants
-type Restaurant = {
-  id: string;
-  title: string;
-  logo: string;
-  posterImages: string[];
-  cuisines: string[];
-  avgCostPerPerson: number;
-  address: string;
-  isOpen: boolean;
-  timing: string;
-  menuImages: string[];
-  categories: string[];
-  isFeatured: boolean;
-  rating: number;
-};
-
-const restaurants: Restaurant[] = [
+const restaurants: RestaurantItem[] = [
   {
     id: "kfc-1",
     title: "KFC",

@@ -11,14 +11,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-import {
-  showSuccessToast,
-  showInfoToast,
-  showErrorToast,
-} from "../UI/ToastContainer";
-
 import mealItems from "../data/mealItem";
-import { MealItemType } from "../data/mealItemTypes";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
@@ -27,10 +20,11 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../redux/slices/CartSlice";
+import { MealItem } from "../types/type";
 
-type productDetailProp = {
+interface productDetailProp {
   id: string;
-};
+}
 
 const Product: React.FC<productDetailProp> = ({ id }) => {
   const dispatch = useDispatch();
@@ -45,7 +39,7 @@ const Product: React.FC<productDetailProp> = ({ id }) => {
   const getItemQuantity = (id: string) =>
     cartItems.find((item) => item.id === id)?.quantity || 0;
 
-  const handleAddToCart = (meal: MealItemType) => {
+  const handleAddToCart = (meal: MealItem) => {
     dispatch(
       addToCart({
         id: meal.id,

@@ -1,9 +1,9 @@
 import { Stack, Box, Typography } from "@mui/material";
 import React from "react";
 
-type topBrandUiProp = {
+interface topBrandUiProp {
   restaurant: { id: string; title: string; logo: string };
-};
+}
 
 const TopBrandUI: React.FC<topBrandUiProp> = ({ restaurant }) => {
   return (

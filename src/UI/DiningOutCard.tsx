@@ -2,9 +2,9 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
-type DiningOutProps = {
+interface DiningOutProps {
   Card: { imgurl: string; heading: string; statement: string };
-};
+}
 
 const DiningOutCard: React.FC<DiningOutProps> = ({ Card }) => {
   return (
