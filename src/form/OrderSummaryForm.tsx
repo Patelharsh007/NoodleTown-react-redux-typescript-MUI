@@ -78,7 +78,12 @@ const OrderSummaryForm = () => {
     };
 
     dispatch(placeOrder(order));
+    setTimeout(() => {
+      navigate("/orders");
+    }, 1500);
+
     dispatch(deselectAddress());
+
     setTimeout(() => {
       dispatch(clearCart());
       window.scrollTo({ top: 0, behavior: "smooth" });
