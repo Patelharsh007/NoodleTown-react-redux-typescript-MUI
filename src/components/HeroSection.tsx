@@ -163,7 +163,6 @@ const HeroSection: React.FC = () => {
                 <Stack
                   width={"90%"}
                   height={"50%"}
-                  // height={{ xs: "40px", sm: "auto" }}
                   margin={"0 auto"}
                   display={"flex"}
                   direction={"row"}

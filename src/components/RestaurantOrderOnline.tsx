@@ -111,12 +111,13 @@ const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
     <>
       <Container sx={{ padding: "20px" }}>
         <Typography
-          fontFamily="Poppins"
+          fontFamily={"Poppins"}
           fontWeight={500}
-          fontSize={{ xs: "26px", sm: "20px" }}
-          lineHeight={{ xs: "34px", sm: "30px" }}
+          fontSize={{ xs: "28px", sm: "24px" }}
+          lineHeight={{ xs: "40px", sm: "36px" }}
+          letterSpacing="0%"
+          color={"#000000"}
           textAlign={{ xs: "center", sm: "left" }}
-          paddingTop={"20px"}
         >
           Order Online
         </Typography>

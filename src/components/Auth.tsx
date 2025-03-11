@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Box, Container, Typography, Button, TextField } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
+
 import { login, signUp } from "../redux/slices/AuthSlice";
 import { LoginForm } from "../form/LoginForm";
 import { SignUpForm } from "../form/SignUpForm";
@@ -25,20 +26,22 @@ export const Auth: React.FC = () => {
   return (
     <Box
       width="100%"
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"center"}
       sx={{
         minHeight: "100vh",
-        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${assets.images.auth.authBg})`,
+        backgroundImage: {
+          xs: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${assets.images.auth.authBg})`,
+          md: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${assets.images.auth.authBg1})`,
+        },
         backgroundSize: "cover",
         backgroundPosition: "center",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
       }}
     >
       <Box
+        width={{ xs: "70%", sm: "50%" }}
         sx={{
-          width: "100%",
-          maxWidth: "450px",
           backgroundColor: "rgba(255, 255, 255, 0.95)",
           borderRadius: "24px",
           padding: { xs: 3, sm: 4 },
@@ -51,8 +54,8 @@ export const Auth: React.FC = () => {
           src={assets.images.auth.authLogo}
           alt="Noodletown"
           sx={{
-            width: 80,
-            height: 80,
+            width: "80px",
+            height: "80px",
             display: "block",
             margin: "0 auto 20px",
           }}

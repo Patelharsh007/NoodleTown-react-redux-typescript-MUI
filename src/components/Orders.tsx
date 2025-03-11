@@ -37,8 +37,8 @@ const Orders: React.FC = () => {
     <Container
       maxWidth="lg"
       sx={{
-        py: { xs: "16px", sm: "24px", md: "32px" },
-        px: { xs: "8px", sm: "16px", md: "px24" },
+        paddingY: { xs: "16px", sm: "24px", md: "32px" },
+        paddingX: { xs: "8px", sm: "16px", md: "px24" },
       }}
     >
       <Typography

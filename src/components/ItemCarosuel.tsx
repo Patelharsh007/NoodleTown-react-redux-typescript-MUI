@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import { Box, Button, Typography } from "@mui/material";
-
 import ScrollerCard from "../UI/ScrollerCard";
 import mealItems from "../data/mealItem";
 import { assets } from "../assets/assets";
 
 const ItemCarosuel: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
+
   const getTopCategories = () => {
     // CategoryCount item(object)
     const categoryCount: { [key: string]: number } = {};
@@ -92,33 +91,34 @@ const ItemCarosuel: React.FC = () => {
         justifyContent={"center"}
         gap={"15px"}
       >
-        {categories.map((category) => (
-          <Button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            sx={{
-              padding: "10px 20px",
-              fontSize: "16px",
-              cursor: "pointer",
-              border:
-                selectedCategory === category
-                  ? "2px solid #F6B716"
-                  : "2px solid #ECEEF6",
-              borderRadius: "45px",
-              bgcolor: selectedCategory === category ? "#F6B716" : "#ECEEF6",
-              color: selectedCategory === category ? "white" : "inherit",
-              textTransform: "none",
+        {categories &&
+          categories.map((category) => (
+            <Button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              sx={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                cursor: "pointer",
+                border:
+                  selectedCategory === category
+                    ? "2px solid #F6B716"
+                    : "2px solid #ECEEF6",
+                borderRadius: "45px",
+                bgcolor: selectedCategory === category ? "#F6B716" : "#ECEEF6",
+                color: selectedCategory === category ? "white" : "inherit",
+                textTransform: "none",
 
-              "&:hover": {
-                opacity: 0.8,
-                bgcolor: "#f8c33d",
-                border: "2px solid #f8c33d",
-              },
-            }}
-          >
-            {category}
-          </Button>
-        ))}
+                "&:hover": {
+                  opacity: 0.8,
+                  bgcolor: "#f8c33d",
+                  border: "2px solid #f8c33d",
+                },
+              }}
+            >
+              {category}
+            </Button>
+          ))}
       </Box>
       <Box
         maxWidth="1800px"
@@ -159,7 +159,7 @@ const ItemCarosuel: React.FC = () => {
             padding: "4px",
             width: "100%",
             height: "100%",
-            justifyContent: filteredItems.length <= 5 ? "center" : "flex-start", // Conditional centering
+            justifyContent: filteredItems.length <= 5 ? "center" : "flex-start",
             "&:hover": {
               cursor: filteredItems.length > 4 ? "grab" : "default",
             },

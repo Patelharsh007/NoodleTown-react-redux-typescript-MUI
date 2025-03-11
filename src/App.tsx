@@ -10,9 +10,8 @@ import UserDetail from "./pages/UserDetail";
 import { ToastContainer } from "react-toastify";
 import ProductDetails from "./pages/ProductDetails";
 import ScrollToTop from "./components/ScrollToTop";
-import Auth from "./components/Auth";
+import AuthPage from "./pages/AuthPage";
 import ProtectedRoute from "./UI/ProtectedRoute";
-import Orders from "./components/Orders";
 import OrderPage from "./pages/OrderPage";
 
 function App() {
@@ -21,6 +20,12 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/restaurant/:id" element={<RestaurantPage />} />
+        <Route path="/product/:id" element={<ProductDetails />} />{" "}
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="/user"
           element={
@@ -29,12 +34,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/restaurant/:id" element={<RestaurantPage />} />
-        <Route path="/product/:id" element={<ProductDetails />} />{" "}
-        <Route path="/cart" element={<Cart />} />
         <Route
           path="/orders"
           element={

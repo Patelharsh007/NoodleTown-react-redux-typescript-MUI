@@ -23,14 +23,14 @@ const FoodCategoryGroupCard: React.FC<foodCategoryGroupProp> = ({ Card }) => {
       >
         {/* Overlay */}
         <Box
+          position={"absolute"}
+          left={0}
+          top={0}
+          width={"100%"}
+          height={"100%"}
+          zIndex={1}
           sx={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100%",
             background: "rgba(0, 0, 0, 0.4)",
-            zIndex: 1,
           }}
         />
 
@@ -48,12 +48,10 @@ const FoodCategoryGroupCard: React.FC<foodCategoryGroupProp> = ({ Card }) => {
 
         {/* Text Stack */}
         <Stack
-          sx={{
-            position: "absolute",
-            bottom: { xs: "20px", sm: "30px", md: "40px" },
-            left: { xs: "15px", sm: "20px", md: "25px" },
-            zIndex: 2,
-          }}
+          position={"absolute"}
+          bottom={{ xs: "20px", sm: "30px", md: "40px" }}
+          left={{ xs: "15px", sm: "20px", md: "25px" }}
+          zIndex={2}
         >
           <Typography
             fontFamily={"Poppins"}

@@ -25,11 +25,12 @@ import menuCategory3 from "./images/menuCategory3.jpg";
 import vector1 from "./images/vector1.png";
 import vector2 from "./images/vector2.png";
 import authBg from "./images/auth-bg.jpg";
+import authBg1 from "./images/auth-bg1.jpg";
 import authLogo from "./images/auth-logo.png";
 
 export const assets = {
   images: {
-    auth: { authBg: authBg, authLogo: authLogo },
+    auth: { authBg: authBg, authLogo: authLogo, authBg1: authBg1 },
     heroImage: heroImage,
     diningOut: {
       diningOut1: diningOut1,
