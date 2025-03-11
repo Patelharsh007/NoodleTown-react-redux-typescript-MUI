@@ -4,11 +4,11 @@ import { Box, Grid2 } from "@mui/material";
 import FoodCategoryGroupCard from "../UI/FoodCategoryGroupCard";
 import { assets } from "../assets/assets";
 
-type foodByCategoryGroup = {
+interface foodByCategoryGroup {
   groupName: string;
   groupDetails: string;
   groupImage: string;
-};
+}
 
 const DUMMY_FOOD_BY_CATEGORY_DATA: foodByCategoryGroup[] = [
   {

@@ -6,10 +6,8 @@ import ScrollerCard from "../UI/ScrollerCard";
 import mealItems from "../data/mealItem";
 import { assets } from "../assets/assets";
 
-type Category = string;
-
 const ItemCarosuel: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<Category>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const getTopCategories = () => {
     // CategoryCount item(object)
     const categoryCount: { [key: string]: number } = {};

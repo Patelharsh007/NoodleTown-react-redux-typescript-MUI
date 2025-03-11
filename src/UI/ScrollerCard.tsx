@@ -1,14 +1,10 @@
-import React, { useDebugValue } from "react";
+import React from "react";
 import { ShoppingBag } from "@mui/icons-material";
 import { Box, Typography, Stack } from "@mui/material";
 
-import { useDispatch, UseDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../redux/slices/CartSlice";
-import {
-  showErrorToast,
-  showInfoToast,
-  showSuccessToast,
-} from "./ToastContainer";
+import { showInfoToast } from "./ToastContainer";
 
 import { RootState } from "../redux/Store";
 import { Link } from "react-router-dom";

@@ -1,13 +1,13 @@
 import { Grid2, Box, Typography, Stack } from "@mui/material";
 import React from "react";
 
-type foodCategoryGroupProp = {
+interface foodCategoryGroupProp {
   Card: {
     groupName: string;
     groupDetails: string;
     groupImage: string;
   };
-};
+}
 
 const FoodCategoryGroupCard: React.FC<foodCategoryGroupProp> = ({ Card }) => {
   return (

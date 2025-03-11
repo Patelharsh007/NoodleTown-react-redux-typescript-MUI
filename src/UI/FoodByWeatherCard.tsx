@@ -4,9 +4,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MealItem } from "../types/type";
 
-type foodByWeatherCardProp = {
+interface foodByWeatherCardProp {
   Card: MealItem;
-};
+}
 
 const FoodByWeatherCard: React.FC<foodByWeatherCardProp> = ({ Card }) => {
   return (

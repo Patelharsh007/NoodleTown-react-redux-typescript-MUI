@@ -8,9 +8,9 @@ import { Badge, Stack, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 
-type NavbarProps = {
+interface NavbarProps {
   linkColor?: string;
-};
+}
 
 const Navbar: React.FC<NavbarProps> = ({ linkColor }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);

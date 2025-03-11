@@ -2,9 +2,9 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
-type BestDelieveredBoxProps = {
+interface BestDelieveredBoxProps {
   box: { id: string; imageurl: string; title: string };
-};
+}
 
 const BestDelieveredBox: React.FC<BestDelieveredBoxProps> = ({ box }) => {
   return (

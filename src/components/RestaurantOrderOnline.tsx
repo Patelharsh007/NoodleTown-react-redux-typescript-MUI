@@ -26,9 +26,9 @@ import { RootState } from "../redux/Store";
 import { Link } from "react-router-dom";
 import { MealItem, RestaurantItem } from "../types/type";
 
-type restaurantProps = {
+interface restaurantProps {
   id: string;
-};
+}
 
 const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
   const [restaurant, setRestaurant] = useState<RestaurantItem | null>(null);
