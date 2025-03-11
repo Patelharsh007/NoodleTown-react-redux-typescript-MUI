@@ -1,13 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { showInfoToast } from "../../UI/ToastContainer";
-
-interface AddressItem {
-  id: string;
-  street: string;
-  city: string;
-  state: string;
-  pincode: string;
-}
+import { AddressItem } from "../../types/type";
 
 interface AddressState {
   items: AddressItem[];

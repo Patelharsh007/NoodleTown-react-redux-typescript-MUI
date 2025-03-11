@@ -1,13 +1,7 @@
 // authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { showErrorToast, showSuccessToast } from "../../UI/ToastContainer";
-
-interface AuthItem {
-  isAuthenticated: boolean;
-  email: string;
-  fullName?: string;
-  password: string;
-}
+import { AuthItem } from "../../types/type";
 
 interface AuthState {
   authUser: AuthItem;

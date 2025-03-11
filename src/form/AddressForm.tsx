@@ -8,7 +8,6 @@ import {
   Stack,
   TextField,
   Button,
-  IconButton,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,22 +15,7 @@ import { RootState } from "../redux/Store";
 import { addAddress, removeAddress } from "../redux/slices/AddressSlice";
 import { selectAddress } from "../redux/slices/SelectedAddressSlice";
 import Remove from "@mui/icons-material/Remove";
-
-interface Address {
-  id: string;
-  street: string;
-  city: string;
-  state: string;
-  pincode: string;
-}
-
-//New address to be added to list
-interface NewAddress {
-  street: string;
-  city: string;
-  state: string;
-  pincode: string;
-}
+import { AddressItem, NewAddress } from "../types/type";
 
 const AddressForm = () => {
   const [showAddressForm, setShowAddressForm] = useState(false);
@@ -61,7 +45,7 @@ const AddressForm = () => {
     ) {
       return;
     }
-    const address: Address = {
+    const address: AddressItem = {
       id: String(Date.now()),
       ...newAddress,
     };

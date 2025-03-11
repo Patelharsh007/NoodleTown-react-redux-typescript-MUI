@@ -4,18 +4,7 @@ import {
   showInfoToast,
   showSuccessToast,
 } from "../../UI/ToastContainer";
-
-interface CartItem {
-  id: string;
-  itemId: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-  restaurantId: string;
-  category: string;
-  description?: string;
-}
+import { CartItem } from "../../types/type";
 
 interface CartState {
   items: CartItem[];

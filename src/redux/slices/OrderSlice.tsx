@@ -1,22 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { showSuccessToast } from "../../UI/ToastContainer";
-
-interface OrderItem {
-  id: string;
-  user_email: string;
-  Date: Date | string;
-  address: string;
-  items: {
-    itemName: string;
-    quantity: number;
-    price: number;
-    itemTotal: number;
-  }[];
-  subTotal: number;
-  discount: number;
-  total: number;
-  status: string;
-}
+import { OrderItem } from "../../types/type";
 
 interface OrderState {
   orders: OrderItem[];

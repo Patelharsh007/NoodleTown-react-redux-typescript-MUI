@@ -14,23 +14,7 @@ import { showSuccessToast } from "../UI/ToastContainer";
 import { placeOrder } from "../redux/slices/OrderSlice";
 import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
 import { Navigate, useNavigate } from "react-router-dom";
-
-interface OrderItem {
-  id: string;
-  user_email: string;
-  Date: Date | string;
-  address: string;
-  items: {
-    itemName: string;
-    quantity: number;
-    price: number;
-    itemTotal: number;
-  }[];
-  subTotal: number;
-  discount: number;
-  total: number;
-  status: string;
-}
+import { OrderItem } from "../types/type";
 
 const OrderSummary = () => {
   // Checkout--- totaldiscount etc

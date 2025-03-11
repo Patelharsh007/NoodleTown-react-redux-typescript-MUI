@@ -1,15 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface SelectedAddressItem {
-  id: string;
-  street: string;
-  city: string;
-  state: string;
-  pincode: string;
-}
+import { AddressItem } from "../../types/type";
 
 interface SelectedAddressState {
-  item: SelectedAddressItem | null;
+  item: AddressItem | null;
 }
 
 const initialState: SelectedAddressState = {
@@ -20,7 +13,7 @@ const SelectedAddressSlice = createSlice({
   name: "selectedaddress",
   initialState,
   reducers: {
-    selectAddress: (state, action: PayloadAction<SelectedAddressItem>) => {
+    selectAddress: (state, action: PayloadAction<AddressItem>) => {
       state.item = { ...action.payload };
     },
     deselectAddress: (state) => {
