@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Auth from "./components/Auth";
 import ProtectedRoute from "./UI/ProtectedRoute";
 import Orders from "./components/Orders";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           path="/orders"
           element={
             <ProtectedRoute>
-              <Orders />
+              <OrderPage />
             </ProtectedRoute>
           }
         />

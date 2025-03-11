@@ -44,14 +44,27 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<{ email: string; password: string }>
     ) => {
-      const user = JSON.parse(localStorage.getItem("auth") || "{}");
+      const storedAuth = localStorage.getItem("auth");
+
+      if (!storedAuth) {
+        showErrorToast("No user found. Please sign up first.");
+        return; // Early return to prevent state update
+      }
+
+      const user = JSON.parse(storedAuth);
+
+      // Check if the credentials match the stored data
       if (
         user.email === action.payload.email &&
         user.password === action.payload.password
       ) {
         state.authUser.isAuthenticated = true;
-        state.authUser.email = action.payload.email;
+        state.authUser.email = user.email;
         state.authUser.fullName = user.fullName;
+        // Password should not be stored in the state
+        state.authUser.password = ""; // Clear sensitive information
+      } else {
+        showErrorToast("Invalid email or password.");
       }
     },
     logout: (state) => {

@@ -13,9 +13,11 @@ import { clearCart } from "../redux/slices/CartSlice";
 import { showSuccessToast } from "../UI/ToastContainer";
 import { placeOrder } from "../redux/slices/OrderSlice";
 import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface OrderItem {
   id: string;
+  user_email: string;
   Date: Date | string;
   address: string;
   items: {
@@ -36,14 +38,15 @@ const OrderSummary = () => {
   const [couponCode, setCouponCode] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   //Redux
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const selectedAddress = useSelector(
     (state: RootState) => state.seletedAddress.item
   );
-  const orders = useSelector((state: RootState) => state.order.orders);
 
+  const { authUser } = useSelector((state: RootState) => state.auth);
   //coupon logic
   const handleApplyCoupon = () => {
     if (couponCode.length === 6) {
@@ -65,9 +68,14 @@ const OrderSummary = () => {
   const handleCheckout = () => {
     if (!selectedAddress || cartItems.length === 0) return;
 
+    if (!authUser.isAuthenticated) {
+      return navigate("/auth");
+    }
+
     //  order object
     const order: OrderItem = {
       id: String(Date.now()), // unique id
+      user_email: authUser.email,
       Date: new Date().toISOString(), // date
       address: `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state} - ${selectedAddress.pincode}`,
       items: cartItems.map((item) => ({
