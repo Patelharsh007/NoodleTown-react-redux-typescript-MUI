@@ -25,6 +25,7 @@ import { RootState } from "../redux/Store";
 
 import { Link } from "react-router-dom";
 import { MealItem, RestaurantItem } from "../types/type";
+import RestaurantOrderCategories from "./RestaurantOrderCategories";
 
 interface restaurantProps {
   id: string;
@@ -122,72 +123,12 @@ const RestaurantOrderOnline: React.FC<restaurantProps> = ({ id }) => {
           Order Online
         </Typography>
         <Grid2 container width={"100%"} marginY={"40px"}>
-          <Grid2
-            size={{ xs: 12, sm: 3 }}
-            position={"relative"}
-            sx={{
-              "&::after": {
-                display: { xs: "none", sm: "block" },
-                position: "absolute",
-                top: 0,
-                left: "103%",
-                content: '""',
-                height: "100%",
-                border: "2px solid #FFC300",
-                zIndex: 3,
-              },
-            }}
-          >
-            <Stack marginTop={{ xs: "0px", sm: "50px" }} spacing={1}>
-              {/* {restaurant?.categories.unshift("Recommended")} */}
-
-              {restaurant && restaurant.categories ? (
-                ["Recommended", ...restaurant.categories].map(
-                  (category, index) => {
-                    const categoryCount =
-                      category === "Recommended"
-                        ? mealItem.filter((item) => item.isPopular).length
-                        : mealItem.filter((item) => item.category === category)
-                            .length;
-                    if (categoryCount > 0) {
-                      const isSelected = selectedCategory === category;
-                      return (
-                        <Button
-                          key={index}
-                          onClick={() => handleCategoryClick(category)}
-                          sx={{
-                            color: isSelected ? "#FFFFFF" : "#000000",
-                            backgroundColor: isSelected
-                              ? "#FFC300"
-                              : "transparent",
-                            "&:hover": {
-                              backgroundColor: "#FFC300",
-                              borderColor: "#FFC300",
-                              "& .MuiTypography-root": {
-                                color: "#FFFFFF",
-                              },
-                            },
-                          }}
-                        >
-                          <Typography
-                            fontFamily="Poppins"
-                            fontWeight={400}
-                            fontSize={{ xs: "20px", sm: "18px", md: "20px" }}
-                            lineHeight={{ xs: "30px", sm: "28px", md: "30px" }}
-                            color="inherit"
-                          >
-                            {category} ({categoryCount})
-                          </Typography>
-                        </Button>
-                      );
-                    }
-                  }
-                )
-              ) : (
-                <p>Loading...</p>
-              )}
-            </Stack>
-          </Grid2>
+          <RestaurantOrderCategories
+            restaurant={restaurant}
+            mealItems={mealItem}
+            Category={selectedCategory}
+            onCategoryClick={handleCategoryClick}
+          />
 
           <Grid2
             size={{ xs: 12, sm: 9 }}
