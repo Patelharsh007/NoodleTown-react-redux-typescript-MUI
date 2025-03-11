@@ -1,19 +1,5 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Container,
-  Grid2,
-  Stack,
-  Typography,
-} from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { Container, Grid2, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
-import restaurants from "../data/restaurantsData";
-
-import mealItems from "../data/mealItem";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -23,8 +9,10 @@ import {
 } from "../redux/slices/CartSlice";
 import { RootState } from "../redux/Store";
 
-import { Link } from "react-router-dom";
 import { MealItem, RestaurantItem } from "../types/type";
+import restaurants from "../data/restaurantsData";
+import mealItems from "../data/mealItem";
+
 import RestaurantOrderCategories from "./RestaurantOrderCategories";
 import RestaurantOrderMenuItems from "./RestaurantOrderMenuItems";
 

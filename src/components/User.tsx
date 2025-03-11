@@ -10,22 +10,19 @@ const UserPage: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Get user data from the Redux store
   const { authUser } = useSelector((state: RootState) => state.auth);
 
-  // Handle Logout
   const handleLogout = () => {
-    dispatch(logout()); // Dispatch logout action
-    navigate("/auth"); // Navigate to the authentication page after logout
+    dispatch(logout());
+    navigate("/auth");
   };
 
-  // Handle viewing orders
   const handleViewOrders = () => {
-    navigate("/orders"); // Navigate to orders page
+    navigate("/orders");
   };
 
   if (!authUser.isAuthenticated) {
-    return <Navigate to="/auth" />; // Redirect to the auth page if the user is not authenticated
+    return <Navigate to="/auth" />;
   }
 
   return (

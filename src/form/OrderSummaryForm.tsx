@@ -16,7 +16,7 @@ import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
 import { useNavigate } from "react-router-dom";
 import { OrderItem } from "../types/type";
 
-const OrderSummary = () => {
+const OrderSummaryForm = () => {
   // Checkout--- totaldiscount etc
   const [discount, setDiscount] = useState(0);
   const [couponCode, setCouponCode] = useState("");
@@ -74,7 +74,7 @@ const OrderSummary = () => {
       ),
       discount: discount,
       total: total,
-      status: "pending",
+      status: "placed",
     };
 
     dispatch(placeOrder(order));
@@ -207,4 +207,4 @@ const OrderSummary = () => {
   );
 };
 
-export default OrderSummary;
+export default OrderSummaryForm;

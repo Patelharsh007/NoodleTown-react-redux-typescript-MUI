@@ -12,7 +12,7 @@ import {
   clearCart,
 } from "../redux/slices/CartSlice";
 
-import OrderSummary from "../form/OrderSummary";
+import OrderSummaryForm from "../form/OrderSummaryForm";
 import AddressForm from "../form/AddressForm";
 import CartCard from "../UI/CartCard";
 
@@ -116,7 +116,7 @@ const CartComponent: React.FC = () => {
           >
             <Grid2 container spacing={4}>
               <AddressForm />
-              <OrderSummary />
+              <OrderSummaryForm />
             </Grid2>
           </Paper>
         )}
