@@ -9,9 +9,17 @@ interface AuthState {
 
 const loadAuthFromLocalStorage = (): AuthState => {
   const storedAuth = localStorage.getItem("auth");
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+
   if (storedAuth) {
-    return { authUser: JSON.parse(storedAuth) };
+    const authenticatedUser = users.find(
+      (user: AuthItem) => user.email === JSON.parse(storedAuth).email
+    );
+    if (authenticatedUser) {
+      return { authUser: authenticatedUser };
+    }
   }
+
   return {
     authUser: { isAuthenticated: false, email: "", fullName: "", password: "" },
   };
@@ -29,47 +37,57 @@ const authSlice = createSlice({
         password: string;
       }>
     ) => {
-      const user = { ...action.payload, isAuthenticated: true };
-      localStorage.setItem("auth", JSON.stringify(user));
-      state.authUser = user;
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const newUser = { ...action.payload, isAuthenticated: false };
+      users.push(newUser);
+      localStorage.setItem("users", JSON.stringify(users));
+      showSuccessToast("Account created successfully.");
     },
 
     login: (
       state,
       action: PayloadAction<{ email: string; password: string }>
     ) => {
-      const storedAuth = localStorage.getItem("auth");
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const user = users.find(
+        (user: AuthItem) =>
+          user.email === action.payload.email &&
+          user.password === action.payload.password
+      );
 
-      if (!storedAuth) {
-        showErrorToast("No user found. Please sign up first.");
-        return; // Early return to prevent state update
-      }
+      if (user) {
+        // Update user as authenticated and store in localStorage
+        user.isAuthenticated = true;
+        localStorage.setItem("auth", JSON.stringify(user));
+        localStorage.setItem("users", JSON.stringify(users)); // Update users array in localStorage
 
-      const user = JSON.parse(storedAuth);
-
-      // Check if the credentials match the stored data
-      if (
-        user.email === action.payload.email &&
-        user.password === action.payload.password
-      ) {
-        state.authUser.isAuthenticated = true;
-        state.authUser.email = user.email;
-        state.authUser.fullName = user.fullName;
-        // Password should not be stored in the state
-        state.authUser.password = ""; // Clear sensitive information
+        state.authUser = user;
+        showSuccessToast("User successfully logged in.");
       } else {
         showErrorToast("Invalid email or password.");
       }
     },
+
     logout: (state) => {
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const updatedUsers = users.map((user: AuthItem) =>
+        user.email === state.authUser.email
+          ? { ...user, isAuthenticated: false }
+          : user
+      );
+
+      // Clear the stored auth user and update localStorage
+      localStorage.removeItem("auth");
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+
       state.authUser = {
         isAuthenticated: false,
         email: "",
         fullName: "",
         password: "",
       };
-      localStorage.removeItem("auth");
-      showSuccessToast("User Logged Out succesfully.");
+
+      showSuccessToast("User successfully logged out.");
     },
   },
 });

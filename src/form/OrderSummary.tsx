@@ -13,7 +13,7 @@ import { clearCart } from "../redux/slices/CartSlice";
 import { showSuccessToast } from "../UI/ToastContainer";
 import { placeOrder } from "../redux/slices/OrderSlice";
 import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { OrderItem } from "../types/type";
 
 const OrderSummary = () => {

@@ -22,6 +22,13 @@ import { deleteOrder } from "../redux/slices/OrderSlice";
 const Orders: React.FC = () => {
   const dispatch = useDispatch();
   const orders = useSelector((state: RootState) => state.order.orders);
+
+  const authUser = useSelector((state: RootState) => state.auth.authUser);
+
+  const user_orders = orders.filter(
+    (item) => item.user_email === authUser.email
+  );
+
   const handleDeleteOrder = (orderId: string) => {
     dispatch(deleteOrder(orderId));
   };
@@ -60,7 +67,7 @@ const Orders: React.FC = () => {
           flexDirection={"column"}
           gap={{ xs: "16px", sm: "20px", md: "24px" }}
         >
-          {orders.map((order) => (
+          {user_orders.map((order) => (
             <Paper
               key={order.id}
               elevation={2}
