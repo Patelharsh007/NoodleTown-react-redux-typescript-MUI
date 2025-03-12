@@ -1,4 +1,4 @@
-import { Box, Grid2, Typography } from "@mui/material";
+import { Box, Button, Grid2, Stack, Typography } from "@mui/material";
 import React from "react";
 import CartCard from "../../components/CartCard";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,9 +8,11 @@ import {
   clearCart,
 } from "../../redux/slices/CartSlice";
 import { RootState } from "../../redux/Store";
+import { useNavigate } from "react-router-dom";
 
 const CartContent = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -36,15 +38,50 @@ const CartContent = () => {
               />
             ))
           ) : (
-            <Typography
-              textAlign="center"
-              width="100%"
-              marginY={4}
-              color="#666"
-              fontSize="1.2rem"
-            >
-              Your cart is empty
-            </Typography>
+            // <Typography
+            //   textAlign="center"
+            //   width="100%"
+            //   marginY={4}
+            //   color="#666"
+            //   fontSize="1.2rem"
+            // >
+            //   Your cart is empty
+            // </Typography>
+            <>
+              <Stack margin={"auto"}>
+                <Box
+                  component={"img"}
+                  margin={"auto"}
+                  height={"450px"}
+                  src={
+                    "https://i.pinimg.com/736x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038.jpg"
+                  }
+                />
+
+                <Button
+                  onClick={() => {
+                    navigate("/menu");
+                  }}
+                  variant="contained"
+                  sx={{
+                    height: "50px",
+                    backgroundColor: "#FFC300",
+                    "&:hover": {
+                      backgroundColor: "#FFA500",
+                    },
+                  }}
+                >
+                  <Typography
+                    textAlign="center"
+                    marginY={4}
+                    color={"#f3f3f3"}
+                    fontSize="1.2rem"
+                  >
+                    Continue Ordering Delicious Food
+                  </Typography>
+                </Button>
+              </Stack>
+            </>
           )}
         </Grid2>
       </Box>
