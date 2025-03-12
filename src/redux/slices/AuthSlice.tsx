@@ -1,4 +1,3 @@
-// authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { showErrorToast, showSuccessToast } from "../../UI/ToastContainer";
 import { AuthItem } from "../../types/type";
@@ -56,10 +55,9 @@ const authSlice = createSlice({
       );
 
       if (user) {
-        // Update user as authenticated and store in localStorage
         user.isAuthenticated = true;
         localStorage.setItem("auth", JSON.stringify(user));
-        localStorage.setItem("users", JSON.stringify(users)); // Update users array in localStorage
+        localStorage.setItem("users", JSON.stringify(users));
 
         state.authUser = user;
         showSuccessToast("User successfully logged in.");
@@ -75,8 +73,6 @@ const authSlice = createSlice({
           ? { ...user, isAuthenticated: false }
           : user
       );
-
-      // Clear the stored auth user and update localStorage
       localStorage.removeItem("auth");
       localStorage.setItem("users", JSON.stringify(updatedUsers));
 

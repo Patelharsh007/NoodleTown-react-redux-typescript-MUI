@@ -13,8 +13,8 @@ import {
 } from "../redux/slices/CartSlice";
 
 import OrderSummaryForm from "../form/OrderSummaryForm";
-import AddressForm from "../form/AddressForm";
 import CartCard from "../UI/CartCard";
+import CartAddressComponent from "./CartAddressComponent";
 
 const CartComponent: React.FC = () => {
   const dispatch = useDispatch();
@@ -90,6 +90,7 @@ const CartComponent: React.FC = () => {
                 item={item}
                 onIncrement={handleIncrement}
                 onDecrement={handleDecrement}
+                key={item.id}
               />
             ))
           ) : (
@@ -115,7 +116,7 @@ const CartComponent: React.FC = () => {
             }}
           >
             <Grid2 container spacing={4}>
-              <AddressForm />
+              <CartAddressComponent />
               <OrderSummaryForm />
             </Grid2>
           </Paper>
