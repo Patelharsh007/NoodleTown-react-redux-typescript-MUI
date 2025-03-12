@@ -23,7 +23,7 @@ const Orders: React.FC = () => {
 
   return (
     <Container
-      maxWidth="lg"
+      maxWidth="md"
       sx={{
         paddingY: { xs: "16px", sm: "24px", md: "32px" },
         paddingX: { xs: "8px", sm: "16px", md: "px24" },
