@@ -47,11 +47,11 @@ const CartSlice = createSlice({
       const item = state.items.find((item) => item.id === action.payload);
       if (item && item.quantity > 1) {
         item.quantity -= 1;
-        // showInfoToast(`${item.name} quantity decreased`);
+        showInfoToast(`${item.name} quantity decreased`);
       } else if (item && item.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== action.payload);
+        showSuccessToast(`${item?.name} removed from cart.`);
       }
-      showInfoToast(`${item?.name} quantity decreased`);
       saveCartToLocalStorage(state);
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
