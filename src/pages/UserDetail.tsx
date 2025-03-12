@@ -1,5 +1,5 @@
 import React from "react";
-import User from "../components/User";
+import User from "../section/user/User";
 import Navbar from "../components/Navbar";
 
 const UserDetail = () => {

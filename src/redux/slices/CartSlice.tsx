@@ -3,7 +3,7 @@ import {
   showErrorToast,
   showInfoToast,
   showSuccessToast,
-} from "../../UI/ToastContainer";
+} from "../../components/ToastContainer";
 import { CartItem } from "../../types/type";
 
 interface CartState {

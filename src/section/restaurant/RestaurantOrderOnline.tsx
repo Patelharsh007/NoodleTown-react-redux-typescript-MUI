@@ -6,15 +6,15 @@ import {
   addToCart,
   decrementQuantity,
   incrementQuantity,
-} from "../redux/slices/CartSlice";
-import { RootState } from "../redux/Store";
+} from "../../redux/slices/CartSlice";
+import { RootState } from "../../redux/Store";
 
-import { MealItem, RestaurantItem } from "../types/type";
-import restaurants from "../data/restaurantsData";
-import mealItems from "../data/mealItem";
+import { MealItem, RestaurantItem } from "../../types/type";
+import restaurants from "../../data/restaurantsData";
+import mealItems from "../../data/mealItem";
 
-import RestaurantOrderCategories from "./RestaurantOrderCategories";
-import RestaurantOrderMenuItems from "./RestaurantOrderMenuItems";
+import RestaurantOrderCategories from "../../components/RestaurantOrderCategories";
+import RestaurantOrderMenuItems from "../../components/RestaurantOrderMenuItems";
 
 interface restaurantProps {
   id: string;

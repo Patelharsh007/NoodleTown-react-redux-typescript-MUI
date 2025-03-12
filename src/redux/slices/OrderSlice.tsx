@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { showSuccessToast } from "../../UI/ToastContainer";
+import { showSuccessToast } from "../../components/ToastContainer";
 import { OrderItem } from "../../types/type";
 
 interface OrderState {

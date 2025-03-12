@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ROUTES } from "./constant/constant";
 
 import "./App.css";
 import Home from "./pages/Home";
@@ -11,23 +12,25 @@ import { ToastContainer } from "react-toastify";
 import ProductDetails from "./pages/ProductDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import AuthPage from "./pages/AuthPage";
-import ProtectedRoute from "./UI/ProtectedRoute";
 import OrderPage from "./pages/OrderPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <div className="App">
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/auth" element={<AuthPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/restaurant/:id" element={<RestaurantPage />} />
-        <Route path="/product/:id" element={<ProductDetails />} />{" "}
-        <Route path="/cart" element={<Cart />} />
+        {/* Redirect to /home by default */}
+        <Route path="/" element={<Navigate to={ROUTES.HOME} />} />
+        <Route path={ROUTES.AUTH} element={<AuthPage />} />
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.MENU} element={<Menu />} />
+        <Route path={ROUTES.RESTAURANT} element={<RestaurantPage />} />
+        <Route path={ROUTES.PRODUCT} element={<ProductDetails />} />
+        <Route path={ROUTES.CART} element={<Cart />} />
         <Route
-          path="/user"
+          path={ROUTES.USER}
           element={
             <ProtectedRoute>
               <UserDetail />
@@ -35,13 +38,14 @@ function App() {
           }
         />
         <Route
-          path="/orders"
+          path={ROUTES.ORDERS}
           element={
             <ProtectedRoute>
               <OrderPage />
             </ProtectedRoute>
           }
         />
+        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>

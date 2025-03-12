@@ -2,16 +2,16 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { Box, Grid2 } from "@mui/material";
 
-import mealItems from "../data/mealItem";
+import mealItems from "../../data/mealItem";
 
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/Store";
+import { RootState } from "../../redux/Store";
 import {
   addToCart,
   incrementQuantity,
   decrementQuantity,
-} from "../redux/slices/CartSlice";
-import { MealItem } from "../types/type";
+} from "../../redux/slices/CartSlice";
+import { MealItem } from "../../types/type";
 import ProductDescription from "./ProductDescription";
 
 interface productDetailProp {

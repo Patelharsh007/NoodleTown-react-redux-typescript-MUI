@@ -1,9 +1,8 @@
 import React from "react";
-
 import Navbar from "../components/Navbar";
-import TopBrands from "../components/TopBrands";
-import FoodByWeather from "../components/FoodByWeather";
-import FoodCategoryGroup from "../components/FoodCategoryGroup";
+import TopBrands from "../section/menu/TopBrands";
+import FoodByWeather from "../section/menu/FoodByWeather";
+import FoodCategoryGroup from "../section/menu/FoodCategoryGroup";
 
 const Menu = () => {
   return (

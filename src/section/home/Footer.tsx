@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid2, Container } from "@mui/material";
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 
 const Footer: React.FC = () => {
   return (

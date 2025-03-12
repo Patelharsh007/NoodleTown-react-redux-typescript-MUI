@@ -1,8 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import DiningOutCard from "../UI/DiningOutCard";
-import { assets } from "../assets/assets";
+import DiningOutCard from "../../components/DiningOutCard";
+import { assets } from "../../assets/assets";
 
 interface dummy_dining_out_data {
   imgurl: string;

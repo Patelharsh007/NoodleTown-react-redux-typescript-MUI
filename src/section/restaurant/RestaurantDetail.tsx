@@ -9,8 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 
-import restaurants from "../data/restaurantsData";
-import { RestaurantItem } from "../types/type";
+import restaurants from "../../data/restaurantsData";
+import { RestaurantItem } from "../../types/type";
 
 interface restaurantProps {
   id: string;

@@ -3,10 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 
-import { login, signUp } from "../redux/slices/AuthSlice";
-import { LoginForm } from "../form/LoginForm";
-import { SignUpForm } from "../form/SignUpForm";
-import { assets } from "../assets/assets";
+import { login, signUp } from "../../redux/slices/AuthSlice";
+import { LoginForm } from "../../form/LoginForm";
+import { SignUpForm } from "../../form/SignUpForm";
+import { assets } from "../../assets/assets";
 
 export const Auth: React.FC = () => {
   const dispatch = useDispatch();

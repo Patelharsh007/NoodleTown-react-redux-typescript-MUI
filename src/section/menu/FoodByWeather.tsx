@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Grid2, Typography } from "@mui/material";
 
-import FoodByWeatherCard from "../UI/FoodByWeatherCard";
+import FoodByWeatherCard from "../../components/FoodByWeatherCard";
 
-import mealItems from "../data/mealItem";
+import mealItems from "../../data/mealItem";
 
 const FoodByWeather: React.FC = () => {
   const num1 = Math.random();

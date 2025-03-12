@@ -1,22 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/Store";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Box,
-  Typography,
-  Container,
-} from "@mui/material";
-import { deleteOrder } from "../redux/slices/OrderSlice";
-import OrderHeader from "./OrderHeader";
-import OrderItems from "./OrderItems";
-import OrderSummary from "./OrderSummary";
+import { RootState } from "../../redux/Store";
+import { Paper, Box, Typography, Container } from "@mui/material";
+import { deleteOrder } from "../../redux/slices/OrderSlice";
+import OrderHeader from "../../components/OrderHeader";
+import OrderItems from "../../components/OrderItems";
+import OrderSummary from "../../components/OrderSummary";
 
 const Orders: React.FC = () => {
   const dispatch = useDispatch();

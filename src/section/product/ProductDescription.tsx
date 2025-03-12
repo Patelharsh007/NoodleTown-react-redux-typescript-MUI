@@ -9,7 +9,7 @@ import {
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { MealItem } from "../types/type";
+import { MealItem } from "../../types/type";
 
 interface ProductDescriptionProps {
   meal: MealItem;

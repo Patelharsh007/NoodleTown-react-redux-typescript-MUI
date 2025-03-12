@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import restaurants from "../data/restaurantsData";
-import { RestaurantItem } from "../types/type";
+import restaurants from "../../data/restaurantsData";
+import { RestaurantItem } from "../../types/type";
 
 interface restaurantProps {
   id: string;

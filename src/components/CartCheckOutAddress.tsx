@@ -17,7 +17,7 @@ import Remove from "@mui/icons-material/Remove";
 
 import AddressForm from "../form/AddressForm";
 
-const CartAddressComponent = () => {
+const CartCheckOutAddress = () => {
   const [showAddressForm, setShowAddressForm] = useState(false);
 
   // Redux
@@ -112,6 +112,7 @@ const CartAddressComponent = () => {
       </RadioGroup>
 
       {showAddressForm ? (
+        // Address form to add new address
         <AddressForm onSetSHowAddressForm={handleSetShowAddressForm} />
       ) : (
         <Button
@@ -130,4 +131,4 @@ const CartAddressComponent = () => {
   );
 };
 
-export default CartAddressComponent;
+export default CartCheckOutAddress;

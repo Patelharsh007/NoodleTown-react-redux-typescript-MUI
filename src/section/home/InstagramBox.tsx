@@ -1,8 +1,7 @@
 import { Box, Grid2, Link, Typography } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import React from "react";
-
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 
 const InstagramBox: React.FC = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Grid2 } from "@mui/material";
 
-import FoodCategoryGroupCard from "../UI/FoodCategoryGroupCard";
-import { assets } from "../assets/assets";
+import FoodCategoryGroupCard from "../../components/FoodCategoryGroupCard";
+import { assets } from "../../assets/assets";
 
 interface foodByCategoryGroup {
   groupName: string;

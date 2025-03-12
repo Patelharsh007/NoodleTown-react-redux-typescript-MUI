@@ -1,5 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { showErrorToast, showSuccessToast } from "../../UI/ToastContainer";
+import {
+  showErrorToast,
+  showSuccessToast,
+} from "../../components/ToastContainer";
 import { AuthItem } from "../../types/type";
 
 interface AuthState {

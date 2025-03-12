@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { showInfoToast } from "../../UI/ToastContainer";
+import { showInfoToast } from "../../components/ToastContainer";
 import { AddressItem } from "../../types/type";
 
 interface AddressState {

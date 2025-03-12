@@ -1,13 +1,16 @@
 import React from "react";
-
 import Navbar from "../components/Navbar";
-import CartComponent from "../components/CartComponent";
+import CartHeader from "../section/cart/CartHeader";
+import CartContent from "../section/cart/CartContent";
+import CartCheckOut from "../section/cart/CartCheckOut";
 
 const Cart = () => {
   return (
     <>
       <Navbar linkColor="#000000" />
-      <CartComponent />
+      <CartHeader />
+      <CartContent />
+      <CartCheckOut />
     </>
   );
 };

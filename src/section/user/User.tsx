@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/Store";
+import { RootState } from "../../redux/Store";
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { Button, Typography, Box, Container } from "@mui/material";
-import { logout } from "../redux/slices/AuthSlice";
+import { logout } from "../../redux/slices/AuthSlice";
 
 const UserPage: React.FC = () => {
   const dispatch = useDispatch();

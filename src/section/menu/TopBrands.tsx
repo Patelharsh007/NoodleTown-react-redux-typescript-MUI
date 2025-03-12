@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import TopBrandUI from "../UI/TopBrandUI";
+import TopBrandUI from "../../components/TopBrandUI";
 
-import restaurants from "../data/restaurantsData";
+import restaurants from "../../data/restaurantsData";
 
 const TopBrands = () => {
   return (

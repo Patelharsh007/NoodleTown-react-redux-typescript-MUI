@@ -8,10 +8,9 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-
 import SearchIcon from "@mui/icons-material/Search";
-import Navbar from "./Navbar";
-import { assets } from "../assets/assets";
+import Navbar from "../../components/Navbar";
+import { assets } from "../../assets/assets";
 
 const HeroSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState("Surat");

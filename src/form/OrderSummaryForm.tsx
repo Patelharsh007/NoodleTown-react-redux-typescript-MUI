@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/Store";
 import { clearCart } from "../redux/slices/CartSlice";
-import { showSuccessToast } from "../UI/ToastContainer";
+import { showSuccessToast } from "../components/ToastContainer";
 import { placeOrder } from "../redux/slices/OrderSlice";
 import { deselectAddress } from "../redux/slices/SelectedAddressSlice";
 import { useNavigate } from "react-router-dom";

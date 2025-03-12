@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Product from "../components/Product";
+import Product from "../section/product/Product";
 
 const ProductDetails = () => {
   const { id } = useParams();

@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import RestaurantDetail from "../components/RestaurantDetail";
-import RestaurantOrderOnline from "../components/RestaurantOrderOnline";
 import { Navigate, useParams } from "react-router-dom";
-import RestaurantBanner from "../components/RestaurantBanner";
-import RestaurantMenu from "../components/RestaurantMenu";
+import Navbar from "../components/Navbar";
+import RestaurantBanner from "../section/restaurant/RestaurantBanner";
+import RestaurantDetail from "../section/restaurant/RestaurantDetail";
+import RestaurantMenu from "../section/restaurant/RestaurantMenu";
+import RestaurantOrderOnline from "../section/restaurant/RestaurantOrderOnline";
 
 const RestaurantPage = () => {
   const { id } = useParams();

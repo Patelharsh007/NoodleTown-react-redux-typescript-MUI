@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import BestDelieveredBox from "../UI/BestDelieveredBox";
-import mealItems from "../data/mealItem";
+import mealItems from "../../data/mealItem";
+import BestDelieveredBox from "../../components/BestDelieveredBox";
 
 const BestDelievered: React.FC = () => {
   const num1 = Math.random();

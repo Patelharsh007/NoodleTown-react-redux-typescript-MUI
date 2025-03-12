@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import ScrollerCard from "../UI/ScrollerCard";
-import mealItems from "../data/mealItem";
-import { assets } from "../assets/assets";
+import ScrollerCard from "../../components/ScrollerCard";
+import mealItems from "../../data/mealItem";
+import { assets } from "../../assets/assets";
 
 const ItemCarosuel: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
