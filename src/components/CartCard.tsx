@@ -111,13 +111,17 @@ const CartCard: React.FC<CartCardProp> = ({
           >
             <Button
               onClick={() => onDecrement(item.id)}
-              variant="contained"
+              variant="outlined"
               sx={{
                 backgroundColor: "#F3F3F3",
                 border: "2px solid #F3F3F3",
                 minWidth: { xs: "40px", sm: "auto" },
                 "& .MuiSvgIcon-root": {
                   color: "#999999",
+                },
+                "&:hover": {
+                  backgroundColor: "#d3d3d3",
+                  border: "2px solid #d3d3d3",
                 },
               }}
             >
