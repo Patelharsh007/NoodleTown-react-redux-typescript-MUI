@@ -159,7 +159,10 @@ const ItemCarosuel: React.FC = () => {
             padding: "4px",
             width: "100%",
             height: "100%",
-            justifyContent: filteredItems.length <= 5 ? "center" : "flex-start",
+            justifyContent: {
+              sm: "flex-start",
+              xm: filteredItems.length <= 5 ? "center" : "flex-start",
+            },
             "&:hover": {
               cursor: filteredItems.length > 4 ? "grab" : "default",
             },
