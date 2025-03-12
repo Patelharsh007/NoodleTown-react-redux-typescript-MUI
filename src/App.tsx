@@ -15,6 +15,7 @@ import AuthPage from "./pages/AuthPage";
 import OrderPage from "./pages/OrderPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Routes>
       <ToastContainer />
+      <Analytics />
     </div>
   );
 }
