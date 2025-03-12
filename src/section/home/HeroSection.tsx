@@ -11,10 +11,13 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Navbar from "../../components/Navbar";
 import { assets } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState("Surat");
   const [searchValue, setSearchValue] = useState("");
+
+  const navigate = useNavigate();
 
   const handleCityChange = (event: SelectChangeEvent) => {
     setSelectedCity(event.target.value || "Surat");
@@ -169,7 +172,12 @@ const HeroSection: React.FC = () => {
                   alignItems={"center"}
                   gap={{ xs: "20px", sm: "15px" }}
                 >
-                  <SearchIcon sx={{ color: "#999999" }} />
+                  <SearchIcon
+                    sx={{ color: "#999999" }}
+                    onClick={() => {
+                      navigate(`/search/${selectedCity}/${searchValue}`);
+                    }}
+                  />
                   <TextField
                     id="search-value"
                     name="search"

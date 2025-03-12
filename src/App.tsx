@@ -16,6 +16,7 @@ import OrderPage from "./pages/OrderPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
+import { SearchPage } from "./pages/SearchPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path={ROUTES.AUTH} element={<AuthPage />} />
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.MENU} element={<Menu />} />
+        <Route path={ROUTES.SEARCH} element={<SearchPage />} />
         <Route path={ROUTES.RESTAURANT} element={<RestaurantPage />} />
         <Route path={ROUTES.PRODUCT} element={<ProductDetails />} />
         <Route path={ROUTES.CART} element={<Cart />} />

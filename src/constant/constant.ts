@@ -4,6 +4,7 @@ export const ROUTES = {
   MENU: "/menu",
   CART: "/cart",
   RESTAURANT: "/restaurant/:id",
+  SEARCH: "/search/:selectedCity/:searchValue",
   PRODUCT: "/product/:id",
   USER: "/user",
   ORDERS: "/orders",
