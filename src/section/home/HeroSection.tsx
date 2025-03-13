@@ -27,6 +27,14 @@ const HeroSection: React.FC = () => {
     setSearchValue(event.target.value);
   };
 
+  // Function to handle the Enter key press
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && searchValue.trim()) {
+      // Navigate to the URL based on the search value
+      navigate(`/search/${selectedCity}/${searchValue}`);
+    }
+  };
+
   return (
     <>
       <Box
@@ -163,28 +171,24 @@ const HeroSection: React.FC = () => {
 
                 <Typography display={{ xs: "none", sm: "block" }}>|</Typography>
                 <Stack
-                  width={"90%"}
+                  width={{ xs: "90%", sm: "70%" }}
+                  marginX={"auto"}
                   height={"50%"}
                   margin={"0 auto"}
                   display={"flex"}
                   direction={"row"}
-                  justifyContent={{ xs: "flex-start", sm: "center" }}
+                  justifyContent={{ xs: "space-evenly", sm: "flex-start" }}
                   alignItems={"center"}
                   gap={{ xs: "20px", sm: "15px" }}
                 >
-                  <SearchIcon
-                    sx={{ color: "#999999" }}
-                    onClick={() => {
-                      navigate(`/search/${selectedCity}/${searchValue}`);
-                    }}
-                  />
                   <TextField
                     id="search-value"
                     name="search"
                     onChange={handleSearchChange}
+                    onKeyDown={handleKeyDown}
                     placeholder="Search for restraunt, cuisine, places"
                     sx={{
-                      width: "90%",
+                      width: { xs: "300px", sm: "85%" },
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
                           border: "none",
@@ -212,6 +216,12 @@ const HeroSection: React.FC = () => {
                       },
                     }}
                     variant="outlined"
+                  />
+                  <SearchIcon
+                    sx={{ color: "#999999" }}
+                    onClick={() => {
+                      navigate(`/search/${selectedCity}/${searchValue}`);
+                    }}
                   />
                 </Stack>
               </Stack>
