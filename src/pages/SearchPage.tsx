@@ -5,7 +5,6 @@ import { Box, Container, Typography, Grid2, Stack, Chip } from "@mui/material";
 import { MealItem, RestaurantItem } from "../types/type";
 import restaurants from "../data/restaurantsData";
 import mealItems from "../data/mealItem";
-import { Category } from "@mui/icons-material";
 
 export const SearchPage: React.FC = () => {
   const { selectedCity, searchValue } = useParams<{

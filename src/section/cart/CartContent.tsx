@@ -38,21 +38,13 @@ const CartContent = () => {
               />
             ))
           ) : (
-            // <Typography
-            //   textAlign="center"
-            //   width="100%"
-            //   marginY={4}
-            //   color="#666"
-            //   fontSize="1.2rem"
-            // >
-            //   Your cart is empty
-            // </Typography>
             <>
               <Stack margin={"auto"}>
                 <Box
                   component={"img"}
+                  width={"90%"}
                   margin={"auto"}
-                  height={"450px"}
+                  height={"350px"}
                   src={
                     "https://i.pinimg.com/736x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038.jpg"
                   }
@@ -75,7 +67,7 @@ const CartContent = () => {
                     textAlign="center"
                     marginY={4}
                     color={"#f3f3f3"}
-                    fontSize="1.2rem"
+                    fontSize="1rem"
                   >
                     Continue Ordering Delicious Food
                   </Typography>
